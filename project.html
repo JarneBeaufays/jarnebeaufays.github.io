@@ -8,7 +8,6 @@
     <meta name="description" content="Project details" id="meta-desc" />
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- GLightbox (Option A) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
@@ -42,7 +41,6 @@
             clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
         }
 
-        /* Lightbox image containment */
         .glightbox-clean .gslide-image img {
             max-width: 90vw !important;
             max-height: 90vh !important;
@@ -50,7 +48,6 @@
             border-radius: 8px;
         }
 
-        /* Optional: add some padding inside the lightbox */
         .glightbox-container .ginner-container {
             padding: 20px;
         }
@@ -137,7 +134,6 @@
             };
 
             try {
-                // If your file is at /data/projects.json, change this path.
                 const res = await fetch('projects.json', { cache: 'no-store' });
                 if (!res.ok) throw new Error('Failed to load data');
 
@@ -184,7 +180,6 @@
                     linksWrap.appendChild(a);
                 });
 
-                // ===== Gallery + GLightbox =====
                 const gallerySources = Array.isArray(project.gallery) ? project.gallery : [];
                 if (gallerySources.length) {
                     const wrap = document.getElementById('galleryWrap');
@@ -210,7 +205,6 @@
 
                     wrap.classList.remove('hidden');
 
-                    // Initialize GLightbox on our gallery links
                     if (!window._glb) {
                         window._glb = GLightbox({ selector: '#gallery a' });
                     } else if (typeof window._glb.reload === 'function') {
@@ -223,7 +217,6 @@
                 console.error(e);
                 fail('There was a problem loading the project data.');
             } finally {
-                // Hide the loading overlay after JSON parsing & DOM updates (or on error)
                 hideLoading();
             }
         })();
