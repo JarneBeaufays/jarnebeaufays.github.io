@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title id="doc-title">Project — Jarne Beaufays</title>
+    <meta name="description" content="Project details" id="meta-desc" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- GLightbox (Option A) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+    <style>
+        :root {
+            --color-primary: #ffffff;
+            --color-accent1: #ff5e00;
+            --color-accent2: #FF93F8;
+            --color-accent3: #FFD350;
+            --color-accent4: #009DFF;
+            --color-accent1-light: #fa7d33;
+            --card-radius: 18px;
+            --card-shadow: 0 10px 30px rgba(16, 24, 40, .06);
+        }
+
+        body {
+            background: var(--color-primary)
+        }
+
+        .cat-pill {
+            background: #fff;
+            color:  var(--color-accent1-light);
+            font-weight: 600
+        }
+
+        .hero-clip {
+            clip-path: polygon(0 0, 100% 0, 100% 75.7%, 0 100%);
+        }
+
+        .footer-clip {
+            clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+        }
+
+        /* Lightbox image containment */
+        .glightbox-clean .gslide-image img {
+            max-width: 90vw !important;
+            max-height: 90vh !important;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        /* Optional: add some padding inside the lightbox */
+        .glightbox-container .ginner-container {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body class="antialiased text-slate-800" aria-busy="true">
+    <!-- Loading overlay (visible until JSON is parsed & page populated) -->
+    <div id="loadingOverlay"
+         class="fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-4
+                bg-white/95 backdrop-blur-sm transition-opacity duration-300">
+        <div class="h-10 w-10 rounded-full border-4 border-slate-300 border-t-slate-700 animate-spin"
+             aria-hidden="true"></div>
+        <p class="text-sm text-slate-600" role="status" aria-live="polite">Loading project…</p>
+        <noscript><p class="text-xs text-slate-500">Enable JavaScript to load this page.</p></noscript>
+    </div>
+
+    <!-- Header / Hero (filled by JS) -->
+    <header class="relative text-white">
+        <div id="hero" class="hero-clip bg-[var(--color-accent1)]">
+            <div class="max-w-6xl mx-auto px-6 py-12 lg:py-16">
+                <a href="index.html" class="inline-block mb-6 text-white/90 hover:underline">&larr; Back to
+                    portfolio</a>
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h1 id="title" class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">Loading…
+                        </h1>
+                        <p id="subtitle" class="mt-2 text-md opacity-90"></p>
+                        <div id="tags" class="mt-4 flex flex-wrap gap-2"></div>
+                    </div>
+                    <div class="flex justify-end">
+                        <img id="heroImg" alt=""
+                            class="w-full max-w-xl rounded-xl ring-8 ring-white/20 shadow-lg object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="max-w-5xl mx-auto px-6 py-10 space-y-10">
+        <section>
+            <h2 class="text-xl font-semibold mb-3">Useful Links</h2>
+            <div id="links" class="mt-5 flex flex-wrap gap-3"></div>
+        </section>
+
+        <section>
+            <h2 class="text-xl font-semibold mb-3">Overview</h2>
+            <p id="description" class="text-slate-700 leading-relaxed">Loading…</p>
+        </section>
+
+        <section id="galleryWrap" class="hidden">
+            <h2 class="text-xl font-semibold mb-4">Gallery</h2>
+            <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        </section>
+    </main>
+
+    <footer class="relative text-white">
+        <div class="footer-clip bg-[var(--color-accent1)]">
+            <div class="max-w-5xl mx-auto px-6 py-10 text-sm">
+                <span class="opacity-90">&copy; Jarne Beaufays — <span id="year">2025</span></span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (async function () {
+            const overlay = document.getElementById('loadingOverlay');
+            const hideLoading = () => {
+                // smooth fade, then fully hide & clear busy state
+                overlay?.classList.add('opacity-0');
+                setTimeout(() => overlay?.classList.add('hidden'), 250);
+                document.body.removeAttribute('aria-busy');
+            };
+
+            const params = new URLSearchParams(location.search);
+            const slug = params.get('slug');
+
+            const fail = (msg) => {
+                document.getElementById('title').textContent = 'Not found';
+                document.getElementById('subtitle').textContent = msg;
+                document.getElementById('description').textContent = 'Double-check the link or go back to the portfolio.';
+                document.getElementById('heroImg').style.display = 'none';
+            };
+
+            try {
+                // If your file is at /data/projects.json, change this path.
+                const res = await fetch('projects.json', { cache: 'no-store' });
+                if (!res.ok) throw new Error('Failed to load data');
+
+                // Wait until JSON is fully parsed
+                const projects = await res.json();
+
+                const project = projects.find(p => p.slug === slug);
+                if (!project) {
+                    fail('No project matches "' + slug + '".');
+                    return;
+                }
+
+                // Basic fields
+                document.getElementById('doc-title').textContent = `${project.title} — Jarne Beaufays`;
+                document.getElementById('meta-desc').setAttribute('content', project.description || project.title);
+                document.getElementById('title').textContent = project.title;
+                document.getElementById('subtitle').textContent = [project.client, project.year].filter(Boolean).join(' • ');
+                document.getElementById('description').innerHTML = project.description || '';
+                document.getElementById('year').textContent = new Date().getFullYear();
+
+                // Hero image
+                const heroImg = document.getElementById('heroImg');
+                heroImg.src = project.hero || project.thumb || '';
+                heroImg.alt = project.title;
+
+                // Tags
+                const tagsWrap = document.getElementById('tags');
+                (project.tags || []).forEach(t => {
+                    const s = document.createElement('span');
+                    s.className = "cat-pill inline-block text-xs px-3 py-1 rounded-full";
+                    s.textContent = t;
+                    tagsWrap.appendChild(s);
+                });
+
+                // Links
+                const linksWrap = document.getElementById('links');
+                (project.links || []).forEach(l => {
+                    const a = document.createElement('a');
+                    a.href = l.href;
+                    a.target = "_blank";
+                    a.rel = "noopener noreferrer";
+                    a.className = "inline-block bg-[var(--color-accent1)] hover:bg-[var(--color-accent3)] text-white font-semibold py-2 px-3 rounded-md text-sm";
+                    a.textContent = l.label;
+                    linksWrap.appendChild(a);
+                });
+
+                // ===== Gallery + GLightbox =====
+                const gallerySources = Array.isArray(project.gallery) ? project.gallery : [];
+                if (gallerySources.length) {
+                    const wrap = document.getElementById('galleryWrap');
+                    const grid = document.getElementById('gallery');
+                    grid.innerHTML = '';
+
+                    gallerySources.forEach((src, i) => {
+                        const a = document.createElement('a');
+                        a.href = src; // full-size
+                        a.className = "block";
+                        a.setAttribute('data-gallery', 'project'); // group
+                        a.setAttribute('aria-label', `${project.title} — image ${i + 1}`);
+
+                        const img = document.createElement('img');
+                        img.src = src;
+                        img.alt = `${project.title} — image ${i + 1}`;
+                        img.loading = 'lazy';
+                        img.className = "w-full h-56 object-cover rounded-lg shadow cursor-zoom-in";
+
+                        a.appendChild(img);
+                        grid.appendChild(a);
+                    });
+
+                    wrap.classList.remove('hidden');
+
+                    // Initialize GLightbox on our gallery links
+                    if (!window._glb) {
+                        window._glb = GLightbox({ selector: '#gallery a' });
+                    } else if (typeof window._glb.reload === 'function') {
+                        window._glb.reload();
+                    } else {
+                        window._glb = GLightbox({ selector: '#gallery a' });
+                    }
+                }
+            } catch (e) {
+                console.error(e);
+                fail('There was a problem loading the project data.');
+            } finally {
+                // Hide the loading overlay after JSON parsing & DOM updates (or on error)
+                hideLoading();
+            }
+        })();
+    </script>
+</body>
+
+</html>

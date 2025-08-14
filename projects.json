@@ -1,0 +1,247 @@
+[
+  {
+    "slug": "the-moonlight-lodge",
+    "title": "The Moonlight Lodge",
+    "year": "2025",
+    "client": "Operative Games",
+    "type": "Industry Projects",
+    "tags": ["VR", "Multiplayer", "Unity"],
+    "thumb": "images/TheMoonLightLodge/TheMoonlightLodge.png",
+    "hero": "images/TheMoonLightLodge/TheMoonlightLodge.png",
+    "short": "Co-op VR mystery set in a remote alpine hotel. Owned multiplayer netcode, UX flows, and build automation.",
+    "description": "Co-op VR mystery set in a remote alpine hotel. Owned multiplayer netcode, UX flows, and build automation.",
+    "links": [
+      { "label": "Studio", "href": "https://www.operativegames.ai/" }
+    ],
+    "gallery": [
+      "images/TheMoonlightLodge/TheMoonlightLodge.png"
+    ]
+  },
+  {
+    "slug": "cicadas",
+    "title": "Cicadas",
+    "year": "2024",
+    "client": "Yale University",
+    "type": "Industry Projects",
+    "tags": ["VR", "Unity"],
+    "thumb": "images/Cicadas.jpg",
+    "hero": "images/Cicadas.jpg",
+    "short": "Immersive VR experience to explore cicada life cycles with interactive visualization.",
+    "description": "Immersive VR experience to explore cicada life cycles with interactive visualization.",
+    "links": [],
+    "gallery": ["images/Cicadas.jpg"]
+  },
+  {
+    "slug": "astro-harvest",
+    "title": "Astro Harvest",
+    "year": "2022",
+    "client": "Mantis Games",
+    "type": "Industry Projects",
+    "tags": ["VR", "Unity"],
+    "thumb": "images/AstroHarvest.jpg",
+    "hero": "images/AstroHarvest.jpg",
+    "short": "Fast-paced space farming prototype balancing traversal, harvesting, and enemy encounters.",
+    "description": "Fast-paced space farming prototype balancing traversal, harvesting, and enemy encounters.",
+    "links": [],
+    "gallery": ["images/AstroHarvest.jpg"]
+  },
+  {
+    "slug": "abm-playable-ads",
+    "title": "Activision Blizzard Media Playable Ads",
+    "year": "2023",
+    "client": "Activision Blizzard Media",
+    "type": "Industry Projects",
+    "tags": ["50+ Projects", "Unity"],
+    "thumb": "images/ABM.png",
+    "hero": "images/ABM.png",
+    "short": "Built a modular pipeline for dozens of bite-size playables, optimized for footprint and CTR.",
+    "description": "Built a modular pipeline for dozens of bite-size playables, optimized for footprint and CTR.",
+    "links": [],
+    "gallery": ["images/ABM.png"]
+  },
+
+  {
+    "slug": "the-fizzler",
+    "title": "The Fizzler",
+    "year": "2025",
+    "client": "",
+    "type": "Personal Projects",
+    "tags": ["Game Jam", "Android", "Unity"],
+    "thumb": "images/TheFizzler.jpeg",
+    "hero": "images/TheFizzler.jpeg",
+    "short": "A game about spraying champagne made on my own during GGJA 2025 while hosting the site.",
+    "description": "A game about spraying champagne made on my own during GGJA 2025 while hosting the site.",
+    "links": [],
+    "gallery": ["images/TheFizzler.jpeg"]
+  },
+  {
+    "slug": "up-with-the-sub",
+    "title": "Up With the Sub",
+    "year": "2021",
+    "client": "",
+    "type": "Personal Projects",
+    "tags": ["School", "Windows Local Coop", "Unity"],
+    "thumb": "images/UpWithTheSub/Main.png",
+    "hero": "images/UpWithTheSub/Main.png",
+    "short": "A local co-op submarine adventure for a class project, voted as “Best Game of the Course 2020.” by our teachers.",
+    "description": "This project was created during the Game Projects course at DAE, a program where all majors come together to collaborate on a game. Together with two artists and another programmer, we successfully completed what became my first Unity project.<br><br>While learning the basics of Unity, I focused on implementing controllable characters, a simple crafting system, and the physics for both the items and the submarine.<br><br>Our project was highly praised by both students and teachers, earning the Teachers’ Prize for Greatest Game of the Course of the Year. In 2025, I heard from my interns that it’s still being showcased as an example during the course’s introduction.",
+    "links": [
+      {"label":"Trailer", "href":"https://www.youtube.com/watch?v=ElbNA6Y3vhY&ab_channel=JorryPotsie"},
+      {"label":"Course", "href":"https://www.digitalartsandentertainment.be/pageselect/47/Game+Projects/103"},
+      {"label":"Itch", "href":"https://jarnebeaufays.itch.io/gameprojects"}
+    ],
+    "gallery": [
+      "images/UpWithTheSub/Main.png", 
+      "images/UpWithTheSub/Gallery.gif",
+      "images/UpWithTheSub/Gallery2.jpg",
+      "images/UpWithTheSub/Gallery3.png",
+      "images/UpWithTheSub/Gallery4.png"
+    ]
+  },
+  {
+    "slug": "cash-money",
+    "title": "Cash Money",
+    "year": "2021",
+    "client": "",
+    "type": "Personal Projects",
+    "tags": ["School", "Windows Local Coop", "Custom Engine"],
+    "thumb": "images/CashMoney.png",
+    "hero": "images/CashMoney.png",
+    "short": "A game made for a DAE course using the school's custom game engine.",
+    "description": "A game made for a DAE course using the school's custom game engine.",
+    "links": [],
+    "gallery": ["images/CashMoney.png"]
+  },
+  {
+    "slug": "launch-oclockdown",
+    "title": "Launch O'clock(down)",
+    "year": "2021",
+    "client": "",
+    "type": "Personal Projects",
+    "tags": ["Game Jam", "WebGL", "Unity"],
+    "thumb": "images/LaunchOClockDown.png",
+    "hero": "images/LaunchOClockDown.png",
+    "short": "My first game jam entry ever, a game about exploring space and using gravitational pull to navigate 2D levels.",
+    "description": "My first game jam entry ever, a game about exploring space and using gravitational pull to navigate 2D levels.",
+    "links": [],
+    "gallery": ["images/LaunchOClockDown.png"]
+  },
+
+  {
+    "slug": "immunodeck",
+    "title": "ImmunoDeck",
+    "year": "2024",
+    "client": "Yale University",
+    "type": "Industry Prototypes",
+    "tags": ["VR", "Unity"],
+    "thumb": "images/ImmunoDeck.png",
+    "hero": "images/ImmunoDeck.png",
+    "short": "Small VR prototype exploring immunology concepts via interactive cards.",
+    "description": "Small VR prototype exploring immunology concepts via interactive cards.",
+    "links": [],
+    "gallery": ["images/ImmunoDeck.png"]
+  },
+  {
+    "slug": "zero-state-agent",
+    "title": "Zero State Agent",
+    "year": "2023",
+    "client": "Fortress Games",
+    "type": "Industry Prototypes",
+    "tags": ["Windows", "Unity"],
+    "thumb": "images/ZeroStateAgent.png",
+    "hero": "images/ZeroStateAgent.png",
+    "short": "Systems-driven prototype focused on agent behavior and state transitions.",
+    "description": "Systems-driven prototype focused on agent behavior and state transitions.",
+    "links":[
+      {"label": "Official Site", "href": "https://zerostateagent.com/" }
+    ],
+    "gallery": ["images/ZeroStateAgent.png"]
+  },
+  {
+    "slug": "digigods",
+    "title": "Digigods",
+    "year": "2022",
+    "client": "Squido Studio",
+    "type": "Industry Prototypes",
+    "tags": ["VR", "Unity"],
+    "thumb": "images/Digigods/Digigods.jpg",
+    "hero": "images/Digigods/Digigods.jpg",
+    "short": "The very first multiplayer prototype of the well received and funded Digigods game on Meta Quest.",
+    "description": "The very first multiplayer prototype of the well received and funded Digigods game on Meta Quest.",
+    "links":[
+      {"label": "Official Site", "href": "https://www.digigods.gg/" }
+    ],
+    "gallery": ["images/Digigods/Digigods.jpg"]
+  },
+  {
+    "slug": "vr-bicycle-simulation",
+    "title": "VR Bicycle Simulation",
+    "year": "2021",
+    "client": "City of Ghent",
+    "type": "Industry Prototypes",
+    "tags": ["VR", "Unity"],
+    "thumb": "images/VRBike.png",
+    "hero": "images/VRBike.png",
+    "short": "Training/education prototype simulating urban cycling scenarios in VR.",
+    "description": "Training/education prototype simulating urban cycling scenarios in VR.",
+    "links": [],
+    "gallery": ["images/VRBike.png"]
+  },
+
+  {
+    "slug": "ggj-theme-committee",
+    "title": "GGJ Theme Committee + Site Organizer",
+    "year": "2025 Onwards",
+    "client": "",
+    "type": "Others",
+    "tags": ["Community Work", "Event", "Hobby"],
+    "thumb": "images/Ggj2025.jpg",
+    "hero": "images/Ggj2025.jpg",
+    "short": "Organizing the Global Game Jam Antwerp site and contributing in the GGJ theme committee.",
+    "description": "Organizing the Global Game Jam Antwerp site and contributing in the GGJ theme committee.",
+    "links": [],
+    "gallery": ["images/Ggj2025.jpg"]
+  },
+  {
+    "slug": "15-years-pl",
+    "title": "15 Years PL",
+    "year": "2025",
+    "client": "",
+    "type": "Others",
+    "tags": ["Event"],
+    "thumb": "images/PreviewLabs15.jpg",
+    "hero": "images/PreviewLabs15.jpg",
+    "short": "Organizing and leading the 15 years of PreviewLabs trip in America and Canada.",
+    "description": "Organizing and leading the 15 years of PreviewLabs trip in America and Canada.",
+    "links": [],
+    "gallery": ["images/PreviewLabs15.jpg"]
+  },
+  {
+    "slug": "3d-printing",
+    "title": "3D Printing",
+    "year": "2024 Onwards",
+    "client": "",
+    "type": "Others",
+    "tags": ["Hobby"],
+    "thumb": "images/3dPrinting.jpg",
+    "hero": "images/3dPrinting.jpg",
+    "short": "Designing, printing, and painting custom parts, props, trophees, and miniatures as a hobby.",
+    "description": "Designing, printing, and painting custom parts, props, trophees, and miniatures as a hobby.",
+    "links": [],
+    "gallery": ["images/3dPrinting.jpg"]
+  },
+  {
+    "slug": "obstacle-course-instructor",
+    "title": "Obstacle Course Instructor",
+    "year": "2018–2022",
+    "client": "",
+    "type": "Others",
+    "tags": ["Hobby"],
+    "thumb": "images/ObstacleCourse.jpg",
+    "hero": "images/ObstacleCourse.jpg",
+    "short": "For 4 years, I've worked with groups of children and adults, leading them over obstacle courses focusing on safety, movement, teamwork, and fun!",
+    "description": "For 4 years, I've worked with groups of children and adults, leading them over obstacle courses focusing on safety, movement, teamwork, and fun!",
+    "links": [],
+    "gallery": ["images/ObstacleCourse.jpg"]
+  }
+]
