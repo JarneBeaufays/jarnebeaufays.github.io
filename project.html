@@ -106,7 +106,7 @@
     </main>
 
     <footer class="relative text-white">
-        <div class="footer-clip bg-[var(--color-accent1)]">
+        <div id="footer" class="footer-clip bg-[var(--color-accent1)]">
             <div class="max-w-5xl mx-auto px-6 py-10 text-sm">
                 <span class="opacity-90">&copy; Jarne Beaufays — <span id="year">2025</span></span>
             </div>
@@ -115,112 +115,141 @@
 
     <script>
         (async function () {
-            const overlay = document.getElementById('loadingOverlay');
-            const hideLoading = () => {
-                // smooth fade, then fully hide & clear busy state
-                overlay?.classList.add('opacity-0');
-                setTimeout(() => overlay?.classList.add('hidden'), 250);
-                document.body.removeAttribute('aria-busy');
-            };
-
-            const params = new URLSearchParams(location.search);
-            const slug = params.get('slug');
-
-            const fail = (msg) => {
-                document.getElementById('title').textContent = 'Not found';
-                document.getElementById('subtitle').textContent = msg;
-                document.getElementById('description').textContent = 'Double-check the link or go back to the portfolio.';
-                document.getElementById('heroImg').style.display = 'none';
-            };
-
-            try {
-                const res = await fetch('projects.json', { cache: 'no-store' });
-                if (!res.ok) throw new Error('Failed to load data');
-
-                // Wait until JSON is fully parsed
-                const projects = await res.json();
-
-                const project = projects.find(p => p.slug === slug);
-                if (!project) {
-                    fail('No project matches "' + slug + '".');
-                    return;
-                }
-
-                // Basic fields
-                document.getElementById('doc-title').textContent = `${project.title} — Jarne Beaufays`;
-                document.getElementById('meta-desc').setAttribute('content', project.description || project.title);
-                document.getElementById('title').textContent = project.title;
-                document.getElementById('subtitle').textContent = [project.client, project.year].filter(Boolean).join(' • ');
-                document.getElementById('description').innerHTML = project.description || '';
-                document.getElementById('year').textContent = new Date().getFullYear();
-
-                // Hero image
-                const heroImg = document.getElementById('heroImg');
-                heroImg.src = project.hero || project.thumb || '';
-                heroImg.alt = project.title;
-
-                // Tags
-                const tagsWrap = document.getElementById('tags');
-                (project.tags || []).forEach(t => {
-                    const s = document.createElement('span');
-                    s.className = "cat-pill inline-block text-xs px-3 py-1 rounded-full";
-                    s.textContent = t;
-                    tagsWrap.appendChild(s);
-                });
-
-                // Links
-                const linksWrap = document.getElementById('links');
-                (project.links || []).forEach(l => {
-                    const a = document.createElement('a');
-                    a.href = l.href;
-                    a.target = "_blank";
-                    a.rel = "noopener noreferrer";
-                    a.className = "inline-block bg-[var(--color-accent1)] hover:bg-[var(--color-accent3)] text-white font-semibold py-2 px-3 rounded-md text-sm";
-                    a.textContent = l.label;
-                    linksWrap.appendChild(a);
-                });
-
-                const gallerySources = Array.isArray(project.gallery) ? project.gallery : [];
-                if (gallerySources.length) {
-                    const wrap = document.getElementById('galleryWrap');
-                    const grid = document.getElementById('gallery');
-                    grid.innerHTML = '';
-
-                    gallerySources.forEach((src, i) => {
-                        const a = document.createElement('a');
-                        a.href = src; // full-size
-                        a.className = "block";
-                        a.setAttribute('data-gallery', 'project'); // group
-                        a.setAttribute('aria-label', `${project.title} — image ${i + 1}`);
-
-                        const img = document.createElement('img');
-                        img.src = src;
-                        img.alt = `${project.title} — image ${i + 1}`;
-                        img.loading = 'lazy';
-                        img.className = "w-full h-56 object-cover rounded-lg shadow cursor-zoom-in";
-
-                        a.appendChild(img);
-                        grid.appendChild(a);
-                    });
-
-                    wrap.classList.remove('hidden');
-
-                    if (!window._glb) {
-                        window._glb = GLightbox({ selector: '#gallery a' });
-                    } else if (typeof window._glb.reload === 'function') {
-                        window._glb.reload();
-                    } else {
-                        window._glb = GLightbox({ selector: '#gallery a' });
-                    }
-                }
-            } catch (e) {
-                console.error(e);
-                fail('There was a problem loading the project data.');
-            } finally {
-                hideLoading();
+          const overlay = document.getElementById('loadingOverlay');
+          const hideLoading = () => {
+            overlay?.classList.add('opacity-0');
+            setTimeout(() => overlay?.classList.add('hidden'), 250);
+            document.body.removeAttribute('aria-busy');
+          };
+      
+          const params = new URLSearchParams(location.search);
+          const slug = params.get('slug');
+      
+          const fail = (msg) => {
+            document.getElementById('title').textContent = 'Not found';
+            document.getElementById('subtitle').textContent = msg;
+            document.getElementById('description').textContent = 'Double-check the link or go back to the portfolio.';
+            document.getElementById('heroImg').style.display = 'none';
+          };
+      
+          try {
+            const res = await fetch('projects.json', { cache: 'no-store' });
+            if (!res.ok) throw new Error('Failed to load data');
+      
+            const projects = await res.json();
+            const project = projects.find(p => p.slug === slug);
+            if (!project) {
+              fail('No project matches "' + slug + '".');
+              return;
             }
+      
+            // Basic fields
+            document.getElementById('doc-title').textContent = `${project.title} — Jarne Beaufays`;
+            document.getElementById('meta-desc').setAttribute('content', project.description || project.title);
+            document.getElementById('title').textContent = project.title;
+            document.getElementById('subtitle').textContent = [project.client, project.year].filter(Boolean).join(' • ');
+            document.getElementById('description').innerHTML = project.description || '';
+            document.getElementById('year').textContent = new Date().getFullYear();
+      
+            // Hero image
+            const heroImg = document.getElementById('heroImg');
+            heroImg.src = project.hero || project.thumb || '';
+            heroImg.alt = project.title;
+      
+            // Tags
+            const tagsWrap = document.getElementById('tags');
+            const tagsData = Array.isArray(project.tags)
+              ? project.tags.filter(t => typeof t === 'string' && t.trim().length)
+              : [];
+            tagsData.forEach(t => {
+              const s = document.createElement('span');
+              s.className = "cat-pill inline-block text-xs px-3 py-1 rounded-full";
+              s.textContent = t;
+              tagsWrap.appendChild(s);
+            });
+      
+            // Links
+            const linksWrap = document.getElementById('links');
+            const linksData = Array.isArray(project.links)
+              ? project.links.filter(l => l && l.href && l.label)
+              : [];
+            linksData.forEach(l => {
+              const a = document.createElement('a');
+              a.href = l.href;
+              a.target = "_blank";
+              a.rel = "noopener noreferrer";
+              a.className = "inline-block bg-[var(--color-accent1)] hover:bg-[var(--color-accent3)] text-white font-semibold py-2 px-3 rounded-md text-sm";
+              a.textContent = l.label;
+              linksWrap.appendChild(a);
+            });
+
+            // Hide the entire "Useful Links" section if no links rendered
+            if (linksWrap.childElementCount === 0) {
+              const linksSection = linksWrap.closest('section');
+              if (linksSection) {
+                linksSection.remove();
+              }
+            }
+
+            const type = project.type.toString();
+            const color = `var(${
+                    type === "Industry Projects"
+                    ? "--color-accent1"
+                    : type === "Industry Prototypes"
+                    ? "--color-accent3"
+                    : type === "Personal Projects"
+                    ? "--color-accent4"
+                    : "--color-accent2"
+                })`;
+
+            const hero = document.getElementById("hero");
+            hero.style.backgroundColor = color;
+
+            const footer = document.getElementById("footer");
+            footer.style.backgroundColor = color;
+      
+            // Gallery
+            const gallerySources = Array.isArray(project.gallery) ? project.gallery.filter(Boolean) : [];
+            if (gallerySources.length) {
+              const wrap = document.getElementById('galleryWrap');
+              const grid = document.getElementById('gallery');
+              grid.innerHTML = '';
+      
+              gallerySources.forEach((src, i) => {
+                const a = document.createElement('a');
+                a.href = src;
+                a.className = "block";
+                a.setAttribute('data-gallery', 'project');
+                a.setAttribute('aria-label', `${project.title} — image ${i + 1}`);
+      
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = `${project.title} — image ${i + 1}`;
+                img.loading = 'lazy';
+                img.className = "w-full h-56 object-cover rounded-lg shadow cursor-zoom-in";
+      
+                a.appendChild(img);
+                grid.appendChild(a);
+              });
+      
+              document.getElementById('galleryWrap').classList.remove('hidden');
+      
+              if (!window._glb) {
+                window._glb = GLightbox({ selector: '#gallery a' });
+              } else if (typeof window._glb.reload === 'function') {
+                window._glb.reload();
+              } else {
+                window._glb = GLightbox({ selector: '#gallery a' });
+              }
+            }
+          } catch (e) {
+            console.error(e);
+            fail('There was a problem loading the project data.');
+          } finally {
+            hideLoading();
+          }
         })();
-    </script>
+      </script>      
 </body>
 
 </html>
