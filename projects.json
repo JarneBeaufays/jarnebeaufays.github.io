@@ -5,10 +5,10 @@
     "year": "2025",
     "client": "Operative Games",
     "type": "Industry Projects",
-    "tags": ["VR", "Multiplayer", "Unity"],
+    "tags": [ "Funded by Meta", "VR", "Multiplayer", "Unity"],
     "thumb": "Images/TheMoonlightLodge/TheMoonlightLodge.png",
     "hero": "Images/TheMoonlightLodge/TheMoonlightLodge.png",
-    "short": "Co-op VR mystery set in a remote alpine hotel. Owned multiplayer netcode, UX flows, and build automation.",
+    "short": "Meta funded VR Multiplayer project about natural interactions with LLM agents.",
     "description": "Co-op VR mystery set in a remote alpine hotel. Owned multiplayer netcode, UX flows, and build automation.",
     "links": [
       { "label": "Studio", "href": "https://www.operativegames.ai/" }
@@ -23,10 +23,10 @@
     "year": "2024",
     "client": "Yale University",
     "type": "Industry Projects",
-    "tags": ["VR", "Unity"],
+    "tags": ["Funded by Unity", "VR", "Unity"],
     "thumb": "Images/Cicadas.jpg",
     "hero": "Images/Cicadas.jpg",
-    "short": "Immersive VR experience to explore cicada life cycles with interactive visualization.",
+    "short": "A VR project funded by Unity about exploring grief for losing a child.",
     "description": "Immersive VR experience to explore cicada life cycles with interactive visualization.",
     "links": [],
     "gallery": ["Images/Cicadas.jpg"]
@@ -40,8 +40,8 @@
     "tags": ["VR", "Unity"],
     "thumb": "Images/AstroHarvest.jpg",
     "hero": "Images/AstroHarvest.jpg",
-    "short": "Fast-paced space farming prototype balancing traversal, harvesting, and enemy encounters.",
-    "description": "Fast-paced space farming prototype balancing traversal, harvesting, and enemy encounters.",
+    "short": "Fast-paced space VR farming game balancing traversal, harvesting, and enemy encounters.",
+    "description": "Fast-paced space VR farming game balancing traversal, harvesting, and enemy encounters.",
     "links": [],
     "gallery": ["Images/AstroHarvest.jpg"]
   },
@@ -54,8 +54,8 @@
     "tags": ["50+ Projects", "Unity"],
     "thumb": "Images/ABM.png",
     "hero": "Images/ABM.png",
-    "short": "Built a modular pipeline for dozens of bite-size playables, optimized for footprint and CTR.",
-    "description": "Built a modular pipeline for dozens of bite-size playables, optimized for footprint and CTR.",
+    "short": "Built a modular pipeline for dozens of bite-size playable ads.",
+    "description": "Built a modular pipeline for dozens of bite-size playable ads.",
     "links": [],
     "gallery": ["Images/ABM.png"]
   },
@@ -136,8 +136,8 @@
     "tags": ["VR", "Unity"],
     "thumb": "Images/ImmunoDeck.png",
     "hero": "Images/ImmunoDeck.png",
-    "short": "Small VR prototype exploring immunology concepts via interactive cards.",
-    "description": "Small VR prototype exploring immunology concepts via interactive cards.",
+    "short": "VR prototype exploring immunology concepts via game technology.",
+    "description": "VR prototype exploring immunology concepts via game technology.",
     "links": [],
     "gallery": ["Images/ImmunoDeck.png"]
   },
@@ -166,10 +166,12 @@
     "tags": ["VR", "Unity"],
     "thumb": "Images/Digigods/Digigods.jpg",
     "hero": "Images/Digigods/Digigods.jpg",
-    "short": "The very first multiplayer prototype of the well received and funded Digigods game on Meta Quest.",
+    "short": "The very first multiplayer prototype of the well received game Digigods, helping raise USD 3 million.",
     "description": "The very first multiplayer prototype of the well received and funded Digigods game on Meta Quest.",
     "links":[
-      {"label": "Official Site", "href": "https://www.digigods.gg/" }
+      {"label": "Official Site", "href": "https://www.digigods.gg/" },
+      {"label": "Funding", "href": "https://gamesbeat.com/squido-studio-raises-3m-for-social-xr-game-digigods/"},
+      {"label": "Blog", "href": "https://previewlabs.com/collaborative-vr-multiplayer-physics-digigods/"}
     ],
     "gallery": ["Images/Digigods/Digigods.jpg"]
   },
@@ -182,7 +184,7 @@
     "tags": ["VR", "Unity"],
     "thumb": "Images/VRBike.png",
     "hero": "Images/VRBike.png",
-    "short": "Training/education prototype simulating urban cycling scenarios in VR.",
+    "short": "Prototype simulating urban cycling scenarios in VR. This project was displayed during the cycling world championship 2021 in Leuven's City hall.",
     "description": "Training/education prototype simulating urban cycling scenarios in VR.",
     "links": [],
     "gallery": ["Images/VRBike.png"]
@@ -199,7 +201,8 @@
     "hero": "Images/Ggj2025.jpg",
     "short": "Organizing the Global Game Jam Antwerp site and contributing in the GGJ theme committee.",
     "description": "Organizing the Global Game Jam Antwerp site and contributing in the GGJ theme committee.",
-    "links": [],
+    "links": [
+      {"label":"Blog", "href": "https://previewlabs.com/ggj2025/"}],
     "gallery": ["Images/Ggj2025.jpg"]
   },
   {
