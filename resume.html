@@ -7,37 +7,13 @@
     <title id="doc-title">Project — Jarne Beaufays</title>
     <meta name="description" content="Project details" id="meta-desc" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <link rel="stylesheet" href="theme.css">
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
     <style>
-        :root {
-            --color-primary: #fff0e5;
-            --color-accent1: #ce6102;
-            --color-accent2: #f3907e;
-            --color-accent3: #eab706;
-            --color-accent4: #0070ba;
-            --color-accent1-light: #fa7d33;
-            --card-radius: 18px;
-            --card-shadow: 0 10px 30px rgba(16, 24, 40, .06);
-        }
-
-        body {
-            background: var(--color-primary)
-        }
-
-        .cat-pill {
-            background: var(--color-accent1);
-            color: #fff;
-            font-weight: 600
-        }
-
-        .url {
-            color: var(--color-accent1);
-            font-weight: 600;
-        }
-
         .small-title {
             color: var(--color-accent1);
         }
@@ -60,6 +36,7 @@
             clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
         }
     </style>
+
 </head>
 
 <body class="antialiased text-slate-800" aria-busy="true">
@@ -68,8 +45,7 @@
     <header class="relative text-white">
         <div id="hero" class="hero-clip bg-[var(--color-accent1)]">
             <div class="max-w-6xl mx-auto px-6 py-12 lg:py-16">
-                <a href="index.html" class="inline-block mb-6 text-white/90 hover:underline">&larr; Back to
-                    portfolio</a>
+                <a href="index.html" class="inline-block mb-6 text-white/90 hover:underline">&larr; Back to portfolio</a>
                 <div class="grid lg:grid-cols-2 items-center gap-4">
                     <div>
                         <h1 id="title" class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">Jarne
@@ -77,17 +53,17 @@
                         <h1 class="text-xl sm:text-xl">Where nerd meets social</h1>
                         <br>
                         <p id="subtitle" class="mt-2 text-md opacity-90">
-                            Hi, I'm Jarne — a creative game programmer who blends technical skill with a social spark.
-                            I love turning ideas into games for clients big and small, and whether I'm working, 3D printing, 
+                            Hi, I'm Jarne — a game programmer who blends technical skill with a social spark.<br><br>
+                            Whether I'm working, 3D printing, 
                             catching up with friends, or battling zombies online, I bring energy, creativity, 
                             and a people-first mindset.<br><br>
 
-                            My first employer once called me a “social nerd” — and you know what? I'm owning it!
+                            My first employer once called me a “social nerd”, and you know what? I'm owning it!
                         </p>
                         <div id="tags" class="mt-4 flex flex-wrap gap-2"></div>
                     </div>
                     <div class="flex justify-end">
-                        <img id="heroImg" src="Images/Resume/HeroImage.jpg" class="w-full max-w-xl rounded-xl ring-8 ring-white/20 shadow-lg object-cover h-[20vw]">
+                        <img id="heroImg" src="Images/Resume/HeroImage.jpg" class="w-full max-w-xl rounded-xl ring-8 ring-white shadow-lg object-cover h-[20vw]">
                     </div>
                 </div>
             </div>
@@ -103,122 +79,120 @@
                 <div class="space-y-3">
                     <h2 class="text-xl font-semibold mb-3">Industry Work Experience</h2>
                     <div class="p-4 bg-white rounded-lg shadow-md">
-                        <div class="flex flex-wrap gap-2 mb-2">
+                        <div class="flex flex-wrap gap-2 mb-1">
                             <h3 class="text-base font-semibold">PreviewLabs - Game Prototype Programmer</h3>
-                            <span class="cat-pill inline-block text-xs px-2 py-1 rounded-full">2022-Now</span>
+                            <span class="cat-pill text-xs px-2 py-1 rounded-full">2023-Now</span>
                         </div>
                         <p class="text-sm leading-snug">
-                            Although my work at PreviewLabs covered many different areas, my primary focus was rapid
-                            prototyping.
-                            I collaborated with a wide variety of technologies and clients, with many projects in XR for
-                            major names such as Yale University,
+                            Although my work at PreviewLabs covers many different areas, my primary focus is rapid prototyping.
+                            I collaborate with a wide variety of clients and technologies, with many projects 
+                            focussing on XR for major names such as Yale University,
                             Activision Blizzard, and many more. If you're curious to how I experience this, feel free to
                             check out
                             <a href="https://previewlabs.com/meet-the-team-jarne-beaufays/" target="_blank"
                                 class="url">this article</a>.
+                            Next to programming, I'm also involved in some project management, sales, and personal assistant tasks.
                             <br>
-                            <a href="https://previewlabs.com/" target="_blank" class="url">https://previewlabs.com</a>
                         </p>
+                        <a href="https://previewlabs.com/" target="_blank" class="url text-sm">https://previewlabs.com</a>
                     </div>
                     <div class="p-4 bg-white rounded-lg shadow-md">
-                        <div class="flex flex-wrap gap-2 mb-2">
+                        <div class="flex flex-wrap gap-2 mb-1">
                             <h3 class="text-base font-semibold">ULIA - Game Programmer</h3>
-                            <span class="cat-pill inline-block text-xs px-2 py-1 rounded-full">2021-2022</span>
+                            <span class="cat-pill text-xs px-2 py-1 rounded-full">2021-2022</span>
                         </div>
                         <p class="text-sm leading-snug">
                             My professional career began here, where I contributed to the company's first few projects
                             on the market and represented them at
                             numerous events. It was a fun and rewarding experience, but securing a full-time contract
                             proved difficult, so I chose to move on.
-                            <a href="https://ulia.be/" target="_blank" class="url">https://ulia.be</a>
                         </p>
+                        <a href="https://ulia.be/" target="_blank" class="url text-sm">https://ulia.be</a>
                     </div>
                 </div>
 
                 <div class="space-y-3">
                     <h2 class="text-xl font-semibold mb-3">Student Work Experience</h2>
                     <div class="p-4 bg-white rounded-lg shadow-md">
-                        <div class="flex flex-wrap gap-2 mb-2">
+                        <div class="flex flex-wrap gap-2 mb-1">
                             <h3 class="text-base font-semibold">City of Ghent: 3D Team - Game Programmer</h3>
-                            <span class="cat-pill inline-block text-xs px-2 py-1 rounded-full">2021</span>
+                            <span class="cat-pill text-xs px-2 py-1 rounded-full">2021</span>
                         </div>
                         <p class="text-sm leading-snug">
                             My work for the city of Ghent began during my internship there as a DAE student. After
                             graduating,
                             I continued part-time as a student employee, but only briefly as government budget cuts were
                             lurking around the corner...<br>
-                            <a href="https://previewlabs.com/" target="_blank" class="url">https://previewlabs.com</a>
                         </p>
                     </div>
 
                     <div class="p-4 bg-white rounded-lg shadow-md">
-                        <div class="flex flex-wrap gap-2 mb-2">
+                        <div class="flex flex-wrap gap-2 mb-1">
                             <h3 class="text-base font-semibold">Intense - High Ropes Course Instructor</h3>
-                            <span class="cat-pill inline-block text-xs px-2 py-1 rounded-full">2018-2022</span>
+                            <span class="cat-pill text-xs px-2 py-1 rounded-full">2018-2022</span>
                         </div>
                         <p class="text-sm leading-snug">
-                            Guiding and securing large groups on courses up to 24 meters high.
+                            Guiding and securing large groups of kids and adults on obstacle courses up to 24 meters high.
                             In this job, I am responsible for the safety of the clients. Being able to handle stress
                             and having an awareness of danger are a must here.<br>
-                            <a href="https://intense.be" target="_blank" class="url">https://intense.be</a>
                         </p>
+                        <a href="https://intense.be" target="_blank" class="url text-sm">https://intense.be</a>
                     </div>
 
                     <div class="p-4 bg-white rounded-lg shadow-md">
-                        <div class="flex flex-wrap gap-2 mb-2">
+                        <div class="flex flex-wrap gap-2 mb-1">
                             <h3 class="text-base font-semibold">Hujo - Camp Counselor</h3>
-                            <span class="cat-pill inline-block text-xs px-2 py-1 rounded-full">2016-2022</span>
+                            <span class="cat-pill text-xs px-2 py-1 rounded-full">2016-2018</span>
                         </div>
                         <p class="text-sm leading-snug">
                             I have been going to camp with the organization Hujo since I was 8 years old.
                             I earned my camp councelor diploma here when I was 16. My main task at Hujo is,
                             of course, interacting with children in a playful and responsible way.
                             Working and organizing with other camp councelors, is also very important here.<br>
-                            <a href="https://www.hujo.be/" target="_blank" class="url">https://www.hujo.be</a>
                         </p>
+                        <a href="https://www.hujo.be/" target="_blank" class="url text-sm">https://www.hujo.be</a>
                     </div>
 
                     <div class="p-4 bg-white rounded-lg shadow-md">
-                        <div class="flex flex-wrap gap-2 mb-2">
+                        <div class="flex flex-wrap gap-2 mb-1">
                             <h3 class="text-base font-semibold">Outfort - Waiter</h3>
-                            <span class="cat-pill inline-block text-xs px-2 py-1 rounded-full">2018-2019</span>
+                            <span class="cat-pill text-xs px-2 py-1 rounded-full">2018-2019</span>
                         </div>
                         <p class="text-sm leading-snug">
                             Serving at wedding parties and ensuring that the events run as smoothly as possible.
                             Afterwards, I made sure everything was ready for the next events.
                             This job was mainly night work.<br>
-                            <a href="https://outfort.com" target="_blank" class="url">https://outfort.com</a>
                         </p>
+                        <a href="https://outfort.com" target="_blank" class="url text-sm">https://outfort.com</a>
                     </div>
 
                     <div class="p-4 bg-white rounded-lg shadow-md">
-                        <div class="flex flex-wrap gap-2 mb-2">
+                        <div class="flex flex-wrap gap-2 mb-1">
                             <h3 class="text-base font-semibold">Progreso - Junior Software Engineer</h3>
-                            <span class="cat-pill inline-block text-xs px-2 py-1 rounded-full">2018</span>
+                            <span class="cat-pill text-xs px-2 py-1 rounded-full">2018</span>
                         </div>
                         <p class="text-sm leading-snug">
-                            I completed my month long internship here during my last year of High School Computer
-                            Science.
+                            I completed my month long internship here during my last year of high school computer
+                            science.
                             Afterwards, I started working there as a student employee. My tasks included creating
                             websites for internal
                             company use, restructuring code, writing code to interact with databases, and managing part
                             of the hardware.<br>
-                            <a href="https://www.progresohrsoftware.be/nl" target="_blank"
-                                class="url">https://www.progresohrsoftware.be</a>
                         </p>
+                        <a href="https://www.progresohrsoftware.be/nl" target="_blank"
+                        class="url text-sm">https://www.progresohrsoftware.be</a>
                     </div>
 
                     <div class="p-4 bg-white rounded-lg shadow-md">
-                        <div class="flex flex-wrap gap-2 mb-2">
+                        <div class="flex flex-wrap gap-2 mb-1">
                             <h3 class="text-base font-semibold">Mediamarkt and Colruyt - Vendor</h3>
-                            <span class="cat-pill inline-block text-xs px-2 py-1 rounded-full">2016-2017</span>
+                            <span class="cat-pill text-xs px-2 py-1 rounded-full">2016-2017</span>
                         </div>
                         <p class="text-sm leading-snug">
                             Independently organizing the warehouses of MediaMarkt. After a successful period working in
                             the warehouse,
                             I moved to the store to work as a sales associate. Working in the Colruyt marked my first
-                            student job starting
-                            right before I turned 16.<br>
+                            student job starting right before I turned 16.<br>
                         </p>
                     </div>
                 </div>
@@ -226,10 +200,10 @@
                 <div class="space-y-3">
                     <h2 class="text-xl font-semibold mb-3">Education</h2>
                     <div class="p-4 bg-white rounded-lg shadow-md">
-                        <div class="flex flex-wrap gap-2 mb-2">
+                        <div class="flex flex-wrap gap-2 mb-1">
                             <h3 class="text-base font-semibold">Howest - Digital Arts and Entertainment</h3>
-                            <span class="cat-pill inline-block text-xs px-2 py-1 rounded-full">2018-2021</span>
-                            <span class="cat-pill inline-block text-xs px-2 py-1 rounded-full">Bachelor</span>
+                            <span class="cat-pill text-xs px-2 py-1 rounded-full">2018-2021</span>
+                            <span class="cat-pill text-xs px-2 py-1 rounded-full">Bachelor</span>
                         </div>
                         <p class="text-sm leading-snug">
                             During my three years at Howest, I graduated cum laude with a Bachelor's degree in Game
@@ -237,20 +211,20 @@
                             The program focuses heavily on game programming, while also covering other parts of the
                             development pipeline,
                             like 2D/3D art and game design.<br><br>
-                            Howest is known for their great Game Development courses. The school has earned many awards
+                            Howest is known for their great game development courses. The school has earned many awards
                             for their efforts.
                             You can still find me strolling around the school sometimes to recruit students.
                             <br>
-                            <a href="https://www.digitalartsandentertainment.be/" target="_blank"
-                                class="url">https://www.digitalartsandentertainment.be</a>
                         </p>
+                        <a href="https://www.digitalartsandentertainment.be/" target="_blank"
+                        class="url text-sm">https://www.digitalartsandentertainment.be</a>
                     </div>
 
                     <div class="p-4 bg-white rounded-lg shadow-md">
-                        <div class="flex flex-wrap gap-2 mb-2">
+                        <div class="flex flex-wrap gap-2 mb-1">
                             <h3 class="text-base font-semibold">Sint-Lodewijk - Computer Science</h3>
-                            <span class="cat-pill inline-block text-xs px-2 py-1 rounded-full">2016-2018</span>
-                            <span class="cat-pill inline-block text-xs px-2 py-1 rounded-full">High School</span>
+                            <span class="cat-pill text-xs px-2 py-1 rounded-full">2016-2018</span>
+                            <span class="cat-pill text-xs px-2 py-1 rounded-full">High School</span>
                         </div>
                         <p class="text-sm leading-snug">
                             Some of the best years of my life were spent at this high school. Ever since I was a child,
@@ -261,26 +235,25 @@
                             Proef (high school thesis).<br><br>
                             To anyone thinking of becoming a game programmer, this is the high school to start.
                             <br>
-                            <a href="https://sintlodewijkantwerpen.be/" target="_blank"
-                                class="url">https://sintlodewijkantwerpen.be</a>
                         </p>
+                        <a href="https://sintlodewijkantwerpen.be/" target="_blank"
+                        class="url text-sm">https://sintlodewijkantwerpen.be</a>
                     </div>
 
                     <div class="p-4 bg-white rounded-lg shadow-md">
-                        <div class="flex flex-wrap gap-2 mb-2">
+                        <div class="flex flex-wrap gap-2 mb-1">
                             <h3 class="text-base font-semibold">KLA - General Sciences</h3>
-                            <span class="cat-pill inline-block text-xs px-2 py-1 rounded-full">2012-2016</span>
-                            <span class="cat-pill inline-block text-xs px-2 py-1 rounded-full">High School</span>
+                            <span class="cat-pill text-xs px-2 py-1 rounded-full">2012-2016</span>
+                            <span class="cat-pill text-xs px-2 py-1 rounded-full">High School</span>
                         </div>
                         <p class="text-sm leading-snug">
                             This is where my high school journey began. I studied general sciences for four years before
                             realizing it wasn't the right fit for me.
                             Transferring to Sint-Lodewijk became one of the most pivotal moments of my life, even though
-                            I was leaving behind an otherwise
-                            excellent school.
+                            I was leaving behind an otherwise great school.
                             <br>
-                            <a href="https://www.kla.be/" target="_blank" class="url">https://www.kla.be</a>
                         </p>
+                        <a href="https://www.kla.be/" target="_blank" class="url text-sm">https://www.kla.be</a>
                     </div>
                 </div>
 
@@ -292,26 +265,18 @@
                     <h2 class="text-xl font-semibold mb-3">Programming</h2>
                     <div class="rounded-lg">
 
-                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3 bg-white">
-                            <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full text-center">C#</span>
+                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 p-3 items-center">
+                            <span class="cat-pill text-xs px-3 py-1">C#</span>
                             <div class="flex-1">
                                 <div class="h-2 rounded-full bg-slate-200/80 w-full">
                                     <div class="h-2 rounded-full bg-[var(--color-accent1)] w-full" aria-hidden="true">
+                                        Rumores have it I speak this more than Dutch.
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3 bg-white">
-                            <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full text-center">C++</span>
-                            <div class="flex-1">
-                                <div class="h-2 rounded-full bg-slate-200/80 w-full">
-                                    <div class="h-2 rounded-full bg-[var(--color-accent1)] w-[70%]" aria-hidden="true">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3 bg-white">
-                            <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full text-center">HTML • CSS</span>
+                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 p-3 items-center">
+                            <span class="cat-pill text-xs px-3 py-1">C++</span>
                             <div class="flex-1">
                                 <div class="h-2 rounded-full bg-slate-200/80 w-full">
                                     <div class="h-2 rounded-full bg-[var(--color-accent1)] w-[80%]" aria-hidden="true">
@@ -319,17 +284,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3 bg-white">
-                            <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full text-center">JS • PHP</span>
+                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 p-3 items-center">
+                            <span class="cat-pill text-xs px-3 py-1">HTML • CSS</span>
                             <div class="flex-1">
                                 <div class="h-2 rounded-full bg-slate-200/80 w-full">
-                                    <div class="h-2 rounded-full bg-[var(--color-accent1)] w-[60%]" aria-hidden="true">
+                                    <div class="h-2 rounded-full bg-[var(--color-accent1)] w-[80%]" aria-hidden="true">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3 bg-white">
-                            <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full text-center">SQL</span>
+                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 p-3 items-center">
+                            <span class="cat-pill text-xs px-3 py-1">SQL</span>
                             <div class="flex-1">
                                 <div class="h-2 rounded-full bg-slate-200/80 w-full">
                                     <div class="h-2 rounded-full bg-[var(--color-accent1)] w-[70%]" aria-hidden="true">
@@ -337,11 +302,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3 bg-white">
-                            <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full text-center">Python</span>
+                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 p-3 items-center">
+                            <span class="cat-pill text-xs px-3 py-1">JS • PHP</span>
                             <div class="flex-1">
                                 <div class="h-2 rounded-full bg-slate-200/80 w-full">
-                                    <div class="h-2 rounded-full bg-[var(--color-accent1)] w-[50%]" aria-hidden="true">
+                                    <div class="h-2 rounded-full bg-[var(--color-accent1)] w-[60%]" aria-hidden="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 p-3 items-center">
+                            <span class="cat-pill text-xs px-3 py-1">Python</span>
+                            <div class="flex-1">
+                                <div class="h-2 rounded-full bg-slate-200/80 w-full">
+                                    <div class="h-2 rounded-full bg-[var(--color-accent1)] w-[60%]" aria-hidden="true">
                                     </div>
                                 </div>
                             </div>
@@ -352,25 +326,25 @@
                 <div class="space-y-3">
                     <h2 class="text-xl font-semibold mb-3">Skills</h2>
                     <div class="rounded-lg">
-                        <div class="grid grid-cols-[1fr_5fr] gap-x-4 items-center p-3 bg-white">
-                            <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full text-center">Social</span>
+                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3">
+                            <span class="cat-pill text-xs px-3 py-1">Social</span>
                             <div class="flex-1 text-sm">
                                 I'm a social guy who's comfortable speaking with others and presenting to large groups.
                                 I enjoy listening to people's stories, showing genuine interest, and relating their experiences to my own.
                             </div>
                         </div>
-                        <div class="grid grid-cols-[1fr_5fr] gap-x-4 items-center p-3 bg-white">
-                            <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full text-center">Hardware</span>
+                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3">
+                            <span class="cat-pill text-xs px-3 py-1">Hardware</span>
                             <div class="flex-1 text-sm">
                                 My passion for programming brought along an interest in all kinds of computer hardware.
-                                Before long, I became the go-to IT guy responsible for keeping my family's computers in working order!
+                                Before long, I became <i>that one IT guy</i> in the friend group".
                             </div>
                         </div>
-                        <div class="grid grid-cols-[1fr_5fr] gap-x-4 items-center p-3 bg-white">
-                            <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full text-center">Software</span>
+                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3">
+                            <span class="cat-pill text-xs px-3 py-1">Software</span>
                             <div class="flex-1 text-sm">
-                                I've been working with Microsoft Office, Google Docs, GIMP, and various video editing tools for as long as I can remember.
-                                Combined with the power of LLMs, I feel like I can tackle complex software challenges quickly and efficiently.
+                                I've been working with Microsoft Office, Google Docs, GIMP, and various video editing tools for as long as I remember.
+                                Combined with the power of LLMs, I feel like I can tackle complex challenges quickly and efficiently.
                             </div>
                         </div>
                     </div>
@@ -378,35 +352,35 @@
                 <div class="space-y-3">
                     <h2 class="text-xl font-semibold mb-3">Hobbies</h2>
                     <div class="rounded-lg">
-                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3 bg-white">
-                            <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full text-center">3D Printing</span>
+                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3">
+                            <span class="cat-pill text-xs px-3 py-1">3D-Printing</span>
                             <div class="flex-1 text-sm">
-                                I love 3D printing miniatures, technical projects, and even trophies! I've also had the
-                                opportunity to create trophies in a professional context.
+                                I enjoy 3D printing. I mainly prins miniatures, handy stuff, and trophies! I've also had the
+                                opportunity to create the latter in a professional context.
                             </div>
                         </div>
-                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3 bg-white">
-                            <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full text-center">Gaming</span>
+                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3">
+                            <span class="cat-pill text-xs px-3 py-1">Gaming</span>
                             <div class="flex-1 text-sm">
-                                Online, you usually find me running through zombie hordes or battling on Summoner's Rift.
+                                Online, you usually find me running through zombie hordes or brawling as Darius on Summoner's Rift.
                             </div>
                         </div>
-                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3 bg-white">
-                            <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full text-center">Sports</span>
+                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3">
+                            <span class="cat-pill text-xs px-3 py-1">Sports</span>
                             <div class="flex-1 text-sm">
                                 If I didn't arrive on foot, I probably got there on my longboard or inline skates. Between me and you,
                                 I might've even arrived by zipline...
                             </div>
                         </div>
-                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3 bg-white">
-                            <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full text-center">Traveling</span>
+                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3">
+                            <span class="cat-pill text-xs px-3 py-1">Traveling</span>
                             <div class="flex-1 text-sm">
                                 I love traveling and have done so independently for both professional and personal reasons. 
                                 I've also organized intercontinental trips for groups of up to 15 people.
                             </div>
                         </div>
-                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3 bg-white">
-                            <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full text-center">Friends</span>
+                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3">
+                            <span class="cat-pill text-xs px-3 py-1">Friends</span>
                             <div class="flex-1 text-sm">
                                 Spending time with friends after work is a must for me.
                             </div>
@@ -418,8 +392,8 @@
                     <h2 class="text-xl font-semibold mb-3">Languages</h2>
                     <div class="rounded-lg"></div>
 
-                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3 bg-white">
-                            <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full text-center">Dutch</span>
+                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3">
+                            <span class="cat-pill text-xs px-3 py-1">Dutch</span>
                             <div class="flex-1">
                                 <div class="h-2 rounded-full bg-slate-200/80 w-full">
                                     <div class="h-2 rounded-full bg-[var(--color-accent1)] w-full" aria-hidden="true">
@@ -427,8 +401,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3 bg-white">
-                            <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full text-center">English</span>
+                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3">
+                            <span class="cat-pill text-xs px-3 py-1">English</span>
                             <div class="flex-1">
                                 <div class="h-2 rounded-full bg-slate-200/80 w-full">
                                     <div class="h-2 rounded-full bg-[var(--color-accent1)] w-[90%]" aria-hidden="true">
@@ -436,8 +410,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3 bg-white">
-                            <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full text-center">French</span>
+                        <div class="grid grid-cols-[1fr_4fr] gap-x-4 items-center p-3">
+                            <span class="cat-pill text-xs px-3 py-1">French</span>
                             <div class="flex-1">
                                 <div class="h-2 rounded-full bg-slate-200/80 w-full">
                                     <div class="h-2 rounded-full bg-[var(--color-accent1)] w-[50%]" aria-hidden="true">

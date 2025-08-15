@@ -1,0 +1,45 @@
+:root {
+    --color-primary: #fff0e5;
+    --color-accent1: #ce6102;
+    --color-accent2: #f3907e;
+    --color-accent3: #eab706;
+    --color-accent4: #0070ba;
+    --color-accent1-light: #fa7d33;
+    --card-radius: 18px;
+    --card-shadow: 0 10px 30px rgba(16, 24, 40, .06);
+}
+
+body {
+    background: var(--color-primary);
+}
+
+.hero-clip {
+    clip-path: polygon(0 0, 100% 0, 100% 75.7%, 0 100%);
+}
+
+.footer-clip {
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+}
+
+.cat-pill,
+.cat-pill-inverted {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-accent1);
+    color: #fff;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+}
+
+.cat-pill-inverted {
+    background: #fff;
+    color: var(--color-accent1);
+}
+
+.url {
+    color: var(--color-accent1);
+    font-weight: 600;
+    text-decoration: underline;
+}

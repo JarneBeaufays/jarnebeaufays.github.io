@@ -9,43 +9,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <link rel="stylesheet" href="theme.css">
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
     <style>
-        :root {
-            --color-primary: #fff0e5;
-            --color-accent1: #ce6102;
-            --color-accent2: #f3907e;
-            --color-accent3: #eab706;
-            --color-accent4: #0070ba;
-            --color-accent1-light: #fa7d33;
-            --card-radius: 18px;
-            --card-shadow: 0 10px 30px rgba(16, 24, 40, .06);
-        }
-
-        body {
-            background: var(--color-primary)
-        }
-
-        .cat-pill {
-            background: #fff;
-            color:  var(--color-accent1-light);
-            font-weight: 600
-        }
-
-        .hero-clip {
-            clip-path: polygon(0 0, 100% 0, 100% 75.7%, 0 100%);
-        }
-
-        .footer-clip {
-            clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
-        }
-
         .glightbox-clean .gslide-image img {
-            max-width: 90vw !important;
-            max-height: 90vh !important;
-            object-fit: contain;
-            border-radius: 8px;
+          width: 90vw !important;
+          height: 90vh !important;
+          object-fit: contain;      /* show full image, no crop */
+          border-radius: 8px;
         }
 
         .glightbox-container .ginner-container {
@@ -80,7 +52,7 @@
                     </div>
                     <div class="flex justify-end">
                         <img id="heroImg" alt=""
-                            class="w-full max-w-xl rounded-xl ring-8 ring-white/20 shadow-lg object-cover">
+                            class="w-full max-w-xl rounded-xl ring-8 ring-white shadow-lg object-cover">
                     </div>
                 </div>
             </div>
@@ -163,7 +135,7 @@
               : [];
             tagsData.forEach(t => {
               const s = document.createElement('span');
-              s.className = "cat-pill inline-block text-xs px-3 py-1 rounded-full";
+              s.className = "cat-pill-inverted inline-block text-xs px-3 py-1 rounded-full";
               s.textContent = t;
               tagsWrap.appendChild(s);
             });

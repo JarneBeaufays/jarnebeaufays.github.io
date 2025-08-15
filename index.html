@@ -6,22 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jarne Beaufays — Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="theme.css">
+
   <style>
-    :root {
-      --color-primary: #fff0e5;
-      --color-accent1: #ce6102;
-      --color-accent2: #f3907e;
-      --color-accent3: #eab706;
-      --color-accent4: #0070ba;
-
-      --card-radius: 18px;
-      --card-shadow: 0 10px 30px rgba(16, 24, 40, 0.06);
-    }
-
-    body {
-      background: var(--color-primary);
-    }
-
     .site-header {
       position: relative;
       background: transparent;
@@ -32,7 +19,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(255, 94, 0, 0.95);
+      background: var(--color-accent1);
       clip-path: polygon(0 0, 100% 0, 100% 75.7%, 0 100%);
       z-index: 0;
     }
@@ -54,12 +41,6 @@
 
     .project-card:hover img {
       transform: scale(1.06)
-    }
-
-    .cat-pill {
-      background: black;
-      color: #fff;
-      font-weight: 600
     }
 
     .decor-blob {
@@ -132,12 +113,13 @@
 
   <!-- Loading overlay (visible until all sections finish parsing + rendering) -->
   <div id="loadingOverlay"
-       class="fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-4
-              bg-white/95 backdrop-blur-sm transition-opacity duration-300">
-    <div class="h-10 w-10 rounded-full border-4 border-slate-300 border-t-slate-700 animate-spin"
-         aria-hidden="true"></div>
+    class="fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-4 bg-white/95 backdrop-blur-sm transition-opacity duration-300">
+    <div class="h-10 w-10 rounded-full border-4 border-slate-300 border-t-slate-700 animate-spin" aria-hidden="true">
+    </div>
     <p class="text-sm text-slate-600" role="status" aria-live="polite">Loading projects…</p>
-    <noscript><p class="text-xs text-slate-500">Enable JavaScript to load this page.</p></noscript>
+    <noscript>
+      <p class="text-xs text-slate-500">Enable JavaScript to load this page.</p>
+    </noscript>
   </div>
 
   <script>
@@ -185,19 +167,18 @@
   <!-- Header / Hero -->
   <header class="site-header text-white py-12 min-h-[300px] flex items-center">
     <div class="max-w-6xl mx-auto px-6 relative">
-      <img src="Images/UrsaMajor.png" class="absolute w-96 h-auto pointer-events-none" alt="Ursa Major illustration">
-
+      <img src="Images/UrsaMajor.png" class="hidden md:block absolute w-96 h-auto pointer-events-none"
+        alt="Ursa Major illustration">
       <div class="decor-blob" aria-hidden="true"></div>
-      <div class="flex items-center justify-between gap-6 translate-y-8">
+      <div class="flex items-center  gap-24 translate-y-8">
         <div class="name-wrap relative">
           <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">Jarne Beaufays</h1>
           <p class="mt-2 text-md opacity-90">Belgian Gameplay Programmer and Community Builder</p>
           <div class="mt-4 flex gap-3">
             <a href="resume.html"
-              class="inline-block bg-white/10 hover:bg-white/20 text-white py-2 px-3 rounded-md text-sm">View resume</a>
+              class="inline-block bg-white/10 hover:bg-white/20 text-white py-2 px-3 rounded-md text-sm">Resume</a>
             <a href="#contact"
-              class="inline-block bg-white text-[var(--color-accent1)] font-semibold py-2 px-3 rounded-md text-sm">Contact
-              me</a>
+              class="inline-block bg-white text-[var(--color-accent1)] font-semibold py-2 px-3 rounded-md text-sm">Contact</a>
           </div>
         </div>
 
@@ -251,16 +232,16 @@
                   <div class="flex items-center justify-between mb-2">
                     <div class="flex gap-2">
                       ${[
-                        ...(typeof p.client === 'string' && p.client !== '' ? [p.client] : []),
-                        ...(Array.isArray(p.tags) ? p.tags : [])
-                      ]
-                .map((t, i) =>
-                  `<span class="cat-pill inline-block text-xs px-3 py-1 rounded-full" 
+                  ...(typeof p.client === 'string' && p.client !== '' ? [p.client] : []),
+                  ...(Array.isArray(p.tags) ? p.tags : [])
+                ]
+                  .map((t, i) =>
+                    `<span class="cat-pill inline-block text-xs px-3 py-1 rounded-full" 
                                   style="background:var(${i === 0 ? '--color-accent1' : '--color-accent3'});">
                             ${t}
                           </span>`
-                ).join('')
-              }
+                  ).join('')
+                }
                     </div>
                     <span class="text-xs text-slate-400">${p.year || ''}</span>
                   </div>
@@ -327,16 +308,16 @@
                   <div class="flex items-center justify-between mb-2">
                     <div class="flex gap-2">
                       ${[
-                        ...(typeof p.client === 'string' && p.client !== '' ? [p.client] : []),
-                        ...(Array.isArray(p.tags) ? p.tags : [])
-                      ]
-                .map((t, i) =>
-                  `<span class="cat-pill inline-block text-xs px-3 py-1 rounded-full" 
+                  ...(typeof p.client === 'string' && p.client !== '' ? [p.client] : []),
+                  ...(Array.isArray(p.tags) ? p.tags : [])
+                ]
+                  .map((t, i) =>
+                    `<span class="cat-pill inline-block text-xs px-3 py-1 rounded-full" 
                                   style="background:var(${i === 0 ? '--color-accent3' : '--color-accent4'});">
                             ${t}
                           </span>`
-                ).join('')
-              }
+                  ).join('')
+                }
                     </div>
                     <span class="text-xs text-slate-400">${p.year || ''}</span>
                   </div>
@@ -402,16 +383,16 @@
                   <div class="flex items-center justify-between mb-2">
                     <div class="flex gap-2">
                       ${[
-                        ...(typeof p.client === 'string' && p.client !== '' ? [p.client] : []),
-                        ...(Array.isArray(p.tags) ? p.tags : [])
-                      ]
-                .map((t, i) =>
-                  `<span class="cat-pill inline-block text-xs px-3 py-1 rounded-full" 
+                  ...(typeof p.client === 'string' && p.client !== '' ? [p.client] : []),
+                  ...(Array.isArray(p.tags) ? p.tags : [])
+                ]
+                  .map((t, i) =>
+                    `<span class="cat-pill inline-block text-xs px-3 py-1 rounded-full" 
                                   style="background:var(${i === 0 ? '--color-accent4' : '--color-accent2'});">
                             ${t}
                           </span>`
-                ).join('')
-              }
+                  ).join('')
+                }
                     </div>
                     <span class="text-xs text-slate-400">${p.year || ''}</span>
                   </div>
@@ -477,16 +458,16 @@
                   <div class="flex items-center justify-between mb-2">
                     <div class="flex gap-2">
                       ${[
-                        ...(typeof p.client === 'string' && p.client !== '' ? [p.client] : []),
-                        ...(Array.isArray(p.tags) ? p.tags : [])
-                      ]
-                .map((t, i) =>
-                  `<span class="cat-pill inline-block text-xs px-3 py-1 rounded-full" 
+                  ...(typeof p.client === 'string' && p.client !== '' ? [p.client] : []),
+                  ...(Array.isArray(p.tags) ? p.tags : [])
+                ]
+                  .map((t, i) =>
+                    `<span class="cat-pill inline-block text-xs px-3 py-1 rounded-full" 
                                   style="background:var(${i === 0 ? '--color-accent2' : '--color-accent1'});">
                             ${t}
                           </span>`
-                ).join('')
-              }
+                  ).join('')
+                }
                     </div>
                     <span class="text-xs text-slate-400">${p.year || ''}</span>
                   </div>
@@ -521,21 +502,23 @@
   </main>
 
   <footer class="footer-cta text-white">
-    <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="max-w-7xl mx-auto px-6 py-12">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
           <h3 class="text-xl font-bold">Always open for a chat — let's connect!</h3>
           <p class="mt-1 opacity-90">You can reach me anytime via email, LinkedIn, or by strolling around Ghent.</p>
         </div>
         <div class="flex gap-3">
-          <a href="mailto:j.beaufays@outlook.com" class="bg-white text-[var(--color-accent1)] py-2 px-4 rounded-md font-semibold">Email me</a>
-            <a href="https://www.linkedin.com/in/jarne-beaufays-404153152" target="_blank" class="bg-white/20 hover:bg-white/30 py-2 px-4 rounded-md">LinkedIn</a>
-            <a href="resume.html" target="_blank" class="bg-white/20 hover:bg-white/30 py-2 px-4 rounded-md">View resume</a>
+          <a href="mailto:j.beaufays@outlook.com"
+            class="bg-white text-[var(--color-accent1)] py-2 px-4 rounded-md font-semibold">Email me</a>
+          <a href="https://www.linkedin.com/in/jarne-beaufays-404153152" target="_blank"
+            class="bg-white/20 hover:bg-white/30 py-2 px-4 rounded-md">LinkedIn</a>
+          <a href="resume.html" target="_blank" class="bg-white/20 hover:bg-white/30 py-2 px-4 rounded-md">Resume</a>
         </div>
       </div>
       <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm opacity-80">
-        <div>&copy; Jarne Beaufays — 2025 — Made with Tailwindcss</div>
-        <div>This website’s design was inspired by a painting created by my grandfather.</div>
+        <div>&copy; Jarne Beaufays — 2025</div>
+        <div>This website's design and colors are inspired by a painting created by my grandfather.</div>
       </div>
     </div>
   </footer>
