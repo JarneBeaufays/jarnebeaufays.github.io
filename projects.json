@@ -5,41 +5,128 @@
     "year": "2025",
     "client": "Operative Games",
     "type": "Industry Projects",
-    "tags": ["Funding Meta", "VR", "Multiplayer", "Unity"],
+    "tags": [
+      "Funded by Meta",
+      "VR",
+      "Multiplayer",
+      "Unity"
+    ],
     "thumb": "Images/TheMoonlightLodge/TheMoonlightLodge.png",
     "hero": "Images/TheMoonlightLodge/TheMoonlightLodge.png",
     "short": "Meta funded VR Multiplayer project about natural interactions with LLM agents.",
     "sections": [
-      {
-        "title": "Overview",
-        "content": "Co-op VR mystery set in a remote alpine hotel. Owned multiplayer netcode, UX flows, and build automation."
+      { 
+        "title": "Project",
+        "content": "This is a VR multiplayer game where players need to communicate with synchronized LLMs to solve a murder mystery. Since this project hasn't been announced yet, there isn't much more I can share for now. What I can say is that it's the biggest project I've worked on, and I've had the opportunity to build it alongside industry veterans while still taking on a lot of responsibility. Interacting with the AI agents is done by layering LLMs for a stable and reliable output, generating visemes to interact with premade emotions, and generating voices."
+      },
+      { 
+        "title": "Responsibilities",
+        "content": "I was responsible for all front-end Unity-related work. My main objectives were to set up the multiplayer (Photon Fusion) and VR (MetaXR) aspects of the project. After this, I implemented all gameplay elements and maintained the Unity project. Performance was also crucial, since the target platform was Meta Quest 3 standalone. I was only partially involved in the AI interactions and in setting up behavior trees on the back end (server)."
+      },
+      { 
+        "title": "Client",
+        "content": "Operative Games, co-founded by Jon Snoddy (former Disney Imagineering R&D leader), is a Los Angeles–based studio pioneering AI-driven interactive storytelling. My mentor on this project was Ryan Green, a BAFTA- and Game Award–winning indie game developer and creative director at Numinous Games. Alongside them, I worked with Hollywood audio engineers, storytellers, project managers, and many others. I also had the pleasure of meeting part of the team in Toronto, Canada."
       },
       {
         "title": "Useful Links",
         "content": [
-          { "label": "Studio", "href": "https://www.operativegames.ai/" }
+          {
+            "label": "Studio Site",
+            "href": "https://www.operativegames.ai/"
+          },
+          {
+            "label": "Studio LinkedIn",
+            "href": "https://www.linkedin.com/company/operativegames/"
+          }
+        ]
+      },
+      {
+        "title": "Technologies",
+        "content": [
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          },
+          {
+            "label": "MetaXR",
+            "href": "https://developers.meta.com/horizon/develop/unity"
+          },
+          {
+            "label": "Photon Fusion",
+            "href": "https://www.photonengine.com/fusion"
+          },
+          {
+            "label": "FMOD",
+            "href": "https://www.fmod.com/"
+          }
         ]
       }
     ],
-    "gallery": ["Images/TheMoonlightLodge/TheMoonlightLodge.png"]
+    "gallery": [
+      "Images/TheMoonlightLodge/TheMoonlightLodge.png"
+    ]
   },
   {
     "slug": "cicadas",
-    "title": "Cicadas",
+    "title": "Year of the Cicadas",
     "year": "2024",
     "client": "Yale University",
     "type": "Industry Projects",
-    "tags": ["Funding Unity", "VR", "Unity"],
+    "tags": [
+      "Funded by Unity",
+      "VR",
+      "Unity"
+    ],
     "thumb": "Images/Cicadas.jpg",
     "hero": "Images/Cicadas.jpg",
     "short": "A VR project funded by Unity about exploring grief for losing a child.",
     "sections": [
       {
-        "title": "Overview",
-        "content": "Immersive VR experience to explore cicada life cycles with interactive visualization."
+        "title": "Project",
+        "content": "Year of the Cicadas is an immersive VR experience that guides the player through Kim Hieftje's grieving process after the loss of her son Cody. The cicadas play a significant role in the project, as they only surface every dozen years and happened to be swarming Cody's tombstone right after he passed away."
+      },
+      { 
+        "title": "Responsibilities",
+        "content": "I wasn't involved during the entire development of the game, but more toward the end. During my time on the project, I mainly managed interns who were contributing to the development, helping them connect the dots, and doing an audio pass. I also stayed with Kim and her husband Bernard for a couple of weeks in Connecticut America, during which we had the chance to talk about her grief and relate it to my own."
+      },
+      { 
+        "title": "Client",
+        "content": "Kimberly (Kim) Hieftje, PhD is an Associate Professor of Pediatrics at Yale School of Medicine and co-director (and co-founder) of XR Pediatrics and the Yale Center for Immersive Technologies in Pediatrics. She leads research on immersive reality and serious games to promote health, behavior change, and education among youth."
+      },
+      {
+        "title": "Useful Links",
+        "content": [
+          {
+            "label": "Game Website",
+            "href": "https://www.yearofthecicadas.com/"
+          },
+          {
+            "label": "Kim LinkedIn",
+            "href": "https://www.linkedin.com/in/kimberlyhieftje/"
+          },
+          {
+          "label": "My LinkedIn Post",
+          "href": "https://www.linkedin.com/posts/jarne-beaufays-404153152_i-will-be-speaking-at-both-games-for-change-activity-7188883450592940032-5sqq?utm_source=share&utm_medium=member_desktop&rcm=ACoAACSvV4QBFgvlvwrTq9EmSV8MxDUZNzSzEE8"
+        }
+        ]
+      },
+      {
+        "title": "Technologies",
+        "content": [
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          },
+          {
+            "label": "MetaXR",
+            "href": "https://developers.meta.com/horizon/develop/unity"
+          }
+        ]
       }
     ],
-    "gallery": ["Images/Cicadas.jpg"]
+    "gallery": [
+      "Images/Cicadas.jpg"
+    ]
   },
   {
     "slug": "astro-harvest",
@@ -47,7 +134,10 @@
     "year": "2022",
     "client": "Mantis Games",
     "type": "Industry Projects",
-    "tags": ["VR", "Unity"],
+    "tags": [
+      "VR",
+      "Unity"
+    ],
     "thumb": "Images/AstroHarvest.jpg",
     "hero": "Images/AstroHarvest.jpg",
     "short": "Fast-paced space VR farming game balancing traversal, harvesting, and enemy encounters.",
@@ -57,7 +147,9 @@
         "content": "Fast-paced space VR farming game balancing traversal, harvesting, and enemy encounters."
       }
     ],
-    "gallery": ["Images/AstroHarvest.jpg"]
+    "gallery": [
+      "Images/AstroHarvest.jpg"
+    ]
   },
   {
     "slug": "abm-playable-ads",
@@ -65,7 +157,10 @@
     "year": "2023",
     "client": "Activision Blizzard Media",
     "type": "Industry Projects",
-    "tags": ["50+ Ads", "Unity"],
+    "tags": [
+      "50+ Ads",
+      "Unity"
+    ],
     "thumb": "Images/ABM.png",
     "hero": "Images/ABM.png",
     "short": "Built a modular pipeline for dozens of bite-size playable ads.",
@@ -75,16 +170,21 @@
         "content": "Built a modular pipeline for dozens of bite-size playable ads."
       }
     ],
-    "gallery": ["Images/ABM.png"]
+    "gallery": [
+      "Images/ABM.png"
+    ]
   },
-
   {
     "slug": "the-fizzler",
     "title": "The Fizzler",
     "year": "2025",
     "client": "",
     "type": "Personal Projects",
-    "tags": ["Game Jam", "Android", "Unity"],
+    "tags": [
+      "Game Jam",
+      "Android",
+      "Unity"
+    ],
     "thumb": "Images/TheFizzler.jpeg",
     "hero": "Images/TheFizzler.jpeg",
     "short": "A game about spraying champagne made on my own during GGJA 2025 while hosting the site.",
@@ -94,7 +194,9 @@
         "content": "A game about spraying champagne made on my own during GGJA 2025 while hosting the site."
       }
     ],
-    "gallery": ["Images/TheFizzler.jpeg"]
+    "gallery": [
+      "Images/TheFizzler.jpeg"
+    ]
   },
   {
     "slug": "up-with-the-sub",
@@ -102,21 +204,35 @@
     "year": "2021",
     "client": "",
     "type": "Personal Projects",
-    "tags": ["School", "Windows", "Co-op", "Unity"],
+    "tags": [
+      "School",
+      "Windows",
+      "Co-op",
+      "Unity"
+    ],
     "thumb": "Images/UpWithTheSub/Main.png",
     "hero": "Images/UpWithTheSub/Main.png",
     "short": "A local co-op submarine adventure for a class project, voted as “Best Game of the Course 2020.” by our teachers.",
     "sections": [
       {
         "title": "Overview",
-        "content": "This project was created during the Game Projects course at DAE, a program where all majors come together to collaborate on a game. Together with two artists and another programmer, we successfully completed what became my first Unity project.<br><br>While learning the basics of Unity, I focused on implementing controllable characters, a simple crafting system, and the physics for both the items and the submarine.<br><br>Our project was highly praised by both students and teachers, earning the Teachers’ Prize for Greatest Game of the Course of the Year. In 2025, I heard from my interns that it’s still being showcased as an example during the course’s introduction."
+        "content": "This project was created during the Game Projects course at DAE, a program where all majors come together to collaborate on a game. Together with two artists and another programmer, we successfully completed what became my first Unity project.<br><br>While learning the basics of Unity, I focused on implementing controllable characters, a simple crafting system, and the physics for both the items and the submarine.<br><br>Our project was highly praised by both students and teachers, earning the Teachers' Prize for Greatest Game of the Course of the Year. In 2025, I heard from my interns that it's still being showcased as an example during the course's introduction."
       },
       {
         "title": "Useful Links",
         "content": [
-          { "label": "Trailer", "href": "https://www.youtube.com/watch?v=ElbNA6Y3vhY&ab_channel=JorryPotsie" },
-          { "label": "Course", "href": "https://www.digitalartsandentertainment.be/pageselect/47/Game+Projects/103" },
-          { "label": "Itch", "href": "https://jarnebeaufays.itch.io/gameprojects" }
+          {
+            "label": "Trailer",
+            "href": "https://www.youtube.com/watch?v=ElbNA6Y3vhY&ab_channel=JorryPotsie"
+          },
+          {
+            "label": "Course",
+            "href": "https://www.digitalartsandentertainment.be/pageselect/47/Game+Projects/103"
+          },
+          {
+            "label": "Itch",
+            "href": "https://jarnebeaufays.itch.io/gameprojects"
+          }
         ]
       }
     ],
@@ -134,7 +250,12 @@
     "year": "2021",
     "client": "",
     "type": "Personal Projects",
-    "tags": ["School", "Windows", "Co-op", "Custom Engine"],
+    "tags": [
+      "School",
+      "Windows",
+      "Co-op",
+      "Custom Engine"
+    ],
     "thumb": "Images/CashMoney.png",
     "hero": "Images/CashMoney.png",
     "short": "A game made for a DAE course using the school's custom game engine.",
@@ -144,7 +265,9 @@
         "content": "A game made for a DAE course using the school's custom game engine."
       }
     ],
-    "gallery": ["Images/CashMoney.png"]
+    "gallery": [
+      "Images/CashMoney.png"
+    ]
   },
   {
     "slug": "launch-oclockdown",
@@ -152,7 +275,11 @@
     "year": "2021",
     "client": "",
     "type": "Personal Projects",
-    "tags": ["Game Jam", "WebGL", "Unity"],
+    "tags": [
+      "Game Jam",
+      "WebGL",
+      "Unity"
+    ],
     "thumb": "Images/LaunchOClockDown.png",
     "hero": "Images/LaunchOClockDown.png",
     "short": "My first game jam entry ever, a game about exploring space and using gravitational pull to navigate 2D levels.",
@@ -162,16 +289,20 @@
         "content": "My first game jam entry ever, a game about exploring space and using gravitational pull to navigate 2D levels."
       }
     ],
-    "gallery": ["Images/LaunchOClockDown.png"]
+    "gallery": [
+      "Images/LaunchOClockDown.png"
+    ]
   },
-
   {
     "slug": "immunodeck",
     "title": "ImmunoDeck",
     "year": "2024",
     "client": "Yale University",
     "type": "Industry Prototypes",
-    "tags": ["VR", "Unity"],
+    "tags": [
+      "VR",
+      "Unity"
+    ],
     "thumb": "Images/ImmunoDeck.png",
     "hero": "Images/ImmunoDeck.png",
     "short": "VR prototype exploring immunology concepts via game technology.",
@@ -181,7 +312,9 @@
         "content": "VR prototype exploring immunology concepts via game technology."
       }
     ],
-    "gallery": ["Images/ImmunoDeck.png"]
+    "gallery": [
+      "Images/ImmunoDeck.png"
+    ]
   },
   {
     "slug": "zero-state-agent",
@@ -189,7 +322,10 @@
     "year": "2023",
     "client": "Fortress Games",
     "type": "Industry Prototypes",
-    "tags": ["Windows", "Unity"],
+    "tags": [
+      "Windows",
+      "Unity"
+    ],
     "thumb": "Images/ZeroStateAgent.png",
     "hero": "Images/ZeroStateAgent.png",
     "short": "Systems-driven prototype focused on agent behavior and state transitions.",
@@ -201,11 +337,16 @@
       {
         "title": "Useful Links",
         "content": [
-          { "label": "Official Site", "href": "https://zerostateagent.com/" }
+          {
+            "label": "Official Site",
+            "href": "https://zerostateagent.com/"
+          }
         ]
       }
     ],
-    "gallery": ["Images/ZeroStateAgent.png"]
+    "gallery": [
+      "Images/ZeroStateAgent.png"
+    ]
   },
   {
     "slug": "digigods",
@@ -213,7 +354,10 @@
     "year": "2022",
     "client": "Squido Studio",
     "type": "Industry Prototypes",
-    "tags": ["VR", "Unity"],
+    "tags": [
+      "VR",
+      "Unity"
+    ],
     "thumb": "Images/Digigods/Digigods.jpg",
     "hero": "Images/Digigods/Digigods.jpg",
     "short": "The very first multiplayer prototype of the well received game Digigods, helping raise USD 3 million.",
@@ -225,13 +369,24 @@
       {
         "title": "Useful Links",
         "content": [
-          { "label": "Official Site", "href": "https://www.digigods.gg/" },
-          { "label": "Funding", "href": "https://gamesbeat.com/squido-studio-raises-3m-for-social-xr-game-digigods/" },
-          { "label": "Blog", "href": "https://previewlabs.com/collaborative-vr-multiplayer-physics-digigods/" }
+          {
+            "label": "Official Site",
+            "href": "https://www.digigods.gg/"
+          },
+          {
+            "label": "Funding",
+            "href": "https://gamesbeat.com/squido-studio-raises-3m-for-social-xr-game-digigods/"
+          },
+          {
+            "label": "Blog",
+            "href": "https://previewlabs.com/collaborative-vr-multiplayer-physics-digigods/"
+          }
         ]
       }
     ],
-    "gallery": ["Images/Digigods/Digigods.jpg"]
+    "gallery": [
+      "Images/Digigods/Digigods.jpg"
+    ]
   },
   {
     "slug": "vr-bicycle-simulation",
@@ -239,7 +394,10 @@
     "year": "2021",
     "client": "City of Ghent",
     "type": "Industry Prototypes",
-    "tags": ["VR", "Unity"],
+    "tags": [
+      "VR",
+      "Unity"
+    ],
     "thumb": "Images/VRBike.png",
     "hero": "Images/VRBike.png",
     "short": "Prototype simulating urban cycling scenarios in VR. This project was displayed during the cycling world championship 2021 in Leuven's City hall.",
@@ -249,16 +407,21 @@
         "content": "Training/education prototype simulating urban cycling scenarios in VR."
       }
     ],
-    "gallery": ["Images/VRBike.png"]
+    "gallery": [
+      "Images/VRBike.png"
+    ]
   },
-
   {
     "slug": "ggj-theme-committee",
     "title": "GGJ Theme Committee + Site Organizer",
     "year": "2025 Onwards",
     "client": "",
     "type": "Others",
-    "tags": ["Community Work", "Event", "Hobby"],
+    "tags": [
+      "Community Work",
+      "Event",
+      "Hobby"
+    ],
     "thumb": "Images/GGJ/Hero.jpg",
     "hero": "Images/GGJ/Hero.jpg",
     "short": "Organizing the Global Game Jam Antwerp site and contributing in the GGJ theme committee.",
@@ -270,7 +433,10 @@
       {
         "title": "Useful Links",
         "content": [
-          { "label": "Blog", "href": "https://previewlabs.com/ggj2025/" }
+          {
+            "label": "Blog",
+            "href": "https://previewlabs.com/ggj2025/"
+          }
         ]
       }
     ],
@@ -290,7 +456,9 @@
     "year": "2025",
     "client": "",
     "type": "Others",
-    "tags": ["Event"],
+    "tags": [
+      "Event"
+    ],
     "thumb": "Images/PreviewLabs15.jpg",
     "hero": "Images/PreviewLabs15.jpg",
     "short": "Organizing and leading the 15 years of PreviewLabs trip in America and Canada.",
@@ -300,7 +468,9 @@
         "content": "Organizing and leading the 15 years of PreviewLabs trip in America and Canada."
       }
     ],
-    "gallery": ["Images/PreviewLabs15.jpg"]
+    "gallery": [
+      "Images/PreviewLabs15.jpg"
+    ]
   },
   {
     "slug": "3d-printing",
@@ -308,7 +478,9 @@
     "year": "2024 Onwards",
     "client": "",
     "type": "Others",
-    "tags": ["Hobby"],
+    "tags": [
+      "Hobby"
+    ],
     "thumb": "Images/3dPrinting.jpg",
     "hero": "Images/3dPrinting.jpg",
     "short": "Designing, printing, and painting custom parts, props, trophees, and miniatures as a hobby.",
@@ -318,7 +490,9 @@
         "content": "Designing, printing, and painting custom parts, props, trophees, and miniatures as a hobby."
       }
     ],
-    "gallery": ["Images/3dPrinting.jpg"]
+    "gallery": [
+      "Images/3dPrinting.jpg"
+    ]
   },
   {
     "slug": "obstacle-course-instructor",
@@ -326,7 +500,9 @@
     "year": "2018–2022",
     "client": "",
     "type": "Others",
-    "tags": ["Hobby"],
+    "tags": [
+      "Hobby"
+    ],
     "thumb": "Images/ObstacleCourse.jpg",
     "hero": "Images/ObstacleCourse.jpg",
     "short": "For 4 years, I've worked with groups of children and adults, leading them over obstacle courses focusing on safety, movement, teamwork, and fun!",

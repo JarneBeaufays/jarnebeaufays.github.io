@@ -58,11 +58,15 @@
   </header>
 
   <!-- Main -->
-  <main id="mainContent" class="max-w-6xl mx-auto px-6 py-10 space-y-10">
-    <!-- Dynamic sections will be inserted here (before gallery) -->
+  <main id="mainContent" class="max-w-6xl mx-auto px-6 py-10">
+    <!-- Two-column content wrapper (text on left, links on right) -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div id="leftCol" class="lg:col-span-2 space-y-10"></div>
+      <div id="rightCol" class="lg:col-span-1 space-y-10"></div>
+    </div>
 
-    <!-- Gallery (always part of the template; shown if images exist) -->
-    <section id="galleryWrap" class="hidden">
+    <!-- Gallery (always at the bottom) -->
+    <section id="galleryWrap" class="hidden mt-12">
       <h2 class="text-xl font-semibold mb-4">Gallery</h2>
       <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
     </section>
@@ -112,9 +116,14 @@
 
         // Meta description: prefer project.short, else first text section, else title
         const firstTextSection = Array.isArray(project.sections)
-          ? project.sections.find(s => typeof s?.content === 'string' && s.content.trim().length)
+          ? project.sections.find(s =>
+              typeof s?.content === 'string' && s.content.trim().length ||
+              (s?.content && typeof s.content === 'object' && typeof s.content.text === 'string' && s.content.text.trim().length)
+            )
           : null;
-        const metaDesc = project.short || firstTextSection?.content || project.title;
+        const metaDesc = project.short
+          || (typeof firstTextSection?.content === 'string' ? firstTextSection.content : firstTextSection?.content?.text)
+          || project.title;
         document.getElementById('meta-desc').setAttribute('content', metaDesc);
 
         document.getElementById('title').textContent = project.title;
@@ -150,51 +159,72 @@
         document.getElementById("hero").style.backgroundColor = color;
         document.getElementById("footer").style.backgroundColor = color;
 
-        // ---- Dynamic Sections (arbitrary) ----
-        const mainContent = document.getElementById('mainContent');
-        const galleryWrap = document.getElementById('galleryWrap');
+        // ---- Column helpers ----
+        const leftCol = document.getElementById('leftCol');
+        const rightCol = document.getElementById('rightCol');
 
+        const makeTextBlock = (title, html) => {
+          const sec = document.createElement('section');
+          const h2 = document.createElement('h2');
+          h2.className = "text-xl font-semibold mb-3";
+          h2.textContent = title;
+          sec.appendChild(h2);
+
+          const div = document.createElement('div');
+          div.className = "text-slate-700 leading-relaxed";
+          div.innerHTML = html;
+          sec.appendChild(div);
+          return sec;
+        };
+
+        const makeLinksBlock = (title, linksArr) => {
+          const sec = document.createElement('section');
+          const h2 = document.createElement('h2');
+          h2.className = "text-xl font-semibold mb-3";
+          h2.textContent = title;
+          sec.appendChild(h2);
+
+          const wrap = document.createElement('div');
+          wrap.className = "flex flex-wrap gap-2";
+          linksArr.forEach(l => {
+            if (!l || !l.href || !l.label) return;
+            const a = document.createElement('a');
+            a.href = l.href;
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+            // Inline buttons that wrap; not full-width
+            a.className = "inline-flex items-center justify-center px-3 py-2 rounded-md text-sm font-semibold bg-[var(--color-accent1)] hover:bg-[var(--color-accent3)] text-white";
+            a.textContent = l.label;
+            wrap.appendChild(a);
+          });
+          sec.appendChild(wrap);
+          return sec;
+        };
+
+        // ---- Dynamic Sections (split across two columns) ----
         if (Array.isArray(project.sections)) {
           project.sections.forEach(sec => {
             if (!sec || !sec.title || !sec.content) return;
 
-            const section = document.createElement('section');
-
-            const h2 = document.createElement('h2');
-            h2.className = "text-xl font-semibold mb-3";
-            h2.textContent = sec.title;
-            section.appendChild(h2);
-
-            // If content is a string -> paragraph (HTML allowed)
+            // TEXT on left
             if (typeof sec.content === 'string') {
-              const p = document.createElement('div');
-              p.className = "text-slate-700 leading-relaxed";
-              p.innerHTML = sec.content; // accepts simple markup like <br>
-              section.appendChild(p);
+              leftCol.appendChild(makeTextBlock(sec.title, sec.content));
             }
-            // If content is an array -> assume array of links {label, href}
+            // LINKS on right
             else if (Array.isArray(sec.content)) {
-              const wrap = document.createElement('div');
-              wrap.className = "mt-5 flex flex-wrap gap-3";
-              sec.content.forEach(l => {
-                if (!l || !l.href || !l.label) return;
-                const a = document.createElement('a');
-                a.href = l.href;
-                a.target = "_blank";
-                a.rel = "noopener noreferrer";
-                a.className = "inline-block bg-[var(--color-accent1)] hover:bg-[var(--color-accent3)] text-white font-semibold py-2 px-3 rounded-md text-sm";
-                a.textContent = l.label;
-                wrap.appendChild(a);
-              });
-              section.appendChild(wrap);
+              rightCol.appendChild(makeLinksBlock(sec.title, sec.content));
             }
-            // Future-proof: if content is an object with custom shapes you can branch here
-
-            mainContent.insertBefore(section, galleryWrap);
+            // MIXED object { text?, links? }
+            else if (sec.content && typeof sec.content === 'object') {
+              const textHtml = typeof sec.content.text === 'string' ? sec.content.text : '';
+              const linksArr = Array.isArray(sec.content.links) ? sec.content.links : [];
+              if (textHtml) leftCol.appendChild(makeTextBlock(sec.title, textHtml));
+              if (linksArr.length) rightCol.appendChild(makeLinksBlock(sec.title, linksArr));
+            }
           });
         }
 
-        // ---- Gallery (kept as a dedicated section) ----
+        // ---- Gallery (always last) ----
         const gallerySources = Array.isArray(project.gallery) ? project.gallery.filter(Boolean) : [];
         const grid = document.getElementById('gallery');
         grid.innerHTML = '';
@@ -228,7 +258,6 @@
             window._glb = GLightbox({ selector: '#gallery a' });
           }
         } else {
-          // Keep the section in the DOM per template, but hide when empty
           document.getElementById('galleryWrap').classList.add('hidden');
         }
 
