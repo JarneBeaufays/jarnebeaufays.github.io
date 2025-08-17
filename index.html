@@ -117,6 +117,37 @@
     .line-clamp-2{-webkit-line-clamp:2}
     .line-clamp-3{-webkit-line-clamp:3}
 
+    /* === Floating section navigation arrows === */
+    .scroll-arrow {
+      position: fixed;
+      right: 1rem;
+      z-index: 60;
+      width: 2.75rem;
+      height: 2.75rem;
+      background: var(--color-accent1);
+      color: white;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: opacity .25s ease, transform .15s ease;
+      opacity: .9;
+      box-shadow: 0 6px 16px rgba(0,0,0,.18);
+      user-select: none;
+    }
+    .scroll-arrow:hover { opacity: 1; transform: translateY(-1px); }
+    .scroll-arrow:active { transform: translateY(0); }
+    .scroll-arrow.hidden { display: none; }
+    .scroll-arrow.down { bottom: 1rem; }
+    .scroll-arrow.up   { top: 1rem; }
+
+    /* Respect reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      html:focus-within { scroll-behavior: auto; }
+    }
   </style>
 
   <script>
@@ -143,121 +174,112 @@
         default:                   return "--color-accent3";
       }
     }
-    </script>
-
-<script>
-  function renderProjects({ data, gridId, type, limit = 3, alwaysShowAll = false }) {
-    const grid = document.getElementById(gridId);
-    if (!grid) return;
-  
-    // equal-height grid tracks
-    grid.classList.add("items-stretch");
-  
-    // Filter & sort once
-    const list = data
-      .filter(p => (p.type || '').toLowerCase() === type.toLowerCase())
-      .sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
-  
-    // Build all cards once (we'll append/remove later)
-    const cards = list.map(p => {
-      const a = document.createElement("a");
-      a.href = `project.html?slug=${encodeURIComponent(p.slug)}`;
-      a.className = "block h-full";
-      a.innerHTML = `
-        <article class="project-card bg-white shadow-md h-full flex flex-col">
-          <img
-            src="${p.thumb}"
-            alt="${p.title}"
-            class="w-full h-72 object-cover"
-            decoding="async"
-            loading="lazy"
-          />
-          <div class="p-4 flex flex-col grow">
-            <div class="flex items-center justify-between mb-2">
-              <div class="flex flex-wrap gap-2">
-                ${[
-                  ...(typeof p.client === "string" && p.client !== "" ? [p.client] : []),
-                  ...(Array.isArray(p.tags) ? p.tags : [])
-                ].map((t, i) => `
-                  <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full"
-                    style="background: var(${ i === 0 ? getPrimaryAccentColor(p.type)
-                                                      : getSecondaryAccentColor(p.type) });">
-                    ${t}
-                  </span>`).join("")}
-              </div>
-              <span class="text-xs text-slate-400 whitespace-nowrap">${p.year || ""}</span>
-            </div>
-            <h3 class="text-lg font-bold mb-1 line-clamp-2">${p.title}</h3>
-            <p class="text-sm text-slate-600 line-clamp-3">${p.short || ""}</p>
-            <div class="mt-auto"></div>
-          </div>
-        </article>`;
-      return a;
-    });
-  
-    // Preload + decode hidden thumbs so first expand doesn't jolt
-    if (!alwaysShowAll && list.length > limit) {
-      const preloads = list.slice(limit).map(p => {
-        const img = new Image();
-        img.decoding = "async";
-        try { img.fetchPriority = "low"; } catch {}
-        img.src = p.thumb;
-        img.addEventListener("load", () => img.decode?.().catch(() => {}));
-        return img;
-      });
-      // keep a strong reference so GC doesn't drop them
-      grid._preloadedThumbs = preloads;
-    }
-  
-    // Initial render (no full re-render later)
-    const initialCount = alwaysShowAll ? cards.length : Math.min(limit, cards.length);
-    grid.append(...cards.slice(0, initialCount));
-  
-    // Show more / less (append/remove only the extras)
-    if (!alwaysShowAll && cards.length > limit) {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.textContent = "Show more ↓";
-      btn.className =
-        "mt-6 px-4 py-2 bg-white hover:bg-[var(" + getPrimaryAccentColor(type) + ")] hover:text-white " +
-        "rounded-lg text-sm block mx-auto shadow transition-colors";
-      btn.dataset.expanded = "false";
-  
-      btn.addEventListener("click", () => {
-        // keep the button visually steady
-        const expanded = btn.dataset.expanded === "true";
-  
-        if (expanded) {
-          // collapse: remove extra children beyond 'limit'
-          while (grid.children.length > limit) {
-            grid.removeChild(grid.lastElementChild);
-          }
-          btn.textContent = "Show more ↓";
-          btn.dataset.expanded = "false";
-        } else {
-          // expand: append remaining prebuilt cards
-          grid.append(...cards.slice(grid.children.length));
-          btn.textContent = "Show less ↑";
-          btn.dataset.expanded = "true";
-        }
-      });
-  
-      grid.parentNode.appendChild(btn);
-    }
-  }
   </script>
-  
+
+  <script>
+    function renderProjects({ data, gridId, type, limit = 3, alwaysShowAll = false }) {
+      const grid = document.getElementById(gridId);
+      if (!grid) return;
+
+      // equal-height grid tracks
+      grid.classList.add("items-stretch");
+
+      // Filter & sort once
+      const list = data
+        .filter(p => (p.type || '').toLowerCase() === type.toLowerCase())
+        .sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
+
+      // Build all cards once (we'll append/remove later)
+      const cards = list.map(p => {
+        const a = document.createElement("a");
+        a.href = `project.html?slug=${encodeURIComponent(p.slug)}`;
+        a.className = "block h-full";
+        a.innerHTML = `
+          <article class="project-card bg-white shadow-md h-full flex flex-col">
+            <img
+              src="${p.thumb}"
+              alt="${p.title}"
+              class="w-full h-72 object-cover"
+              decoding="async"
+              loading="lazy"
+            />
+            <div class="p-4 flex flex-col grow">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex flex-wrap gap-2">
+                  ${[
+                    ...(typeof p.client === "string" && p.client !== "" ? [p.client] : []),
+                    ...(Array.isArray(p.tags) ? p.tags : [])
+                  ].map((t, i) => `
+                    <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full"
+                      style="background: var(${ i === 0 ? getPrimaryAccentColor(p.type)
+                                                        : getSecondaryAccentColor(p.type) });">
+                      ${t}
+                    </span>`).join("")}
+                </div>
+                <span class="text-xs text-slate-400 whitespace-nowrap">${p.year || ""}</span>
+              </div>
+              <h3 class="text-lg font-bold mb-1 line-clamp-2">${p.title}</h3>
+              <p class="text-sm text-slate-600 line-clamp-3">${p.short || ""}</p>
+              <div class="mt-auto"></div>
+            </div>
+          </article>`;
+        return a;
+      });
+
+      // Preload + decode hidden thumbs so first expand doesn't jolt
+      if (!alwaysShowAll && list.length > limit) {
+        const preloads = list.slice(limit).map(p => {
+          const img = new Image();
+          img.decoding = "async";
+          try { img.fetchPriority = "low"; } catch {}
+          img.src = p.thumb;
+          img.addEventListener("load", () => img.decode?.().catch(() => {}));
+          return img;
+        });
+        // keep a strong reference so GC doesn't drop them
+        grid._preloadedThumbs = preloads;
+      }
+
+      // Initial render (no full re-render later)
+      const initialCount = alwaysShowAll ? cards.length : Math.min(limit, cards.length);
+      grid.append(...cards.slice(0, initialCount));
+
+      // Show more / less (append/remove only the extras)
+      if (!alwaysShowAll && cards.length > limit) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = "Show more ↓";
+        btn.className =
+          "mt-6 px-4 py-2 bg-white hover:bg-[var(" + getPrimaryAccentColor(type) + ")] hover:text-white " +
+          "rounded-lg text-sm block mx-auto shadow transition-colors";
+        btn.dataset.expanded = "false";
+
+        btn.addEventListener("click", () => {
+          const expanded = btn.dataset.expanded === "true";
+
+          if (expanded) {
+            // collapse: remove extra children beyond 'limit'
+            while (grid.children.length > limit) {
+              grid.removeChild(grid.lastElementChild);
+            }
+            btn.textContent = "Show more ↓";
+            btn.dataset.expanded = "false";
+          } else {
+            // expand: append remaining prebuilt cards
+            grid.append(...cards.slice(grid.children.length));
+            btn.textContent = "Show less ↑";
+            btn.dataset.expanded = "true";
+          }
+        });
+
+        grid.parentNode.appendChild(btn);
+      }
+    }
+  </script>
+
 </head>
 
 <body class="antialiased text-slate-800" aria-busy="true">
-  <nav class="absolute top-4 left-6 z-10">
-    <ul class="flex flex-col gap-2 text-sm font-semibold">
-      <li><a href="#industry-projects" class="hover:underline">Industry Projects</a></li>
-      <li><a href="#industry-prototypes" class="hover:underline">Industry Prototypes</a></li>
-      <li><a href="#personal-projects" class="hover:underline">Personal Projects</a></li>
-      <li><a href="#others" class="hover:underline">Others</a></li>
-    </ul>
-  </nav>
 
   <!-- Loading overlay (visible until all sections finish parsing + rendering) -->
   <div id="loadingOverlay"
@@ -493,6 +515,86 @@
     </div>
   </footer>
 
-</body>
+  <!-- === Floating section navigation arrows === -->
+  <button id="arrowDown" class="scroll-arrow down" aria-label="Go to next section" title="Next section">↓</button>
+  <button id="arrowUp" class="scroll-arrow up hidden" aria-label="Go to previous section" title="Previous section">↑</button>
 
+  <script>
+    // Build scroll targets: hero header + every <section> inside <main>
+    const scrollTargets = Array.from(document.querySelectorAll("header.site-header, main section"));
+
+    const arrowDown = document.getElementById("arrowDown");
+    const arrowUp   = document.getElementById("arrowUp");
+
+    function clamp(n, min, max) { return Math.max(min, Math.min(max, n)); }
+
+    function getCurrentIndex() {
+      let idx = 0;
+      let best = Infinity;
+      for (let i = 0; i < scrollTargets.length; i++) {
+        const rect = scrollTargets[i].getBoundingClientRect();
+        const dist = Math.abs(rect.top);
+        if (dist < best) { best = dist; idx = i; }
+      }
+      return idx;
+    }
+
+    // Read a "type name" from a target element so we can map to a color
+    function getTypeFromElement(el) {
+      if (el.matches("header.site-header")) {
+        return "Industry Projects"; // hero default
+      }
+      const h2 = el.querySelector("h2");
+      return (h2?.textContent || "").trim();
+    }
+
+    // Apply color to both arrows
+    function applyArrowColorsForIndex(i) {
+      const el = scrollTargets[i];
+      const typeName = getTypeFromElement(el);
+      const cssVarName = getPrimaryAccentColor(typeName) || "--color-accent1";
+      const color = `var(${cssVarName})`;
+      arrowDown.style.background = color;
+      arrowUp.style.background = color;
+    }
+
+    function scrollToIndex(i) {
+      i = clamp(i, 0, scrollTargets.length - 1);
+      scrollTargets[i].scrollIntoView({ behavior: "smooth", block: "start" });
+      applyArrowColorsForIndex(i);
+    }
+
+    function updateArrows() {
+      const i = getCurrentIndex();
+      arrowUp.classList.toggle("hidden", i === 0);
+      const atBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 2);
+      arrowDown.classList.toggle("hidden", i === scrollTargets.length - 1 || atBottom);
+      applyArrowColorsForIndex(i);
+    }
+
+    arrowDown.addEventListener("click", () => {
+      const i = getCurrentIndex();
+      scrollToIndex(i + 1);
+    });
+    arrowUp.addEventListener("click", () => {
+      const i = getCurrentIndex();
+      scrollToIndex(i - 1);
+    });
+
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateArrows();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    window.addEventListener("load", updateArrows);
+    window.addEventListener("resize", updateArrows);
+  </script>
+
+</body>
 </html>
