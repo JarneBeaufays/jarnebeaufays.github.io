@@ -5,17 +5,23 @@
     "year": "2025",
     "client": "Operative Games",
     "type": "Industry Projects",
-    "tags": [ "Funding Meta", "VR", "Multiplayer", "Unity"],
+    "tags": ["Funding Meta", "VR", "Multiplayer", "Unity"],
     "thumb": "Images/TheMoonlightLodge/TheMoonlightLodge.png",
     "hero": "Images/TheMoonlightLodge/TheMoonlightLodge.png",
     "short": "Meta funded VR Multiplayer project about natural interactions with LLM agents.",
-    "description": "Co-op VR mystery set in a remote alpine hotel. Owned multiplayer netcode, UX flows, and build automation.",
-    "links": [
-      { "label": "Studio", "href": "https://www.operativegames.ai/" }
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "Co-op VR mystery set in a remote alpine hotel. Owned multiplayer netcode, UX flows, and build automation."
+      },
+      {
+        "title": "Useful Links",
+        "content": [
+          { "label": "Studio", "href": "https://www.operativegames.ai/" }
+        ]
+      }
     ],
-    "gallery": [
-      "Images/TheMoonlightLodge/TheMoonlightLodge.png"
-    ]
+    "gallery": ["Images/TheMoonlightLodge/TheMoonlightLodge.png"]
   },
   {
     "slug": "cicadas",
@@ -27,8 +33,12 @@
     "thumb": "Images/Cicadas.jpg",
     "hero": "Images/Cicadas.jpg",
     "short": "A VR project funded by Unity about exploring grief for losing a child.",
-    "description": "Immersive VR experience to explore cicada life cycles with interactive visualization.",
-    "links": [],
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "Immersive VR experience to explore cicada life cycles with interactive visualization."
+      }
+    ],
     "gallery": ["Images/Cicadas.jpg"]
   },
   {
@@ -41,8 +51,12 @@
     "thumb": "Images/AstroHarvest.jpg",
     "hero": "Images/AstroHarvest.jpg",
     "short": "Fast-paced space VR farming game balancing traversal, harvesting, and enemy encounters.",
-    "description": "Fast-paced space VR farming game balancing traversal, harvesting, and enemy encounters.",
-    "links": [],
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "Fast-paced space VR farming game balancing traversal, harvesting, and enemy encounters."
+      }
+    ],
     "gallery": ["Images/AstroHarvest.jpg"]
   },
   {
@@ -55,8 +69,12 @@
     "thumb": "Images/ABM.png",
     "hero": "Images/ABM.png",
     "short": "Built a modular pipeline for dozens of bite-size playable ads.",
-    "description": "Built a modular pipeline for dozens of bite-size playable ads.",
-    "links": [],
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "Built a modular pipeline for dozens of bite-size playable ads."
+      }
+    ],
     "gallery": ["Images/ABM.png"]
   },
 
@@ -70,8 +88,12 @@
     "thumb": "Images/TheFizzler.jpeg",
     "hero": "Images/TheFizzler.jpeg",
     "short": "A game about spraying champagne made on my own during GGJA 2025 while hosting the site.",
-    "description": "A game about spraying champagne made on my own during GGJA 2025 while hosting the site.",
-    "links": [],
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "A game about spraying champagne made on my own during GGJA 2025 while hosting the site."
+      }
+    ],
     "gallery": ["Images/TheFizzler.jpeg"]
   },
   {
@@ -84,14 +106,22 @@
     "thumb": "Images/UpWithTheSub/Main.png",
     "hero": "Images/UpWithTheSub/Main.png",
     "short": "A local co-op submarine adventure for a class project, voted as “Best Game of the Course 2020.” by our teachers.",
-    "description": "This project was created during the Game Projects course at DAE, a program where all majors come together to collaborate on a game. Together with two artists and another programmer, we successfully completed what became my first Unity project.<br><br>While learning the basics of Unity, I focused on implementing controllable characters, a simple crafting system, and the physics for both the items and the submarine.<br><br>Our project was highly praised by both students and teachers, earning the Teachers’ Prize for Greatest Game of the Course of the Year. In 2025, I heard from my interns that it’s still being showcased as an example during the course’s introduction.",
-    "links": [
-      {"label":"Trailer", "href":"https://www.youtube.com/watch?v=ElbNA6Y3vhY&ab_channel=JorryPotsie"},
-      {"label":"Course", "href":"https://www.digitalartsandentertainment.be/pageselect/47/Game+Projects/103"},
-      {"label":"Itch", "href":"https://jarnebeaufays.itch.io/gameprojects"}
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "This project was created during the Game Projects course at DAE, a program where all majors come together to collaborate on a game. Together with two artists and another programmer, we successfully completed what became my first Unity project.<br><br>While learning the basics of Unity, I focused on implementing controllable characters, a simple crafting system, and the physics for both the items and the submarine.<br><br>Our project was highly praised by both students and teachers, earning the Teachers’ Prize for Greatest Game of the Course of the Year. In 2025, I heard from my interns that it’s still being showcased as an example during the course’s introduction."
+      },
+      {
+        "title": "Useful Links",
+        "content": [
+          { "label": "Trailer", "href": "https://www.youtube.com/watch?v=ElbNA6Y3vhY&ab_channel=JorryPotsie" },
+          { "label": "Course", "href": "https://www.digitalartsandentertainment.be/pageselect/47/Game+Projects/103" },
+          { "label": "Itch", "href": "https://jarnebeaufays.itch.io/gameprojects" }
+        ]
+      }
     ],
     "gallery": [
-      "Images/UpWithTheSub/Main.png", 
+      "Images/UpWithTheSub/Main.png",
       "Images/UpWithTheSub/Gallery.gif",
       "Images/UpWithTheSub/Gallery2.jpg",
       "Images/UpWithTheSub/Gallery3.png",
@@ -108,8 +138,12 @@
     "thumb": "Images/CashMoney.png",
     "hero": "Images/CashMoney.png",
     "short": "A game made for a DAE course using the school's custom game engine.",
-    "description": "A game made for a DAE course using the school's custom game engine.",
-    "links": [],
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "A game made for a DAE course using the school's custom game engine."
+      }
+    ],
     "gallery": ["Images/CashMoney.png"]
   },
   {
@@ -122,8 +156,12 @@
     "thumb": "Images/LaunchOClockDown.png",
     "hero": "Images/LaunchOClockDown.png",
     "short": "My first game jam entry ever, a game about exploring space and using gravitational pull to navigate 2D levels.",
-    "description": "My first game jam entry ever, a game about exploring space and using gravitational pull to navigate 2D levels.",
-    "links": [],
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "My first game jam entry ever, a game about exploring space and using gravitational pull to navigate 2D levels."
+      }
+    ],
     "gallery": ["Images/LaunchOClockDown.png"]
   },
 
@@ -137,8 +175,12 @@
     "thumb": "Images/ImmunoDeck.png",
     "hero": "Images/ImmunoDeck.png",
     "short": "VR prototype exploring immunology concepts via game technology.",
-    "description": "VR prototype exploring immunology concepts via game technology.",
-    "links": [],
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "VR prototype exploring immunology concepts via game technology."
+      }
+    ],
     "gallery": ["Images/ImmunoDeck.png"]
   },
   {
@@ -151,9 +193,17 @@
     "thumb": "Images/ZeroStateAgent.png",
     "hero": "Images/ZeroStateAgent.png",
     "short": "Systems-driven prototype focused on agent behavior and state transitions.",
-    "description": "Systems-driven prototype focused on agent behavior and state transitions.",
-    "links":[
-      {"label": "Official Site", "href": "https://zerostateagent.com/" }
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "Systems-driven prototype focused on agent behavior and state transitions."
+      },
+      {
+        "title": "Useful Links",
+        "content": [
+          { "label": "Official Site", "href": "https://zerostateagent.com/" }
+        ]
+      }
     ],
     "gallery": ["Images/ZeroStateAgent.png"]
   },
@@ -167,11 +217,19 @@
     "thumb": "Images/Digigods/Digigods.jpg",
     "hero": "Images/Digigods/Digigods.jpg",
     "short": "The very first multiplayer prototype of the well received game Digigods, helping raise USD 3 million.",
-    "description": "The very first multiplayer prototype of the well received and funded Digigods game on Meta Quest.",
-    "links":[
-      {"label": "Official Site", "href": "https://www.digigods.gg/" },
-      {"label": "Funding", "href": "https://gamesbeat.com/squido-studio-raises-3m-for-social-xr-game-digigods/"},
-      {"label": "Blog", "href": "https://previewlabs.com/collaborative-vr-multiplayer-physics-digigods/"}
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "The very first multiplayer prototype of the well received and funded Digigods game on Meta Quest."
+      },
+      {
+        "title": "Useful Links",
+        "content": [
+          { "label": "Official Site", "href": "https://www.digigods.gg/" },
+          { "label": "Funding", "href": "https://gamesbeat.com/squido-studio-raises-3m-for-social-xr-game-digigods/" },
+          { "label": "Blog", "href": "https://previewlabs.com/collaborative-vr-multiplayer-physics-digigods/" }
+        ]
+      }
     ],
     "gallery": ["Images/Digigods/Digigods.jpg"]
   },
@@ -185,8 +243,12 @@
     "thumb": "Images/VRBike.png",
     "hero": "Images/VRBike.png",
     "short": "Prototype simulating urban cycling scenarios in VR. This project was displayed during the cycling world championship 2021 in Leuven's City hall.",
-    "description": "Training/education prototype simulating urban cycling scenarios in VR.",
-    "links": [],
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "Training/education prototype simulating urban cycling scenarios in VR."
+      }
+    ],
     "gallery": ["Images/VRBike.png"]
   },
 
@@ -200,10 +262,27 @@
     "thumb": "Images/GGJ/Hero.jpg",
     "hero": "Images/GGJ/Hero.jpg",
     "short": "Organizing the Global Game Jam Antwerp site and contributing in the GGJ theme committee.",
-    "description": "Organizing the Global Game Jam Antwerp site and contributing in the GGJ theme committee.",
-    "links": [
-      {"label":"Blog", "href": "https://previewlabs.com/ggj2025/"}],
-    "gallery": ["Images/GGJ/Hero.jpg", "Images/GGJ/Gallery.jpg", "Images/GGJ/Gallery2.jpg", "Images/GGJ/Gallery3.jpg", "Images/GGJ/Gallery4.gif", "Images/GGJ/Ggj.png", "Images/GGJ/VRJamming.jpg"] 
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "Organizing the Global Game Jam Antwerp site and contributing in the GGJ theme committee."
+      },
+      {
+        "title": "Useful Links",
+        "content": [
+          { "label": "Blog", "href": "https://previewlabs.com/ggj2025/" }
+        ]
+      }
+    ],
+    "gallery": [
+      "Images/GGJ/Hero.jpg",
+      "Images/GGJ/Gallery.jpg",
+      "Images/GGJ/Gallery2.jpg",
+      "Images/GGJ/Gallery3.jpg",
+      "Images/GGJ/Gallery4.gif",
+      "Images/GGJ/Ggj.png",
+      "Images/GGJ/VRJamming.jpg"
+    ]
   },
   {
     "slug": "15-years-pl",
@@ -215,8 +294,12 @@
     "thumb": "Images/PreviewLabs15.jpg",
     "hero": "Images/PreviewLabs15.jpg",
     "short": "Organizing and leading the 15 years of PreviewLabs trip in America and Canada.",
-    "description": "Organizing and leading the 15 years of PreviewLabs trip in America and Canada.",
-    "links": [],
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "Organizing and leading the 15 years of PreviewLabs trip in America and Canada."
+      }
+    ],
     "gallery": ["Images/PreviewLabs15.jpg"]
   },
   {
@@ -229,8 +312,12 @@
     "thumb": "Images/3dPrinting.jpg",
     "hero": "Images/3dPrinting.jpg",
     "short": "Designing, printing, and painting custom parts, props, trophees, and miniatures as a hobby.",
-    "description": "Designing, printing, and painting custom parts, props, trophees, and miniatures as a hobby.",
-    "links": [],
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "Designing, printing, and painting custom parts, props, trophees, and miniatures as a hobby."
+      }
+    ],
     "gallery": ["Images/3dPrinting.jpg"]
   },
   {
@@ -243,8 +330,17 @@
     "thumb": "Images/ObstacleCourse.jpg",
     "hero": "Images/ObstacleCourse.jpg",
     "short": "For 4 years, I've worked with groups of children and adults, leading them over obstacle courses focusing on safety, movement, teamwork, and fun!",
-    "description": "For 4 years, I've worked with groups of children and adults, leading them over obstacle courses focusing on safety, movement, teamwork, and fun!",
-    "links": [],
-    "gallery": ["Images/ObstacleCourse.jpg", "Images/Intense/Gallery.jpg", "Images/Intense/Gallery2.jpg", "Images/Intense/Gallery3.jpg"]
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "For 4 years, I've worked with groups of children and adults, leading them over obstacle courses focusing on safety, movement, teamwork, and fun!"
+      }
+    ],
+    "gallery": [
+      "Images/ObstacleCourse.jpg",
+      "Images/Intense/Gallery.jpg",
+      "Images/Intense/Gallery2.jpg",
+      "Images/Intense/Gallery3.jpg"
+    ]
   }
 ]

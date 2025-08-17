@@ -2,226 +2,243 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title id="doc-title">Project — Jarne Beaufays</title>
-    <meta name="description" content="Project details" id="meta-desc" />
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title id="doc-title">Project — Jarne Beaufays</title>
+  <meta name="description" content="Project details" id="meta-desc" />
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-    <link rel="stylesheet" href="theme.css">
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <link rel="stylesheet" href="theme.css">
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
-    <style>
-        .glightbox-clean .gslide-image img {
-          width: 90vw !important;
-          height: 90vh !important;
-          object-fit: contain;      /* show full image, no crop */
-          border-radius: 8px;
-        }
-
-        .glightbox-container .ginner-container {
-            padding: 20px;
-        }
-    </style>
+  <style>
+    .glightbox-clean .gslide-image img {
+      width: 90vw !important;
+      height: 90vh !important;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .glightbox-container .ginner-container {
+      padding: 20px;
+    }
+  </style>
 </head>
 
 <body class="antialiased text-slate-800" aria-busy="true">
-    <!-- Loading overlay (visible until JSON is parsed & page populated) -->
-    <div id="loadingOverlay"
-         class="fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-4
-                bg-white/95 backdrop-blur-sm transition-opacity duration-300">
-        <div class="h-10 w-10 rounded-full border-4 border-slate-300 border-t-slate-700 animate-spin"
-             aria-hidden="true"></div>
-        <p class="text-sm text-slate-600" role="status" aria-live="polite">Loading project…</p>
-        <noscript><p class="text-xs text-slate-500">Enable JavaScript to load this page.</p></noscript>
+  <!-- Loading overlay (visible until JSON is parsed & page populated) -->
+  <div id="loadingOverlay"
+       class="fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-4
+              bg-white/95 backdrop-blur-sm transition-opacity duration-300">
+    <div class="h-10 w-10 rounded-full border-4 border-slate-300 border-t-slate-700 animate-spin"
+         aria-hidden="true"></div>
+    <p class="text-sm text-slate-600" role="status" aria-live="polite">Loading project…</p>
+    <noscript><p class="text-xs text-slate-500">Enable JavaScript to load this page.</p></noscript>
+  </div>
+
+  <!-- Header / Hero (filled by JS) -->
+  <header class="relative text-white">
+    <div id="hero" class="hero-clip bg-[var(--color-accent1)]">
+      <div class="max-w-6xl mx-auto px-6 py-12 lg:py-16">
+        <a href="index.html" class="inline-block mb-6 text-white/90 hover:underline">&larr; Back to
+          portfolio</a>
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <h1 id="title" class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">Loading…</h1>
+            <p id="subtitle" class="mt-2 text-md opacity-90"></p>
+            <div id="tags" class="mt-4 flex flex-wrap gap-2"></div>
+          </div>
+          <div class="flex justify-end">
+            <img id="heroImg" alt=""
+                 class="w-full max-w-xl rounded-xl ring-8 ring-white shadow-lg object-cover">
+          </div>
+        </div>
+      </div>
     </div>
+  </header>
 
-    <!-- Header / Hero (filled by JS) -->
-    <header class="relative text-white">
-        <div id="hero" class="hero-clip bg-[var(--color-accent1)]">
-            <div class="max-w-6xl mx-auto px-6 py-12 lg:py-16">
-                <a href="index.html" class="inline-block mb-6 text-white/90 hover:underline">&larr; Back to
-                    portfolio</a>
-                <div class="grid lg:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <h1 id="title" class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">Loading…
-                        </h1>
-                        <p id="subtitle" class="mt-2 text-md opacity-90"></p>
-                        <div id="tags" class="mt-4 flex flex-wrap gap-2"></div>
-                    </div>
-                    <div class="flex justify-end">
-                        <img id="heroImg" alt=""
-                            class="w-full max-w-xl rounded-xl ring-8 ring-white shadow-lg object-cover">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+  <!-- Main -->
+  <main id="mainContent" class="max-w-6xl mx-auto px-6 py-10 space-y-10">
+    <!-- Dynamic sections will be inserted here (before gallery) -->
 
-    <!-- Main -->
-    <main class="max-w-6xl mx-auto px-6 py-10 space-y-10">
-        <section>
-            <h2 class="text-xl font-semibold mb-3">Useful Links</h2>
-            <div id="links" class="mt-5 flex flex-wrap gap-3"></div>
-        </section>
+    <!-- Gallery (always part of the template; shown if images exist) -->
+    <section id="galleryWrap" class="hidden">
+      <h2 class="text-xl font-semibold mb-4">Gallery</h2>
+      <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </section>
+  </main>
 
-        <section>
-            <h2 class="text-xl font-semibold mb-3">Overview</h2>
-            <p id="description" class="text-slate-700 leading-relaxed">Loading…</p>
-        </section>
+  <footer class="relative text-white">
+    <div id="footer" class="footer-clip bg-[var(--color-accent1)]">
+      <div class="max-w-5xl mx-auto px-6 py-10 text-sm">
+        <span class="opacity-90">&copy; Jarne Beaufays — <span id="year">2025</span></span>
+      </div>
+    </div>
+  </footer>
 
-        <section id="galleryWrap" class="hidden">
-            <h2 class="text-xl font-semibold mb-4">Gallery</h2>
-            <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
-        </section>
-    </main>
+  <script>
+    (async function () {
+      const overlay = document.getElementById('loadingOverlay');
+      const hideLoading = () => {
+        overlay?.classList.add('opacity-0');
+        setTimeout(() => overlay?.classList.add('hidden'), 250);
+        document.body.removeAttribute('aria-busy');
+      };
 
-    <footer class="relative text-white">
-        <div id="footer" class="footer-clip bg-[var(--color-accent1)]">
-            <div class="max-w-5xl mx-auto px-6 py-10 text-sm">
-                <span class="opacity-90">&copy; Jarne Beaufays — <span id="year">2025</span></span>
-            </div>
-        </div>
-    </footer>
+      const params = new URLSearchParams(location.search);
+      const slug = params.get('slug');
 
-    <script>
-        (async function () {
-          const overlay = document.getElementById('loadingOverlay');
-          const hideLoading = () => {
-            overlay?.classList.add('opacity-0');
-            setTimeout(() => overlay?.classList.add('hidden'), 250);
-            document.body.removeAttribute('aria-busy');
-          };
-      
-          const params = new URLSearchParams(location.search);
-          const slug = params.get('slug');
-      
-          const fail = (msg) => {
-            document.getElementById('title').textContent = 'Not found';
-            document.getElementById('subtitle').textContent = msg;
-            document.getElementById('description').textContent = 'Double-check the link or go back to the portfolio.';
-            document.getElementById('heroImg').style.display = 'none';
-          };
-      
-          try {
-            const res = await fetch('projects.json', { cache: 'no-store' });
-            if (!res.ok) throw new Error('Failed to load data');
-      
-            const projects = await res.json();
-            const project = projects.find(p => p.slug === slug);
-            if (!project) {
-              fail('No project matches "' + slug + '".');
-              return;
+      const fail = (msg) => {
+        document.getElementById('title').textContent = 'Not found';
+        document.getElementById('subtitle').textContent = msg;
+        document.getElementById('doc-title').textContent = `Not found — Jarne Beaufays`;
+        document.getElementById('meta-desc').setAttribute('content', 'Project not found');
+        document.getElementById('heroImg').style.display = 'none';
+      };
+
+      try {
+        const res = await fetch('projects.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error('Failed to load data');
+
+        const projects = await res.json();
+        const project = projects.find(p => p.slug === slug);
+        if (!project) {
+          fail('No project matches "' + slug + '".');
+          return;
+        }
+
+        // ---- Basic fields ----
+        document.getElementById('doc-title').textContent = `${project.title} — Jarne Beaufays`;
+
+        // Meta description: prefer project.short, else first text section, else title
+        const firstTextSection = Array.isArray(project.sections)
+          ? project.sections.find(s => typeof s?.content === 'string' && s.content.trim().length)
+          : null;
+        const metaDesc = project.short || firstTextSection?.content || project.title;
+        document.getElementById('meta-desc').setAttribute('content', metaDesc);
+
+        document.getElementById('title').textContent = project.title;
+        document.getElementById('subtitle').textContent = [project.client, project.year].filter(Boolean).join(' • ');
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Hero image
+        const heroImg = document.getElementById('heroImg');
+        heroImg.src = project.hero || project.thumb || '';
+        heroImg.alt = project.title;
+
+        // Tags
+        const tagsWrap = document.getElementById('tags');
+        const tagsData = Array.isArray(project.tags)
+          ? project.tags.filter(t => typeof t === 'string' && t.trim().length)
+          : [];
+        tagsWrap.innerHTML = '';
+        tagsData.forEach(t => {
+          const s = document.createElement('span');
+          s.className = "cat-pill-inverted inline-block text-xs px-3 py-1 rounded-full";
+          s.textContent = t;
+          tagsWrap.appendChild(s);
+        });
+
+        // Accent color by type
+        const type = (project.type ?? '').toString();
+        const color = `var(${
+          type === "Industry Projects" ? "--color-accent1"
+            : type === "Industry Prototypes" ? "--color-accent3"
+            : type === "Personal Projects" ? "--color-accent4"
+            : "--color-accent2"
+        })`;
+        document.getElementById("hero").style.backgroundColor = color;
+        document.getElementById("footer").style.backgroundColor = color;
+
+        // ---- Dynamic Sections (arbitrary) ----
+        const mainContent = document.getElementById('mainContent');
+        const galleryWrap = document.getElementById('galleryWrap');
+
+        if (Array.isArray(project.sections)) {
+          project.sections.forEach(sec => {
+            if (!sec || !sec.title || !sec.content) return;
+
+            const section = document.createElement('section');
+
+            const h2 = document.createElement('h2');
+            h2.className = "text-xl font-semibold mb-3";
+            h2.textContent = sec.title;
+            section.appendChild(h2);
+
+            // If content is a string -> paragraph (HTML allowed)
+            if (typeof sec.content === 'string') {
+              const p = document.createElement('div');
+              p.className = "text-slate-700 leading-relaxed";
+              p.innerHTML = sec.content; // accepts simple markup like <br>
+              section.appendChild(p);
             }
-      
-            // Basic fields
-            document.getElementById('doc-title').textContent = `${project.title} — Jarne Beaufays`;
-            document.getElementById('meta-desc').setAttribute('content', project.description || project.title);
-            document.getElementById('title').textContent = project.title;
-            document.getElementById('subtitle').textContent = [project.client, project.year].filter(Boolean).join(' • ');
-            document.getElementById('description').innerHTML = project.description || '';
-            document.getElementById('year').textContent = new Date().getFullYear();
-      
-            // Hero image
-            const heroImg = document.getElementById('heroImg');
-            heroImg.src = project.hero || project.thumb || '';
-            heroImg.alt = project.title;
-      
-            // Tags
-            const tagsWrap = document.getElementById('tags');
-            const tagsData = Array.isArray(project.tags)
-              ? project.tags.filter(t => typeof t === 'string' && t.trim().length)
-              : [];
-            tagsData.forEach(t => {
-              const s = document.createElement('span');
-              s.className = "cat-pill-inverted inline-block text-xs px-3 py-1 rounded-full";
-              s.textContent = t;
-              tagsWrap.appendChild(s);
-            });
-      
-            // Links
-            const linksWrap = document.getElementById('links');
-            const linksData = Array.isArray(project.links)
-              ? project.links.filter(l => l && l.href && l.label)
-              : [];
-            linksData.forEach(l => {
-              const a = document.createElement('a');
-              a.href = l.href;
-              a.target = "_blank";
-              a.rel = "noopener noreferrer";
-              a.className = "inline-block bg-[var(--color-accent1)] hover:bg-[var(--color-accent3)] text-white font-semibold py-2 px-3 rounded-md text-sm";
-              a.textContent = l.label;
-              linksWrap.appendChild(a);
-            });
-
-            // Hide the entire "Useful Links" section if no links rendered
-            if (linksWrap.childElementCount === 0) {
-              const linksSection = linksWrap.closest('section');
-              if (linksSection) {
-                linksSection.remove();
-              }
-            }
-
-            const type = project.type.toString();
-            const color = `var(${
-                    type === "Industry Projects"
-                    ? "--color-accent1"
-                    : type === "Industry Prototypes"
-                    ? "--color-accent3"
-                    : type === "Personal Projects"
-                    ? "--color-accent4"
-                    : "--color-accent2"
-                })`;
-
-            const hero = document.getElementById("hero");
-            hero.style.backgroundColor = color;
-
-            const footer = document.getElementById("footer");
-            footer.style.backgroundColor = color;
-      
-            // Gallery
-            const gallerySources = Array.isArray(project.gallery) ? project.gallery.filter(Boolean) : [];
-            if (gallerySources.length) {
-              const wrap = document.getElementById('galleryWrap');
-              const grid = document.getElementById('gallery');
-              grid.innerHTML = '';
-      
-              gallerySources.forEach((src, i) => {
+            // If content is an array -> assume array of links {label, href}
+            else if (Array.isArray(sec.content)) {
+              const wrap = document.createElement('div');
+              wrap.className = "mt-5 flex flex-wrap gap-3";
+              sec.content.forEach(l => {
+                if (!l || !l.href || !l.label) return;
                 const a = document.createElement('a');
-                a.href = src;
-                a.className = "block";
-                a.setAttribute('data-gallery', 'project');
-                a.setAttribute('aria-label', `${project.title} — image ${i + 1}`);
-      
-                const img = document.createElement('img');
-                img.src = src;
-                img.alt = `${project.title} — image ${i + 1}`;
-                img.loading = 'lazy';
-                img.className = "w-full h-56 object-cover rounded-lg shadow cursor-zoom-in";
-      
-                a.appendChild(img);
-                grid.appendChild(a);
+                a.href = l.href;
+                a.target = "_blank";
+                a.rel = "noopener noreferrer";
+                a.className = "inline-block bg-[var(--color-accent1)] hover:bg-[var(--color-accent3)] text-white font-semibold py-2 px-3 rounded-md text-sm";
+                a.textContent = l.label;
+                wrap.appendChild(a);
               });
-      
-              document.getElementById('galleryWrap').classList.remove('hidden');
-      
-              if (!window._glb) {
-                window._glb = GLightbox({ selector: '#gallery a' });
-              } else if (typeof window._glb.reload === 'function') {
-                window._glb.reload();
-              } else {
-                window._glb = GLightbox({ selector: '#gallery a' });
-              }
+              section.appendChild(wrap);
             }
-          } catch (e) {
-            console.error(e);
-            fail('There was a problem loading the project data.');
-          } finally {
-            hideLoading();
-          }
-        })();
-      </script>      
-</body>
+            // Future-proof: if content is an object with custom shapes you can branch here
 
+            mainContent.insertBefore(section, galleryWrap);
+          });
+        }
+
+        // ---- Gallery (kept as a dedicated section) ----
+        const gallerySources = Array.isArray(project.gallery) ? project.gallery.filter(Boolean) : [];
+        const grid = document.getElementById('gallery');
+        grid.innerHTML = '';
+
+        if (gallerySources.length) {
+          gallerySources.forEach((src, i) => {
+            const a = document.createElement('a');
+            a.href = src;
+            a.className = "block";
+            a.setAttribute('data-gallery', 'project');
+            a.setAttribute('aria-label', `${project.title} — image ${i + 1}`);
+
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = `${project.title} — image ${i + 1}`;
+            img.loading = 'lazy';
+            img.className = "w-full h-56 object-cover rounded-lg shadow cursor-zoom-in";
+
+            a.appendChild(img);
+            grid.appendChild(a);
+          });
+
+          document.getElementById('galleryWrap').classList.remove('hidden');
+
+          // (Re)initialize GLightbox
+          if (!window._glb) {
+            window._glb = GLightbox({ selector: '#gallery a' });
+          } else if (typeof window._glb.reload === 'function') {
+            window._glb.reload();
+          } else {
+            window._glb = GLightbox({ selector: '#gallery a' });
+          }
+        } else {
+          // Keep the section in the DOM per template, but hide when empty
+          document.getElementById('galleryWrap').classList.add('hidden');
+        }
+
+      } catch (e) {
+        console.error(e);
+        fail('There was a problem loading the project data.');
+      } finally {
+        hideLoading();
+      }
+    })();
+  </script>
+</body>
 </html>
