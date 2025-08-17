@@ -106,7 +106,147 @@
       background: var(--color-accent2);
       clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
     }
+
+    /* simple line-clamp helpers (no Tailwind plugin needed) */
+    .line-clamp-1,.line-clamp-2,.line-clamp-3{
+      display:-webkit-box;
+      -webkit-box-orient:vertical;
+      overflow:hidden
+    }
+    .line-clamp-1{-webkit-line-clamp:1}
+    .line-clamp-2{-webkit-line-clamp:2}
+    .line-clamp-3{-webkit-line-clamp:3}
+
   </style>
+
+  <script>
+    function normalizeType(t) {
+      return String(t || "").toLowerCase().replace(/\s+/g, "");
+    }
+
+    function getPrimaryAccentColor(type) {
+      switch (normalizeType(type)) {
+        case "industryprojects":   return "--color-accent1";
+        case "industryprototypes": return "--color-accent3";
+        case "personalprojects":   return "--color-accent4";
+        case "others":             return "--color-accent2";
+        default:                   return "--color-accent1";
+      }
+    }
+
+    function getSecondaryAccentColor(type) {
+      switch (normalizeType(type)) {
+        case "industryprojects":   return "--color-accent3";
+        case "industryprototypes": return "--color-accent4";
+        case "personalprojects":   return "--color-accent2";
+        case "others":             return "--color-accent1";
+        default:                   return "--color-accent3";
+      }
+    }
+    </script>
+
+<script>
+  function renderProjects({ data, gridId, type, limit = 3, alwaysShowAll = false }) {
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+  
+    // equal-height grid tracks
+    grid.classList.add("items-stretch");
+  
+    // Filter & sort once
+    const list = data
+      .filter(p => (p.type || '').toLowerCase() === type.toLowerCase())
+      .sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
+  
+    // Build all cards once (we'll append/remove later)
+    const cards = list.map(p => {
+      const a = document.createElement("a");
+      a.href = `project.html?slug=${encodeURIComponent(p.slug)}`;
+      a.className = "block h-full";
+      a.innerHTML = `
+        <article class="project-card bg-white shadow-md h-full flex flex-col">
+          <img
+            src="${p.thumb}"
+            alt="${p.title}"
+            class="w-full h-72 object-cover"
+            decoding="async"
+            loading="lazy"
+          />
+          <div class="p-4 flex flex-col grow">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex flex-wrap gap-2">
+                ${[
+                  ...(typeof p.client === "string" && p.client !== "" ? [p.client] : []),
+                  ...(Array.isArray(p.tags) ? p.tags : [])
+                ].map((t, i) => `
+                  <span class="cat-pill inline-block text-xs px-3 py-1 rounded-full"
+                    style="background: var(${ i === 0 ? getPrimaryAccentColor(p.type)
+                                                      : getSecondaryAccentColor(p.type) });">
+                    ${t}
+                  </span>`).join("")}
+              </div>
+              <span class="text-xs text-slate-400 whitespace-nowrap">${p.year || ""}</span>
+            </div>
+            <h3 class="text-lg font-bold mb-1 line-clamp-2">${p.title}</h3>
+            <p class="text-sm text-slate-600 line-clamp-3">${p.short || ""}</p>
+            <div class="mt-auto"></div>
+          </div>
+        </article>`;
+      return a;
+    });
+  
+    // Preload + decode hidden thumbs so first expand doesn't jolt
+    if (!alwaysShowAll && list.length > limit) {
+      const preloads = list.slice(limit).map(p => {
+        const img = new Image();
+        img.decoding = "async";
+        try { img.fetchPriority = "low"; } catch {}
+        img.src = p.thumb;
+        img.addEventListener("load", () => img.decode?.().catch(() => {}));
+        return img;
+      });
+      // keep a strong reference so GC doesn't drop them
+      grid._preloadedThumbs = preloads;
+    }
+  
+    // Initial render (no full re-render later)
+    const initialCount = alwaysShowAll ? cards.length : Math.min(limit, cards.length);
+    grid.append(...cards.slice(0, initialCount));
+  
+    // Show more / less (append/remove only the extras)
+    if (!alwaysShowAll && cards.length > limit) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = "Show more ↓";
+      btn.className =
+        "mt-6 px-4 py-2 bg-white hover:bg-[var(" + getPrimaryAccentColor(type) + ")] hover:text-white " +
+        "rounded-lg text-sm block mx-auto shadow transition-colors";
+      btn.dataset.expanded = "false";
+  
+      btn.addEventListener("click", () => {
+        // keep the button visually steady
+        const expanded = btn.dataset.expanded === "true";
+  
+        if (expanded) {
+          // collapse: remove extra children beyond 'limit'
+          while (grid.children.length > limit) {
+            grid.removeChild(grid.lastElementChild);
+          }
+          btn.textContent = "Show more ↓";
+          btn.dataset.expanded = "false";
+        } else {
+          // expand: append remaining prebuilt cards
+          grid.append(...cards.slice(grid.children.length));
+          btn.textContent = "Show less ↑";
+          btn.dataset.expanded = "true";
+        }
+      });
+  
+      grid.parentNode.appendChild(btn);
+    }
+  }
+  </script>
+  
 </head>
 
 <body class="antialiased text-slate-800" aria-busy="true">
@@ -205,58 +345,14 @@
 
       <script>
         withLoading(async () => {
-          try {
-            const data = await getProjects();
-
-            // Customize these per section 
-            const targetGridId = 'industry-projects-grid';
-            const wantType = 'Industry Projects';
-            const limit = Infinity;
-
-            const grid = document.getElementById(targetGridId);
-            if (!grid) return console.warn(`No element with id="${targetGridId}"`);
-
-            const list = data
-              .filter(p => (p.type || '').toLowerCase() === wantType.toLowerCase())
-              .sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0))
-              .slice(0, limit);
-
-            list.forEach(p => {
-              const a = document.createElement('a');
-              a.href = `project.html?slug=${encodeURIComponent(p.slug)}`;
-              a.className = "block";
-              a.innerHTML = `
-              <article class="project-card bg-white shadow-md">
-                <img src="${p.thumb}" alt="${p.title}" class="w-full h-72 object-cover">
-                <div class="p-4">
-                  <div class="flex items-center justify-between mb-2">
-                    <div class="flex gap-2">
-                      ${[
-                  ...(typeof p.client === 'string' && p.client !== '' ? [p.client] : []),
-                  ...(Array.isArray(p.tags) ? p.tags : [])
-                ]
-                  .map((t, i) =>
-                    `<span class="cat-pill inline-block text-xs px-3 py-1 rounded-full" 
-                                  style="background:var(${i === 0 ? '--color-accent1' : '--color-accent3'});">
-                            ${t}
-                          </span>`
-                  ).join('')
-                }
-                    </div>
-                    <span class="text-xs text-slate-400">${p.year || ''}</span>
-                  </div>
-                  <h3 class="text-lg font-bold mb-1">${p.title}</h3>
-                  <p class="text-sm text-slate-600">${p.short || ''}</p>
-                </div>
-              </article>`;
-              grid.appendChild(a);
-            });
-          } catch (e) {
-            console.error(e);
-            const grid = document.getElementById('industry-projects-grid');
-            if (grid) grid.innerHTML = '<p class="text-sm text-slate-500">Failed to load projects.</p>';
-          }
-        });
+          const data = await getProjects();
+          renderProjects({
+            data,
+            gridId: "industry-projects-grid",
+            type: "Industry Projects",
+            alwaysShowAll: true
+          });
+        });      
       </script>
     </section>
 
@@ -278,60 +374,15 @@
       </div>
 
       <div id="industry-prototypes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-
       <script>
         withLoading(async () => {
-          try {
-            const data = await getProjects();
-
-            // Customize these per section
-            const targetGridId = 'industry-prototypes-grid';
-            const wantType = 'Industry Prototypes';
-            const limit = Infinity;
-
-            const grid = document.getElementById(targetGridId);
-            if (!grid) return console.warn(`No element with id="${targetGridId}"`);
-
-            const list = data
-              .filter(p => (p.type || '').toLowerCase() === wantType.toLowerCase())
-              .sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0))
-              .slice(0, limit);
-
-            list.forEach(p => {
-              const a = document.createElement('a');
-              a.href = `project.html?slug=${encodeURIComponent(p.slug)}`;
-              a.className = "block";
-              a.innerHTML = `
-              <article class="project-card bg-white shadow-md">
-                <img src="${p.thumb}" alt="${p.title}" class="w-full h-72 object-cover">
-                <div class="p-4">
-                  <div class="flex items-center justify-between mb-2">
-                    <div class="flex gap-2">
-                      ${[
-                  ...(typeof p.client === 'string' && p.client !== '' ? [p.client] : []),
-                  ...(Array.isArray(p.tags) ? p.tags : [])
-                ]
-                  .map((t, i) =>
-                    `<span class="cat-pill inline-block text-xs px-3 py-1 rounded-full" 
-                                  style="background:var(${i === 0 ? '--color-accent3' : '--color-accent4'});">
-                            ${t}
-                          </span>`
-                  ).join('')
-                }
-                    </div>
-                    <span class="text-xs text-slate-400">${p.year || ''}</span>
-                  </div>
-                  <h3 class="text-lg font-bold mb-1">${p.title}</h3>
-                  <p class="text-sm text-slate-600">${p.short || ''}</p>
-                </div>
-              </article>`;
-              grid.appendChild(a);
-            });
-          } catch (e) {
-            console.error(e);
-            const grid = document.getElementById('industry-prototypes-grid');
-            if (grid) grid.innerHTML = '<p class="text-sm text-slate-500">Failed to load projects.</p>';
-          }
+          const data = await getProjects();
+          renderProjects({
+            data,
+            gridId: "industry-prototypes-grid",
+            type: "Industry Prototypes",
+            limit: 3
+          });
         });
       </script>
     </section>
@@ -353,60 +404,15 @@
       </div>
 
       <div id="personal-projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-
       <script>
         withLoading(async () => {
-          try {
-            const data = await getProjects();
-
-            // Customize these per section
-            const targetGridId = 'personal-projects-grid';
-            const wantType = 'Personal Projects';
-            const limit = Infinity;
-
-            const grid = document.getElementById(targetGridId);
-            if (!grid) return console.warn(`No element with id="${targetGridId}"`);
-
-            const list = data
-              .filter(p => (p.type || '').toLowerCase() === wantType.toLowerCase())
-              .sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0))
-              .slice(0, limit);
-
-            list.forEach(p => {
-              const a = document.createElement('a');
-              a.href = `project.html?slug=${encodeURIComponent(p.slug)}`;
-              a.className = "block";
-              a.innerHTML = `
-              <article class="project-card bg-white shadow-md">
-                <img src="${p.thumb}" alt="${p.title}" class="w-full h-72 object-cover">
-                <div class="p-4">
-                  <div class="flex items-center justify-between mb-2">
-                    <div class="flex gap-2">
-                      ${[
-                  ...(typeof p.client === 'string' && p.client !== '' ? [p.client] : []),
-                  ...(Array.isArray(p.tags) ? p.tags : [])
-                ]
-                  .map((t, i) =>
-                    `<span class="cat-pill inline-block text-xs px-3 py-1 rounded-full" 
-                                  style="background:var(${i === 0 ? '--color-accent4' : '--color-accent2'});">
-                            ${t}
-                          </span>`
-                  ).join('')
-                }
-                    </div>
-                    <span class="text-xs text-slate-400">${p.year || ''}</span>
-                  </div>
-                  <h3 class="text-lg font-bold mb-1">${p.title}</h3>
-                  <p class="text-sm text-slate-600">${p.short || ''}</p>
-                </div>
-              </article>`;
-              grid.appendChild(a);
-            });
-          } catch (e) {
-            console.error(e);
-            const grid = document.getElementById('personal-projects-grid');
-            if (grid) grid.innerHTML = '<p class="text-sm text-slate-500">Failed to load projects.</p>';
-          }
+          const data = await getProjects();
+          renderProjects({
+            data,
+            gridId: "personal-projects-grid",
+            type: "Personal Projects",
+            limit: 3
+          });
         });
       </script>
     </section>
@@ -431,57 +437,13 @@
 
       <script>
         withLoading(async () => {
-          try {
-            const data = await getProjects();
-
-            // Customize these per section
-            const targetGridId = 'others-grid';
-            const wantType = 'Others';
-            const limit = Infinity;
-
-            const grid = document.getElementById(targetGridId);
-            if (!grid) return console.warn(`No element with id="${targetGridId}"`);
-
-            const list = data
-              .filter(p => (p.type || '').toLowerCase() === wantType.toLowerCase())
-              .sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0))
-              .slice(0, limit);
-
-            list.forEach(p => {
-              const a = document.createElement('a');
-              a.href = `project.html?slug=${encodeURIComponent(p.slug)}`;
-              a.className = "block";
-              a.innerHTML = `
-              <article class="project-card bg-white shadow-md">
-                <img src="${p.thumb}" alt="${p.title}" class="w-full h-72 object-cover">
-                <div class="p-4">
-                  <div class="flex items-center justify-between mb-2">
-                    <div class="flex gap-2">
-                      ${[
-                  ...(typeof p.client === 'string' && p.client !== '' ? [p.client] : []),
-                  ...(Array.isArray(p.tags) ? p.tags : [])
-                ]
-                  .map((t, i) =>
-                    `<span class="cat-pill inline-block text-xs px-3 py-1 rounded-full" 
-                                  style="background:var(${i === 0 ? '--color-accent2' : '--color-accent1'});">
-                            ${t}
-                          </span>`
-                  ).join('')
-                }
-                    </div>
-                    <span class="text-xs text-slate-400">${p.year || ''}</span>
-                  </div>
-                  <h3 class="text-lg font-bold mb-1">${p.title}</h3>
-                  <p class="text-sm text-slate-600">${p.short || ''}</p>
-                </div>
-              </article>`;
-              grid.appendChild(a);
-            });
-          } catch (e) {
-            console.error(e);
-            const grid = document.getElementById('others-grid');
-            if (grid) grid.innerHTML = '<p class="text-sm text-slate-500">Failed to load projects.</p>';
-          }
+          const data = await getProjects();
+          renderProjects({
+            data,
+            gridId: "others-grid",
+            type: "Others",
+            limit: 3
+          });
         });
       </script>
     </section>
