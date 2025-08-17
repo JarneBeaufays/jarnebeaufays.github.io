@@ -186,9 +186,7 @@
 
       // Filter & sort once
       const list = data
-        .filter(p => (p.type || '').toLowerCase() === type.toLowerCase())
-        .sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
-
+        .filter(p => (p.type || '').toLowerCase() === type.toLowerCase());
       // Build all cards once (we'll append/remove later)
       const cards = list.map(p => {
         const a = document.createElement("a");
@@ -343,7 +341,7 @@
       <div class="flex items-center  gap-24 translate-y-8">
         <div class="name-wrap relative">
           <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">Jarne Beaufays</h1>
-          <p class="mt-2 text-md opacity-90">Belgian Gameplay Programmer and Community Builder</p>
+          <p class="mt-2 text-md opacity-90">Belgian Game Programmer and Community Builder</p>
           <div class="mt-4 flex gap-3">
             <a href="resume.html"
               class="inline-block bg-white/10 hover:bg-white/20 text-white py-2 px-3 rounded-md text-sm">Resume</a>

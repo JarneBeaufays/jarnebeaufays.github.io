@@ -62,7 +62,19 @@
     <!-- Two-column content wrapper (text on left, links on right) -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
       <div id="leftCol" class="lg:col-span-2 space-y-10"></div>
-      <div id="rightCol" class="lg:col-span-1 space-y-10"></div>
+      <div id="rightCol" class="lg:col-span-1 space-y-10">
+        <div id="playableWrap" class="w-full max-w-lg mx-auto hidden">
+          <iframe 
+            src="Ads/pepsi.html" 
+            width="100%" 
+            height="600" 
+            frameborder="0" 
+            allow="muted"
+            scrolling="no">
+          </iframe>
+          A playable ad for Pepsi I made. This is a special muted build.
+        </div>
+      </div>
     </div>
 
     <!-- Gallery (always at the bottom) -->
@@ -222,6 +234,13 @@
               if (linksArr.length) rightCol.appendChild(makeLinksBlock(sec.title, linksArr));
             }
           });
+        }
+
+        // ---- Reveal playable ad only if title contains "Activision" ----
+        const playableWrap  = document.getElementById('playableWrap');
+        if (project.title.toLowerCase().includes('activision')) {
+          playableWrap.classList.remove('hidden');
+          playableWrap.parentNode.appendChild(playableWrap);
         }
 
         // ---- Gallery (always last) ----

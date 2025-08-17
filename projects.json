@@ -129,6 +129,63 @@
     ]
   },
   {
+    "slug": "abm-playable-ads",
+    "title": "Activision Blizzard Media Playable Ads",
+    "year": "2023",
+    "client": "Activision Blizzard Media",
+    "type": "Industry Projects",
+    "tags": [
+      "40+ Ads",
+      "Unity"
+    ],
+    "thumb": "Images/ABM.png",
+    "hero": "Images/ABM.png",
+    "short": "Built a modular pipeline for dozens of bite-size playable ads.",
+    "sections": [
+      {
+        "title": "Project Overview",
+        "content": "I've worked on many projects for Activision Blizzard Media. While these didn't include major titles like Candy Crush, I specifically developed 40+ playable ads that were shown across their entire mobile game library. On average, each of my ads was served <b>over 3 million times</b>. In addition to creating playable ads, I also contributed to building a modular platform that enabled rapid construction of new ads and the reuse of components across different campaigns."
+      },
+      { 
+        "title": "Responsibilities",
+        "content": "I've developed a wide range of playable ads using Unity Playworks (formerly known as Luna Playground). For each ad, I was responsible for the entire development process — including coordinating with ABM artists to integrating their artwork and design. I enjoy adding an extra layer of polish to my ads, often through refined animations.<br><br>Over time, this approach contributed to a steady increase in the overall complexity and quality of the ABM playable ad library. I've developed a wide range of playable ads using Unity Playworks (formerly known as Luna Playground). For each ad, I was responsible for the entire development process — from coordinating with ABM artists to integrating their artwork. I enjoy adding an extra layer of polish to my ads, often through refined animations, which over time contributed to a steady increase in the complexity and quality of the ABM playable ad library.<br><br>In addition, given Activision was bought by Microsoft, I also conducted R&D, exploring how our ads could be integrated into the Xbox interface."
+      },
+      { 
+        "title": "Client",
+        "content": "While working on Activision Blizzard Media projects, I primarily collaborated with Brian Janelli, Senior Creative Director at ABM. Over the years, we've worked on many projects together.<br><br>Some of our ad clients include brands like McDonalds, Walmart, Pepsi, Ben & Jerry's, KitKat, UK Government, Honda, and many more."
+      },
+      {
+        "title":"Useful Links",
+        "content":[
+          {
+            "label":"ABM",
+            "href":"https://www.activisionblizzardmedia.com/"
+          },
+          {
+            "label":"Article",
+            "href":"https://www.activisionblizzardmedia.com/blog/gaming-industry/best-practices-for-playable-ads"
+          }
+        ]
+      },
+      {
+        "title": "Technologies",
+        "content": [
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          },
+          {
+            "label": "Unity Playworks",
+            "href": "https://unity.com/products/playworks"
+          }
+        ]
+      }
+    ],
+    "gallery": [
+      "Images/ABM.png"
+    ]
+  },
+  {
     "slug": "astro-harvest",
     "title": "Astro Harvest",
     "year": "2022",
@@ -149,29 +206,6 @@
     ],
     "gallery": [
       "Images/AstroHarvest.jpg"
-    ]
-  },
-  {
-    "slug": "abm-playable-ads",
-    "title": "Activision Blizzard Media Playable Ads",
-    "year": "2023",
-    "client": "Activision Blizzard Media",
-    "type": "Industry Projects",
-    "tags": [
-      "50+ Ads",
-      "Unity"
-    ],
-    "thumb": "Images/ABM.png",
-    "hero": "Images/ABM.png",
-    "short": "Built a modular pipeline for dozens of bite-size playable ads.",
-    "sections": [
-      {
-        "title": "Overview",
-        "content": "Built a modular pipeline for dozens of bite-size playable ads."
-      }
-    ],
-    "gallery": [
-      "Images/ABM.png"
     ]
   },
   {
@@ -294,61 +328,6 @@
     ]
   },
   {
-    "slug": "immunodeck",
-    "title": "ImmunoDeck",
-    "year": "2024",
-    "client": "Yale University",
-    "type": "Industry Prototypes",
-    "tags": [
-      "VR",
-      "Unity"
-    ],
-    "thumb": "Images/ImmunoDeck.png",
-    "hero": "Images/ImmunoDeck.png",
-    "short": "VR prototype exploring immunology concepts via game technology.",
-    "sections": [
-      {
-        "title": "Overview",
-        "content": "VR prototype exploring immunology concepts via game technology."
-      }
-    ],
-    "gallery": [
-      "Images/ImmunoDeck.png"
-    ]
-  },
-  {
-    "slug": "zero-state-agent",
-    "title": "Zero State Agent",
-    "year": "2023",
-    "client": "Fortress Games",
-    "type": "Industry Prototypes",
-    "tags": [
-      "Windows",
-      "Unity"
-    ],
-    "thumb": "Images/ZeroStateAgent.png",
-    "hero": "Images/ZeroStateAgent.png",
-    "short": "Systems-driven prototype focused on agent behavior and state transitions.",
-    "sections": [
-      {
-        "title": "Overview",
-        "content": "Systems-driven prototype focused on agent behavior and state transitions."
-      },
-      {
-        "title": "Useful Links",
-        "content": [
-          {
-            "label": "Official Site",
-            "href": "https://zerostateagent.com/"
-          }
-        ]
-      }
-    ],
-    "gallery": [
-      "Images/ZeroStateAgent.png"
-    ]
-  },
-  {
     "slug": "digigods",
     "title": "Digigods",
     "year": "2022",
@@ -386,6 +365,61 @@
     ],
     "gallery": [
       "Images/Digigods/Digigods.jpg"
+    ]
+  },
+  {
+    "slug": "zero-state-agent",
+    "title": "Zero State Agent",
+    "year": "2023",
+    "client": "Fortress Games",
+    "type": "Industry Prototypes",
+    "tags": [
+      "Windows",
+      "Unity"
+    ],
+    "thumb": "Images/ZeroStateAgent.png",
+    "hero": "Images/ZeroStateAgent.png",
+    "short": "Systems-driven prototype focused on agent behavior and state transitions.",
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "Systems-driven prototype focused on agent behavior and state transitions."
+      },
+      {
+        "title": "Useful Links",
+        "content": [
+          {
+            "label": "Official Site",
+            "href": "https://zerostateagent.com/"
+          }
+        ]
+      }
+    ],
+    "gallery": [
+      "Images/ZeroStateAgent.png"
+    ]
+  },
+  {
+    "slug": "immunodeck",
+    "title": "ImmunoDeck",
+    "year": "2024",
+    "client": "Yale University",
+    "type": "Industry Prototypes",
+    "tags": [
+      "VR",
+      "Unity"
+    ],
+    "thumb": "Images/ImmunoDeck.png",
+    "hero": "Images/ImmunoDeck.png",
+    "short": "VR prototype exploring immunology concepts via game technology.",
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "VR prototype exploring immunology concepts via game technology."
+      }
+    ],
+    "gallery": [
+      "Images/ImmunoDeck.png"
     ]
   },
   {
