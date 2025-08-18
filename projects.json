@@ -521,7 +521,16 @@
     "sections": [
       {
         "title": "Overview",
-        "content": "Designing, printing, and painting custom parts, props, trophees, and miniatures as a hobby."
+        "content": "Ever since I bought my Bambu Lab A1 printer, I haven't stopped 3D printing. I'm usually skeptical about whether a new hobby will stick, but this time I quickly knew it would.<br><br>I've also had the opportunity to use 3D printing professionally, designing and printing trophies for several game jams with up to 60 participants. More recently, I've become more involved with the GGJ, which gave me the opportunity to design a trophy for all site organizers to use and print."
+      },
+      {
+        "title": "Gear",
+        "content": [
+          {
+            "label": "Bambulab A1 with AMS",
+            "href": "https://eu.store.bambulab.com/?gad_source=1&gad_campaignid=21230405414&gbraid=0AAAAAqFjFZrpzGDNjj57uNK3sprIl1zR5&gclid=Cj0KCQjw-4XFBhCBARIsAAdNOku8jrLyE2z0P85vS71TdF1MD7CIop9UxzeuL3zX4o8s5A0pEH4y5ogaAsebEALw_wcB"
+          }
+        ]
       }
     ],
     "gallery": [
@@ -531,7 +540,7 @@
   {
     "slug": "obstacle-course-instructor",
     "title": "Obstacle Course Instructor",
-    "year": "2018–2022",
+    "year": "2018-2022",
     "client": "",
     "type": "Others",
     "tags": [
