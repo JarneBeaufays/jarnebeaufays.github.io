@@ -486,24 +486,34 @@
   },
   {
     "slug": "15-years-pl",
-    "title": "15 Years PL",
+    "title": "Company Trip Organizing and Planning",
     "year": "2025",
     "client": "",
     "type": "Others",
     "tags": [
       "Event"
     ],
-    "thumb": "Images/PreviewLabs15.jpg",
-    "hero": "Images/PreviewLabs15.jpg",
-    "short": "Organizing and leading the 15 years of PreviewLabs trip in America and Canada.",
+    "thumb": "Images/CompanyTrip/PreviewLabs15.jpg",
+    "hero": "Images/CompanyTrip/PreviewLabs15.jpg",
+    "short": "Organizing and planning the 15 years of PreviewLabs trip in America and Canada.",
     "sections": [
       {
         "title": "Overview",
-        "content": "Organizing and leading the 15 years of PreviewLabs trip in America and Canada."
+        "content": "Organizing the 15 years of PreviewLabs trip in America and Canada."
       }
     ],
     "gallery": [
-      "Images/PreviewLabs15.jpg"
+      "Images/CompanyTrip/PreviewLabs15.jpg",
+      "Images/CompanyTrip/Gallery.jpg",
+      "Images/CompanyTrip/Gallery2.jpg",
+      "Images/CompanyTrip/Gallery3.jpg",
+      "Images/CompanyTrip/Gallery4.jpg",
+      "Images/CompanyTrip/Gallery5.jpg",
+      "Images/CompanyTrip/Gallery6.jpg",
+      "Images/CompanyTrip/Gallery7.jpg",
+      "Images/CompanyTrip/Gallery8.jpg",
+      "Images/CompanyTrip/Gallery9.jpg",
+      "Images/CompanyTrip/Gallery10.jpg"
     ]
   },
   {

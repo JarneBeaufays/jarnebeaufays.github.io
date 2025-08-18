@@ -23,6 +23,23 @@
       padding: 20px;
     }
   </style>
+
+  <style>
+    /* Masonry helpers */
+    #gallery > a {
+      display: block;
+      margin-bottom: 1rem;                 /* vertical spacing between items */
+      break-inside: avoid;                 /* prevent column breaks inside items */
+      -webkit-column-break-inside: avoid;  /* Safari */
+      page-break-inside: avoid;            /* Print fallback */
+    }
+    #gallery img {
+      width: 100%;
+      height: auto;   /* keep natural aspect ratio */
+      display: block;
+      border-radius: 0.5rem;
+    }
+  </style>
 </head>
 
 <body class="antialiased text-slate-800" aria-busy="true">
@@ -80,7 +97,7 @@
     <!-- Gallery (always at the bottom) -->
     <section id="galleryWrap" class="hidden mt-12">
       <h2 class="text-xl font-semibold mb-4">Gallery</h2>
-      <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      <div id="gallery" class="columns-1 sm:columns-2 lg:columns-3 gap-4"></div>
     </section>
   </main>
 
@@ -243,7 +260,7 @@
           playableWrap.parentNode.appendChild(playableWrap);
         }
 
-        // ---- Gallery (always last) ----
+       // ---- Gallery (always last) ----
         const gallerySources = Array.isArray(project.gallery) ? project.gallery.filter(Boolean) : [];
         const grid = document.getElementById('gallery');
         grid.innerHTML = '';
@@ -252,7 +269,7 @@
           gallerySources.forEach((src, i) => {
             const a = document.createElement('a');
             a.href = src;
-            a.className = "block";
+            a.className = "mb-4"; // spacing; break-inside handled in CSS above
             a.setAttribute('data-gallery', 'project');
             a.setAttribute('aria-label', `${project.title} — image ${i + 1}`);
 
@@ -260,7 +277,6 @@
             img.src = src;
             img.alt = `${project.title} — image ${i + 1}`;
             img.loading = 'lazy';
-            img.className = "w-full h-56 object-cover rounded-lg shadow cursor-zoom-in";
 
             a.appendChild(img);
             grid.appendChild(a);
