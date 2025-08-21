@@ -17,15 +17,15 @@
     "sections": [
       { 
         "title": "Project",
-        "content": "This is a VR multiplayer game where players need to communicate with synchronized LLMs to solve a murder mystery. Since this project hasn't been announced yet, there isn't much more I can share for now. What I can say is that it's the biggest project I've worked on, and I've had the opportunity to build it alongside industry veterans while still taking on a lot of responsibility. Interacting with the AI agents is done by layering LLMs for a stable and reliable output, generating visemes to interact with premade emotions, and generating voices."
+        "content": "This unannounced VR multiplayer game has been my biggest project yet, developed alongside industry veterans while I took on significant responsibilities. Players solve a murder mystery by interacting with synchronized AI agents, powered by layered LLMs for stability, viseme-driven emotions, and generated voices."
       },
       { 
         "title": "Responsibilities",
-        "content": "I was responsible for all front-end Unity-related work. My main objectives were to set up the multiplayer (Photon Fusion) and VR (MetaXR) aspects of the project. After this, I implemented all gameplay elements and maintained the Unity project. Performance was also crucial, since the target platform was Meta Quest 3 standalone. I was only partially involved in the AI interactions and in setting up behavior trees on the back end (server)."
+        "content": "I handled all front-end Unity work, focusing on multiplayer and VR setup. I implemented gameplay features, maintained the Unity project, and optimized performance for Meta Quest 3 standalone. My involvement in AI interactions and backend behavior trees was partial."
       },
       { 
         "title": "Client",
-        "content": "Operative Games, co-founded by Jon Snoddy (former Disney Imagineering R&D leader), is a Los Angeles–based studio pioneering AI-driven interactive storytelling. My mentor on this project was Ryan Green, a BAFTA- and Game Award–winning indie game developer and creative director at Numinous Games. Alongside them, I worked with Hollywood audio engineers, storytellers, project managers, and many others. I also had the pleasure of meeting part of the team in Toronto, Canada."
+        "content": "Operative Games, co-founded by Jon Snoddy (former Disney Imagineering R&D leader), is a Los Angeles-based studio pioneering AI-driven interactive storytelling. I was mentored by Ryan Green, a BAFTA- and Game Award-winning developer and creative director at Numinous Games, and collaborated with renowned audio engineers, storytellers, and project managers. I also met part of the team in Toronto, Canada."
       },
       {
         "title": "Useful Links",
@@ -87,7 +87,7 @@
       },
       { 
         "title": "Responsibilities",
-        "content": "I wasn't involved during the entire development of the game, but more toward the end. During my time on the project, I mainly managed interns who were contributing to the development, helping them connect the dots, and doing an audio pass. I also stayed with Kim and her husband Bernard for a couple of weeks in Connecticut America, during which we had the chance to talk about her grief and relate it to my own."
+        "content": "I wasn't involved during the entire development of the game, but more toward the end. During my time on the project, I mainly managed interns who were contributing to the development, helping them connect the dots. I also stayed with Kim and her husband Bernard for a couple of weeks in Connecticut America, during which we had the chance to talk about her grief and relate it to my own."
       },
       { 
         "title": "Client",
@@ -144,15 +144,15 @@
     "sections": [
       {
         "title": "Project Overview",
-        "content": "I've worked on many projects for Activision Blizzard Media. While these didn't include major titles like Candy Crush, I specifically developed 40+ playable ads that were shown across their entire mobile game library. On average, each of my ads was served <b>over 3 million times</b>. In addition to creating playable ads, I also contributed to building a modular platform that enabled rapid construction of new ads and the reuse of components across different campaigns."
+        "content": "I developed 40+ polished playable ads for Activision Blizzard Media's mobile game library, each served over 3 million times on average. I also helped build a modular platform that enabled rapid ad development and component reuse across campaigns."
       },
       { 
         "title": "Responsibilities",
-        "content": "I've developed a wide range of playable ads using Unity Playworks (formerly known as Luna Playground). For each ad, I was responsible for the entire development process — including coordinating with ABM artists to integrating their artwork and design. I enjoy adding an extra layer of polish to my ads, often through refined animations.<br><br>Over time, this approach contributed to a steady increase in the overall complexity and quality of the ABM playable ad library. I've developed a wide range of playable ads using Unity Playworks (formerly known as Luna Playground). For each ad, I was responsible for the entire development process — from coordinating with ABM artists to integrating their artwork. I enjoy adding an extra layer of polish to my ads, often through refined animations, which over time contributed to a steady increase in the complexity and quality of the ABM playable ad library.<br><br>In addition, given Activision was bought by Microsoft, I also conducted R&D, exploring how our ads could be integrated into the Xbox interface."
+        "content": "I handled the full process of coding, integrating ABM artwork, and polishing the ads. This helped raise the overall quality and complexity of ABM's ad library. I also conducted R&D on integrating ads into the Xbox interface following Microsoft's acquisition of Activision."
       },
       { 
         "title": "Client",
-        "content": "While working on Activision Blizzard Media projects, I primarily collaborated with Brian Janelli, Senior Creative Director at ABM. Over the years, we've worked on many projects together.<br><br>Some of our ad clients include brands like McDonalds, Walmart, Pepsi, Ben & Jerry's, KitKat, UK Government, Honda, and many more."
+        "content": "At Activision Blizzard Media, I worked closely with Senior Creative Director Brian Janelli on campaigns for clients including McDonald’s, Walmart, Pepsi, Ben & Jerry’s, KitKat, the UK Government, Honda, and more."
       },
       {
         "title":"Useful Links",
@@ -162,8 +162,8 @@
             "href":"https://www.activisionblizzardmedia.com/"
           },
           {
-            "label":"Article",
-            "href":"https://www.activisionblizzardmedia.com/blog/gaming-industry/best-practices-for-playable-ads"
+            "label":"ABM Playables",
+            "href":"https://www.activisionblizzardmedia.com/ad-solutions/interactive-advertising"
           }
         ]
       },
@@ -458,11 +458,15 @@
     ],
     "thumb": "Images/GGJ/Hero.jpg",
     "hero": "Images/GGJ/Hero.jpg",
-    "short": "Organizing the Global Game Jam Antwerp site and contributing in the GGJ theme committee.",
+    "short": "Co-organizing the Global Game Jam Antwerp site and contributing in the GGJ theme committee.",
     "sections": [
       {
-        "title": "Overview",
-        "content": "Organizing the Global Game Jam Antwerp site and contributing in the GGJ theme committee."
+        "title": "GGJ Theme Committee",
+        "content": "Starting from GGJ 2026, I'll be part of the GGJ Theme Committee. In addition, I'll be designing a trophy and certificate that other site organizers can (3D) print for their participants."
+      },
+      {
+        "title": "GGJA 2025 & 2026",
+        "content": "In 2025, I co-organized the Antwerp GGJ site. Thanks to our sponsors, we managed to host a free two-night on-site game jam (food/drinks/snacks included) with 65 participants.<br><br>During my spare time, I also developed my own game, The Fizzler. In 2026, I'm planning to do this all over again!"
       },
       {
         "title": "Useful Links",
@@ -470,6 +474,10 @@
           {
             "label": "Blog",
             "href": "https://previewlabs.com/ggj2025/"
+          },
+          {
+            "label":"LinkedIn Post",
+            "href":"https://www.linkedin.com/posts/jarne-beaufays-404153152_global-game-jam-antwerp-2025-had-65-participants-activity-7291145208363188226-79zt?utm_source=share&utm_medium=member_desktop&rcm=ACoAACSvV4QBFgvlvwrTq9EmSV8MxDUZNzSzEE8"
           }
         ]
       }
@@ -480,7 +488,6 @@
       "Images/GGJ/Gallery2.jpg",
       "Images/GGJ/Gallery3.jpg",
       "Images/GGJ/Gallery4.gif",
-      "Images/GGJ/Ggj.png",
       "Images/GGJ/VRJamming.jpg"
     ]
   },

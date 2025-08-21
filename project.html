@@ -259,6 +259,11 @@
           playableWrap.classList.remove('hidden');
           playableWrap.parentNode.appendChild(playableWrap);
         }
+        else{
+          if (playableWrap) {
+            playableWrap.remove();
+          }        
+        }
 
        // ---- Gallery (always last) ----
         const gallerySources = Array.isArray(project.gallery) ? project.gallery.filter(Boolean) : [];
