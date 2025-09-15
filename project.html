@@ -67,7 +67,7 @@
           </div>
           <div class="flex justify-end">
             <img id="heroImg" alt=""
-                 class="w-full max-w-xl rounded-xl ring-8 ring-white shadow-lg object-cover">
+                 class="w-full max-w-xl h-[300px] rounded-xl ring-8 ring-white shadow-lg object-cover">
           </div>
         </div>
       </div>
@@ -179,14 +179,10 @@
 
         // Accent color by type
         const type = (project.type ?? '').toString();
-        const color = `var(${
-          type === "Industry Projects" ? "--color-accent1"
-            : type === "Industry Prototypes" ? "--color-accent3"
-            : type === "Personal Projects" ? "--color-accent4"
-            : "--color-accent2"
-        })`;
+        const color = getAccentColor(type);
         document.getElementById("hero").style.backgroundColor = color;
         document.getElementById("footer").style.backgroundColor = color;
+        document.querySelectorAll(".cat-pill-inverted").forEach(el => {el.style.color = color;});
 
         // ---- Column helpers ----
         const leftCol = document.getElementById('leftCol');
@@ -206,6 +202,24 @@
           return sec;
         };
 
+        function getAccentColor(type) {
+          return `var(${
+            type === "Industry Projects" ? "--color-accent1"
+              : type === "Industry Prototypes" ? "--color-accent3"
+              : type === "Personal Projects" ? "--color-accent4"
+              : "--color-accent2"
+          })`;
+        }
+
+        function getSecondaryAccentColor(type) {
+          return `var(${
+            type === "Industry Projects" ? "--color-accent3"
+              : type === "Industry Prototypes" ? "--color-accent4"
+              : type === "Personal Projects" ? "--color-accent2"
+              : "--color-accent1"
+          })`;
+        }
+
         const makeLinksBlock = (title, linksArr) => {
           const sec = document.createElement('section');
           const h2 = document.createElement('h2');
@@ -222,7 +236,7 @@
             a.target = "_blank";
             a.rel = "noopener noreferrer";
             // Inline buttons that wrap; not full-width
-            a.className = "inline-flex items-center justify-center px-3 py-2 rounded-md text-sm font-semibold bg-[var(--color-accent1)] hover:bg-[var(--color-accent3)] text-white";
+            a.className = "inline-flex items-center justify-center px-3 py-2 rounded-md text-sm font-semibold bg-["+getAccentColor(type)+"] hover:bg-["+getSecondaryAccentColor(type)+"] text-white";
             a.textContent = l.label;
             wrap.appendChild(a);
           });

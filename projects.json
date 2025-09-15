@@ -502,11 +502,24 @@
     ],
     "thumb": "Images/CompanyTrip/PreviewLabs15.jpg",
     "hero": "Images/CompanyTrip/PreviewLabs15.jpg",
-    "short": "Organizing and planning the 15 years of PreviewLabs trip in America and Canada.",
+    "short": "Organizing and planning the 15 years of PreviewLabs trip to America and Canada.",
     "sections": [
       {
         "title": "Overview",
-        "content": "Organizing the 15 years of PreviewLabs trip in America and Canada."
+        "content": "I had the pleasure of completely organizing and planning the 15 years of PreviewLabs trip to America and Canada. This trip was all about connecting with colleagues and doing fun stuff. In addition, we met clients, did some teambuilding, and explored culture across the pond.<br><br>I was responsible for tasks such as booking the flights, making sure everyone had their travel authorization, ensuring everyone was briefed, and polling interests across the company to make sure everyone would have fun together participating in activities."
+      },
+      {
+        "title": "Useful Links",
+        "content": [
+          {
+            "label": "Company LinkedIn Post",
+            "href": "https://www.linkedin.com/posts/previewlabs_gamedevelopment-rapidprototyping-seriousgames-activity-7341608241048514560-RH0J?utm_source=share&utm_medium=member_desktop&rcm=ACoAACSvV4QBFgvlvwrTq9EmSV8MxDUZNzSzEE8"
+          },
+          {
+            "label": "Personal LinkedIn Post",
+            "href": "https://www.linkedin.com/posts/jarne-beaufays-404153152_this-year-we-celebrated-the-15th-anniversary-activity-7346572539814420480-28zL?utm_source=share&utm_medium=member_desktop&rcm=ACoAACSvV4QBFgvlvwrTq9EmSV8MxDUZNzSzEE8"
+          }
+        ]
       }
     ],
     "gallery": [
@@ -565,11 +578,20 @@
     ],
     "thumb": "Images/ObstacleCourse.jpg",
     "hero": "Images/ObstacleCourse.jpg",
-    "short": "For 4 years, I've worked with groups of children and adults, leading them over obstacle courses focusing on safety, movement, teamwork, and fun!",
+    "short": "For 4 years, I've worked with groups of children and adults, leading them over obstacle courses focusing on safety, movement, trust, and fun!",
     "sections": [
       {
         "title": "Overview",
-        "content": "For 4 years, I've worked with groups of children and adults, leading them over obstacle courses focusing on safety, movement, teamwork, and fun!"
+        "content": "For 4 years, I've worked with groups of children and adults, leading them over obstacle courses goin up to 24m in height. My focus was on safety, movement, trust, and mainly fun!<br><br>I did this at the company named <b>Intense</b>, who have a location in De Schorre and Hoboken."
+      },
+      {
+        "title": "Useful Links",
+        "content": [
+          {
+            "label": "Intense",
+            "href": "https://intense.be/en/"
+          }
+        ]
       }
     ],
     "gallery": [
