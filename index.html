@@ -189,15 +189,15 @@
 
   /* Mobile: hide the entire overview, keep arrows */
   @media (max-width: 639.98px) {
-    .section-overview { display: none; }
+    .section-overview { display: block; }
   }
 
-/* Hide ALL scrollbars everywhere, but keep scrolling working */
-:root { scrollbar-color: transparent transparent; }             /* Firefox fallback */
-* { scrollbar-width: none; }                                    /* Firefox */
-*::-webkit-scrollbar { width: 0 !important; height: 0 !important; }  /* Chrome/Safari/Edge */
-*::-webkit-scrollbar-thumb { background: transparent !important; }
-*::-webkit-scrollbar-track { background: transparent !important; }
+  /* Hide ALL scrollbars everywhere, but keep scrolling working */
+  :root { scrollbar-color: transparent transparent; }             /* Firefox fallback */
+  * { scrollbar-width: none; }                                    /* Firefox */
+  *::-webkit-scrollbar { width: 0 !important; height: 0 !important; }  /* Chrome/Safari/Edge */
+  *::-webkit-scrollbar-thumb { background: transparent !important; }
+  *::-webkit-scrollbar-track { background: transparent !important; }
 </style>
 
 </head>
