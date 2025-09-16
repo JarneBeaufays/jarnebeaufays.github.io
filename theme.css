@@ -9,8 +9,13 @@
     --card-shadow: 0 10px 30px rgba(16, 24, 40, .06);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
     background: var(--color-primary);
+    overflow-x: hidden;
 }
 
 .hero-clip {
@@ -26,6 +31,7 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     background: var(--color-accent1);
     color: #fff;
     font-weight: 600;
