@@ -13,47 +13,70 @@
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
   <style>
-    .glightbox-clean .gslide-image img {
-      width: 90vw !important;
-      height: 90vh !important;
-      object-fit: contain;
-      border-radius: 8px;
-    }
-    .glightbox-container .ginner-container {
-      padding: 20px;
-    }
-  </style>
+  #gallery > a {
+    display: block;
+    margin-bottom: 1rem;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
 
-  <style>
-    /* Masonry helpers */
-    #gallery > a {
-      display: block;
-      margin-bottom: 1rem;                 /* vertical spacing between items */
-      break-inside: avoid;                 /* prevent column breaks inside items */
-      -webkit-column-break-inside: avoid;  /* Safari */
-      page-break-inside: avoid;            /* Print fallback */
-    }
-    #gallery img {
-      width: 100%;
-      height: auto;   /* keep natural aspect ratio */
-      display: block;
-      border-radius: 0.5rem;
-    }
-  </style>
+  #gallery img,
+  #gallery div {
+    width: 100%;
+    display: block;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  /* Universal hover effect for ALL thumbnails */
+  #gallery a:hover img,
+  #gallery a:hover div {
+    transform: scale(1.03);
+    filter: brightness(0.9);
+  }
+
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: transparent;
+  transition: background 0.25s ease;
+}
+
+.play-overlay svg {
+  position: absolute;      /* ⬅ key */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  /* ⬅ key */
+  width: 60px;
+  height: 60px;
+  display: block;          /* avoid inline gaps */
+  fill: white;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.4));
+  pointer-events: none;
+}
+
+
+</style>
+
 </head>
 
 <body class="antialiased text-slate-800" aria-busy="true">
-  <!-- Loading overlay (visible until JSON is parsed & page populated) -->
+  <!-- Loading overlay -->
   <div id="loadingOverlay"
-       class="fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-4
+    class="fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-4
               bg-white/95 backdrop-blur-sm transition-opacity duration-300">
     <div class="h-10 w-10 rounded-full border-4 border-slate-300 border-t-slate-700 animate-spin"
-         aria-hidden="true"></div>
+      aria-hidden="true"></div>
     <p class="text-sm text-slate-600" role="status" aria-live="polite">Loading project…</p>
     <noscript><p class="text-xs text-slate-500">Enable JavaScript to load this page.</p></noscript>
   </div>
 
-  <!-- Header / Hero (filled by JS) -->
+  <!-- Header / Hero -->
   <header class="relative text-white">
     <div id="hero" class="hero-clip bg-[var(--color-accent1)]">
       <div class="max-w-7xl mx-auto px-6 py-12 lg:py-16">
@@ -67,7 +90,7 @@
           </div>
           <div class="flex justify-end">
             <img id="heroImg" alt=""
-                 class="w-full max-w-xl h-[300px] rounded-xl ring-8 ring-white shadow-lg object-cover">
+              class="w-full max-w-xl h-[300px] rounded-xl ring-8 ring-white shadow-lg object-cover">
           </div>
         </div>
       </div>
@@ -76,28 +99,19 @@
 
   <!-- Main -->
   <main id="mainContent" class="max-w-7xl mx-auto px-6 py-10">
-    <!-- Two-column content wrapper (text on left, links on right) -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
       <div id="leftCol" class="lg:col-span-2 space-y-10"></div>
       <div id="rightCol" class="lg:col-span-1 space-y-10">
         <div id="playableWrap" class="w-full max-w-lg mx-auto hidden">
-          <iframe 
-            src="Ads/pepsi.html" 
-            width="100%" 
-            height="600" 
-            frameborder="0" 
-            allow="muted"
-            scrolling="no">
-          </iframe>
+          <iframe src="Ads/pepsi.html" width="100%" height="600" frameborder="0" allow="muted" scrolling="no"></iframe>
           A playable ad for Pepsi I made. This is a special muted build.
         </div>
       </div>
     </div>
 
-    <!-- Gallery (always at the bottom) -->
     <section id="galleryWrap" class="hidden mt-12">
       <h2 class="text-xl font-semibold mb-4">Gallery</h2>
-      <div id="gallery" class="columns-1 sm:columns-2 lg:columns-3 gap-4"></div>
+      <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
     </section>
   </main>
 
@@ -140,15 +154,12 @@
           return;
         }
 
-        // ---- Basic fields ----
         document.getElementById('doc-title').textContent = `${project.title} — Jarne Beaufays`;
-
-        // Meta description: prefer project.short, else first text section, else title
         const firstTextSection = Array.isArray(project.sections)
           ? project.sections.find(s =>
-              typeof s?.content === 'string' && s.content.trim().length ||
-              (s?.content && typeof s.content === 'object' && typeof s.content.text === 'string' && s.content.text.trim().length)
-            )
+            typeof s?.content === 'string' && s.content.trim().length ||
+            (s?.content && typeof s.content === 'object' && typeof s.content.text === 'string' && s.content.text.trim().length)
+          )
           : null;
         const metaDesc = project.short
           || (typeof firstTextSection?.content === 'string' ? firstTextSection.content : firstTextSection?.content?.text)
@@ -159,16 +170,12 @@
         document.getElementById('subtitle').textContent = [project.client, project.year].filter(Boolean).join(' • ');
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Hero image
         const heroImg = document.getElementById('heroImg');
         heroImg.src = project.hero || project.thumb || '';
         heroImg.alt = project.title;
 
-        // Tags
         const tagsWrap = document.getElementById('tags');
-        const tagsData = Array.isArray(project.tags)
-          ? project.tags.filter(t => typeof t === 'string' && t.trim().length)
-          : [];
+        const tagsData = Array.isArray(project.tags) ? project.tags.filter(t => typeof t === 'string' && t.trim().length) : [];
         tagsWrap.innerHTML = '';
         tagsData.forEach(t => {
           const s = document.createElement('span');
@@ -177,14 +184,25 @@
           tagsWrap.appendChild(s);
         });
 
-        // Accent color by type
+        function getAccentColor(type) {
+          return `var(${type === "Industry Projects" ? "--color-accent1"
+            : type === "Industry Prototypes" ? "--color-accent3"
+              : type === "Personal Projects" ? "--color-accent4"
+                : "--color-accent2"})`;
+        }
+        function getSecondaryAccentColor(type) {
+          return `var(${type === "Industry Projects" ? "--color-accent3"
+            : type === "Industry Prototypes" ? "--color-accent4"
+              : type === "Personal Projects" ? "--color-accent2"
+                : "--color-accent1"})`;
+        }
+
         const type = (project.type ?? '').toString();
         const color = getAccentColor(type);
         document.getElementById("hero").style.backgroundColor = color;
         document.getElementById("footer").style.backgroundColor = color;
-        document.querySelectorAll(".cat-pill-inverted").forEach(el => {el.style.color = color;});
+        document.querySelectorAll(".cat-pill-inverted").forEach(el => { el.style.color = color; });
 
-        // ---- Column helpers ----
         const leftCol = document.getElementById('leftCol');
         const rightCol = document.getElementById('rightCol');
 
@@ -194,7 +212,6 @@
           h2.className = "text-xl font-semibold mb-3";
           h2.textContent = title;
           sec.appendChild(h2);
-
           const div = document.createElement('div');
           div.className = "text-slate-700 leading-relaxed";
           div.innerHTML = html;
@@ -202,31 +219,12 @@
           return sec;
         };
 
-        function getAccentColor(type) {
-          return `var(${
-            type === "Industry Projects" ? "--color-accent1"
-              : type === "Industry Prototypes" ? "--color-accent3"
-              : type === "Personal Projects" ? "--color-accent4"
-              : "--color-accent2"
-          })`;
-        }
-
-        function getSecondaryAccentColor(type) {
-          return `var(${
-            type === "Industry Projects" ? "--color-accent3"
-              : type === "Industry Prototypes" ? "--color-accent4"
-              : type === "Personal Projects" ? "--color-accent2"
-              : "--color-accent1"
-          })`;
-        }
-
         const makeLinksBlock = (title, linksArr) => {
           const sec = document.createElement('section');
           const h2 = document.createElement('h2');
           h2.className = "text-xl font-semibold mb-3";
           h2.textContent = title;
           sec.appendChild(h2);
-
           const wrap = document.createElement('div');
           wrap.className = "flex flex-wrap gap-2";
           linksArr.forEach(l => {
@@ -235,8 +233,7 @@
             a.href = l.href;
             a.target = "_blank";
             a.rel = "noopener noreferrer";
-            // Inline buttons that wrap; not full-width
-            a.className = "inline-flex items-center justify-center px-3 py-2 rounded-md text-sm font-semibold bg-["+getAccentColor(type)+"] hover:bg-["+getSecondaryAccentColor(type)+"] text-white";
+            a.className = "inline-flex items-center justify-center px-3 py-2 rounded-md text-sm font-semibold bg-[" + getAccentColor(type) + "] hover:bg-[" + getSecondaryAccentColor(type) + "] text-white";
             a.textContent = l.label;
             wrap.appendChild(a);
           });
@@ -244,20 +241,11 @@
           return sec;
         };
 
-        // ---- Dynamic Sections (split across two columns) ----
         if (Array.isArray(project.sections)) {
           project.sections.forEach(sec => {
             if (!sec || !sec.title || !sec.content) return;
-
-            // TEXT on left
-            if (typeof sec.content === 'string') {
-              leftCol.appendChild(makeTextBlock(sec.title, sec.content));
-            }
-            // LINKS on right
-            else if (Array.isArray(sec.content)) {
-              rightCol.appendChild(makeLinksBlock(sec.title, sec.content));
-            }
-            // MIXED object { text?, links? }
+            if (typeof sec.content === 'string') leftCol.appendChild(makeTextBlock(sec.title, sec.content));
+            else if (Array.isArray(sec.content)) rightCol.appendChild(makeLinksBlock(sec.title, sec.content));
             else if (sec.content && typeof sec.content === 'object') {
               const textHtml = typeof sec.content.text === 'string' ? sec.content.text : '';
               const linksArr = Array.isArray(sec.content.links) ? sec.content.links : [];
@@ -267,19 +255,14 @@
           });
         }
 
-        // ---- Reveal playable ad only if title contains "Activision" ----
-        const playableWrap  = document.getElementById('playableWrap');
+        const playableWrap = document.getElementById('playableWrap');
         if (project.title.toLowerCase().includes('activision')) {
           playableWrap.classList.remove('hidden');
           playableWrap.parentNode.appendChild(playableWrap);
-        }
-        else{
-          if (playableWrap) {
-            playableWrap.remove();
-          }        
+        } else {
+          playableWrap?.remove();
         }
 
-       // ---- Gallery (always last) ----
         const gallerySources = Array.isArray(project.gallery) ? project.gallery.filter(Boolean) : [];
         const grid = document.getElementById('gallery');
         grid.innerHTML = '';
@@ -288,33 +271,56 @@
           gallerySources.forEach((src, i) => {
             const a = document.createElement('a');
             a.href = src;
-            a.className = "mb-4"; // spacing; break-inside handled in CSS above
+            a.className = "mb-4 relative";
             a.setAttribute('data-gallery', 'project');
-            a.setAttribute('aria-label', `${project.title} — image ${i + 1}`);
+            a.setAttribute('aria-label', `${project.title} — item ${i + 1}`);
 
-            const img = document.createElement('img');
-            img.src = src;
-            img.alt = `${project.title} — image ${i + 1}`;
-            img.loading = 'lazy';
+            const lowerSrc = src.toLowerCase();
+            const makeImg = (url, alt) => {
+              const img = document.createElement('img');
+              img.src = url;
+              img.alt = alt;
+              //img.loading = 'lazy';
+              img.className = "w-full aspect-video object-cover rounded";
+              return img;
+            };
 
-            a.appendChild(img);
+            let thumbEl;
+            if (/\.(jpe?g|png|gif|webp|avif)$/i.test(lowerSrc)) {
+              thumbEl = makeImg(src, `${project.title} — image ${i + 1}`);
+            } else if (lowerSrc.endsWith('.mp4') || lowerSrc.endsWith('.webm') || lowerSrc.endsWith('.ogg')) {
+              a.setAttribute('data-type', 'video');
+              thumbEl = document.createElement('div');
+              thumbEl.className = "w-full aspect-video bg-slate-200 rounded";
+            } else if (lowerSrc.includes('youtube.com') || lowerSrc.includes('youtu.be')) {
+              a.setAttribute('data-type', 'video');
+              a.setAttribute('data-source', 'youtube');
+              const videoId = src.match(/(?:youtube\.com.*v=|youtu\.be\/)([a-zA-Z0-9_-]+)/)?.[1];
+              if (videoId) {
+                thumbEl = makeImg(`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`, `${project.title} — YouTube video ${i + 1}`);
+              }
+            }
+
+            if (thumbEl) {
+              a.appendChild(thumbEl);
+
+              if (a.hasAttribute('data-type')) {
+                const overlay = document.createElement('div');
+                overlay.className = "play-overlay";
+                overlay.innerHTML = `<svg viewBox="0 0 64 64"><polygon points="20,14 52,32 20,50" /></svg>`;
+                a.appendChild(overlay);
+              }
+            }
             grid.appendChild(a);
           });
 
           document.getElementById('galleryWrap').classList.remove('hidden');
-
-          // (Re)initialize GLightbox
-          if (!window._glb) {
-            window._glb = GLightbox({ selector: '#gallery a' });
-          } else if (typeof window._glb.reload === 'function') {
-            window._glb.reload();
-          } else {
-            window._glb = GLightbox({ selector: '#gallery a' });
-          }
+          if (!window._glb) window._glb = GLightbox({ selector: '#gallery a' });
+          else if (typeof window._glb.reload === 'function') window._glb.reload();
+          else window._glb = GLightbox({ selector: '#gallery a' });
         } else {
           document.getElementById('galleryWrap').classList.add('hidden');
         }
-
       } catch (e) {
         console.error(e);
         fail('There was a problem loading the project data.');

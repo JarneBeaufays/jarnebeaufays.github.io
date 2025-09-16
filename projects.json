@@ -17,15 +17,15 @@
     "sections": [
       { 
         "title": "Project",
-        "content": "This unannounced VR multiplayer game has been my biggest project yet, developed alongside industry veterans while I took on significant responsibilities. Players solve a murder mystery by interacting with synchronized AI agents, powered by layered LLMs for stability, viseme-driven emotions, and generated voices."
+        "content": "This unannounced VR multiplayer game has been my biggest project yet. I helped develop it alongside industry veterans while I took on significant responsibilities. Players solve a murder mystery by interacting with AI agents, powered by layered LLMs, viseme-driven emotions, generated voices, and flexible storytelling."
       },
       { 
         "title": "Responsibilities",
-        "content": "I handled all front-end Unity work, focusing on multiplayer and VR setup. I implemented gameplay features, maintained the Unity project, and optimized performance for Meta Quest 3 standalone. My involvement in AI interactions and backend behavior trees was partial."
+        "content": "I handled nearly all front-end Unity work, focusing on multiplayer and VR setup. I implemented gameplay features, art, maintained the Unity project, and optimized performance for Meta Quest 3 standalone."
       },
       { 
         "title": "Client",
-        "content": "Operative Games, co-founded by Jon Snoddy (former Disney Imagineering R&D leader), is a Los Angeles-based studio pioneering AI-driven interactive storytelling. I was mentored by Ryan Green, a BAFTA- and Game Award-winning developer and creative director at Numinous Games, and collaborated with renowned audio engineers, storytellers, and project managers. I also met part of the team in Toronto, Canada."
+        "content": "Operative Games, co-founded by Jon Snoddy (former Disney Imagineering R&D leader), is a Los Angeles-based studio pioneering AI-driven interactive storytelling. I was mentored by Ryan Green, a BAFTA- and Game Award-winning developer and creative director at Numinous Games, and collaborated with various audio engineers, storytellers, and project managers."
       },
       {
         "title": "Useful Links",
@@ -83,15 +83,15 @@
     "sections": [
       {
         "title": "Project",
-        "content": "Year of the Cicadas is an immersive VR experience that guides the player through Kim Hieftje's grieving process after the loss of her son Cody. The cicadas play a significant role in the project, as they only surface every dozen years and happened to be swarming Cody's tombstone right after he passed away."
+        "content": "Year of the Cicadas is an immersive VR experience that guides the player through Kim Hieftje's grieving process after the loss of her son Cody. The cicadas play a significant role in the project, as they only surface every dozen years and happened to be swarming Cody's tombstone after passing away."
       },
       { 
         "title": "Responsibilities",
-        "content": "I wasn't involved during the entire development of the game, but more toward the end. During my time on the project, I mainly managed interns who were contributing to the development, helping them connect the dots. I also stayed with Kim and her husband Bernard for a couple of weeks in Connecticut America, during which we had the chance to talk about her grief and relate it to my own."
+        "content": "During my time on the project, I managed interns who were contributing to the development, helping them connect the dots. After, I did a polish pass to ensure the project was ready for release."
       },
       { 
         "title": "Client",
-        "content": "Kimberly (Kim) Hieftje, PhD is an Associate Professor of Pediatrics at Yale School of Medicine and co-director (and co-founder) of XR Pediatrics and the Yale Center for Immersive Technologies in Pediatrics. She leads research on immersive reality and serious games to promote health, behavior change, and education among youth."
+        "content": "Kimberly (Kim) Hieftje is an Associate Professor of Pediatrics at Yale School of Medicine and co-director (and co-founder) of XR Pediatrics and the Yale Center for Immersive Technologies in Pediatrics. She leads research on immersive reality and serious games to promote health, behavior change, and education among youth."
       },
       {
         "title": "Useful Links",
@@ -144,15 +144,15 @@
     "sections": [
       {
         "title": "Project Overview",
-        "content": "I developed 40+ polished playable ads for Activision Blizzard Media's mobile game library, each served over 3 million times on average. I also helped build a modular platform that enabled rapid ad development and component reuse across campaigns."
+        "content": "I've developed 40+ polished playable ads for Activision Blizzard Media's mobile game library, each served an average of 3 million times. I also helped build a modular platform that enabled rapid ad development and component reuse across campaigns."
       },
       { 
         "title": "Responsibilities",
-        "content": "I handled the full process of coding, integrating ABM artwork, and polishing the ads. This helped raise the overall quality and complexity of ABM's ad library. I also conducted R&D on integrating ads into the Xbox interface following Microsoft's acquisition of Activision."
+        "content": "I handle the full process of coding, integrating art, and polishing the ads. This helps raise the overall quality and complexity of ABM's ad library. I also conduct R&D for ABM, e.g. for integrating ads into the Xbox interface following Microsoft's acquisition of Activision."
       },
       { 
         "title": "Client",
-        "content": "At Activision Blizzard Media, I worked closely with Senior Creative Director Brian Janelli on campaigns for clients including McDonald’s, Walmart, Pepsi, Ben & Jerry’s, KitKat, the UK Government, Honda, and more."
+        "content": "I work closely with Senior Creative Director Brian Janelli on campaigns for clients including McDonald's, Walmart, Pepsi, Ben & Jerry's, KitKat, the UK Government, Honda, and many more."
       },
       {
         "title":"Useful Links",
@@ -195,17 +195,42 @@
       "VR",
       "Unity"
     ],
-    "thumb": "Images/AstroHarvest.jpg",
-    "hero": "Images/AstroHarvest.jpg",
+    "thumb": "Images/AstroHarvest/AstroHarvest.jpg",
+    "hero": "Images/AstroHarvest/AstroHarvest.jpg",
     "short": "Fast-paced space VR farming game balancing traversal, harvesting, and enemy encounters.",
     "sections": [
       {
-        "title": "Overview",
-        "content": "Fast-paced space VR farming game balancing traversal, harvesting, and enemy encounters."
+        "title": "Project Overview",
+        "content": "Astro Harvest is a cute fast-paced VR tower defense like game, where the user must harvest (the power of) fruit to combat a mysterious alien force. It's available for free online."
+      },
+      { 
+        "title": "Responsibilities",
+        "content": "I worked on many gameplay elements like the variety of turrets, bullets, and fruits. I was also closely involved in art integration and level design."
+      },
+      { 
+        "title": "Client",
+        "content": "Mantis Games is a small Belgian studio that worked with me and a couple other developers during my education. We helped create their pre alpha version after which it was only slightly altered."
+      },
+      {
+        "title":"Useful Links",
+        "content":[
+          {
+            "label":"Mantis Games",
+            "href":"https://mantis.games/"
+          },
+          {
+            "label":"Download",
+            "href":"https://sidequestvr.com/app/19527/astro-harvest"
+          }
+        ]
       }
     ],
     "gallery": [
-      "Images/AstroHarvest.jpg"
+      "https://www.youtube.com/watch?v=btasjoFUzn8",
+      "Images/AstroHarvest/AstroHarvest1.png",
+      "Images/AstroHarvest/AstroHarvest2.png",
+      "Images/AstroHarvest/AstroHarvest3.png",
+      "Images/AstroHarvest/AstroHarvest4.png"
     ]
   },
   {
@@ -256,10 +281,6 @@
         "title": "Useful Links",
         "content": [
           {
-            "label": "Trailer",
-            "href": "https://www.youtube.com/watch?v=ElbNA6Y3vhY&ab_channel=JorryPotsie"
-          },
-          {
             "label": "Course",
             "href": "https://www.digitalartsandentertainment.be/pageselect/47/Game+Projects/103"
           },
@@ -271,7 +292,7 @@
       }
     ],
     "gallery": [
-      "Images/UpWithTheSub/Main.png",
+      "https://www.youtube.com/watch?v=ElbNA6Y3vhY&ab_channel=JorryPotsie",
       "Images/UpWithTheSub/Gallery.gif",
       "Images/UpWithTheSub/Gallery2.jpg",
       "Images/UpWithTheSub/Gallery3.png",
