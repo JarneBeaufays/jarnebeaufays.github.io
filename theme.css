@@ -9,13 +9,14 @@
     --card-shadow: 0 10px 30px rgba(16, 24, 40, .06);
 }
 
-html {
+html, body {
   overflow-x: hidden;
+  position: relative;
+  max-width: 100%;
 }
 
 body {
     background: var(--color-primary);
-    overflow-x: hidden;
 }
 
 .hero-clip {
