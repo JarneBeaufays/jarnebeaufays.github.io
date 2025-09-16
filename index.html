@@ -146,19 +146,41 @@
     border: 0 !important;
   }
 
-  .section-overview .dot {
-    margin-left: 0;
-    width: .5rem; height: .5rem;
-    border-radius: 999px;
-    background: var(--_accent, var(--color-accent1));
-    box-shadow: 0 0 0 2px rgba(0,0,0,.04) inset;
-    flex: 0 0 .5rem;
-    opacity: 1;
-    transform: scale(1);
-    transition: transform .14s ease, opacity .14s ease;
-  }
-  .section-overview .item:hover .dot { opacity: .9; transform: scale(1.5); }
-  .section-overview .current .dot { opacity: 1; transform: scale(1.5); }
+  /* Dots with inner white core on hover/current */
+.section-overview .dot {
+  margin-left: 0;
+  width: .5rem;
+  height: .5rem;
+  border-radius: 999px;
+  background: var(--_accent, var(--color-accent1));
+  box-shadow: 0 0 0 2px rgba(0,0,0,.04) inset;
+  flex: 0 0 .5rem;
+  opacity: 1;
+  transform: scale(1);
+  transition: transform .14s ease, opacity .14s ease;
+  position: relative;
+}
+
+.section-overview .dot::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 40%;
+  height: 40%;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 999px;
+  background: #fff;
+  transition: transform .14s ease;
+}
+
+.section-overview .item:hover .dot { opacity: .9; transform: scale(1.5); }
+.section-overview .current .dot { opacity: 1; transform: scale(1.5); }
+
+.section-overview .item:hover .dot::after,
+.section-overview .current .dot::after {
+  transform: translate(-50%, -50%) scale(1);
+}
 
   @media (prefers-reduced-motion: reduce) {
     .section-overview .label, .section-overview .dot { transition: opacity .14s ease; }
@@ -202,7 +224,7 @@
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-8 py-12 space-y-16">
+  <main class="max-w-7xl mx-auto px-10 py-12 space-y-16">
     <section>
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-3xl font-semibold">Industry Projects</h2>
