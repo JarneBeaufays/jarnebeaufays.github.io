@@ -147,40 +147,40 @@
   }
 
   /* Dots with inner white core on hover/current */
-.section-overview .dot {
-  margin-left: 0;
-  width: .5rem;
-  height: .5rem;
-  border-radius: 999px;
-  background: var(--_accent, var(--color-accent1));
-  box-shadow: 0 0 0 2px rgba(0,0,0,.04) inset;
-  flex: 0 0 .5rem;
-  opacity: 1;
-  transform: scale(1);
-  transition: transform .14s ease, opacity .14s ease;
-  position: relative;
-}
+  .section-overview .dot {
+    margin-left: 0;
+    width: .5rem;
+    height: .5rem;
+    border-radius: 999px;
+    background: var(--_accent, var(--color-accent1));
+    box-shadow: 0 0 0 2px rgba(0,0,0,.04) inset;
+    flex: 0 0 .5rem;
+    opacity: 1;
+    transform: scale(1);
+    transition: transform .14s ease, opacity .14s ease;
+    position: relative;
+  }
 
-.section-overview .dot::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 40%;
-  height: 40%;
-  transform: translate(-50%, -50%) scale(0);
-  border-radius: 999px;
-  background: #fff;
-  transition: transform .14s ease;
-}
+  .section-overview .dot::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 40%;
+    height: 40%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 999px;
+    background: #fff;
+    transition: transform .14s ease;
+  }
 
-.section-overview .item:hover .dot { opacity: .9; transform: scale(1.5); }
-.section-overview .current .dot { opacity: 1; transform: scale(1.5); }
+  .section-overview .item:hover .dot { opacity: .9; transform: scale(1.5); }
+  .section-overview .current .dot { opacity: 1; transform: scale(1.5); }
 
-.section-overview .item:hover .dot::after,
-.section-overview .current .dot::after {
-  transform: translate(-50%, -50%) scale(1);
-}
+  .section-overview .item:hover .dot::after,
+  .section-overview .current .dot::after {
+    transform: translate(-50%, -50%) scale(1);
+  }
 
   @media (prefers-reduced-motion: reduce) {
     .section-overview .label, .section-overview .dot { transition: opacity .14s ease; }
@@ -191,6 +191,13 @@
   @media (max-width: 639.98px) {
     .section-overview { display: none; }
   }
+
+/* Hide ALL scrollbars everywhere, but keep scrolling working */
+:root { scrollbar-color: transparent transparent; }             /* Firefox fallback */
+* { scrollbar-width: none; }                                    /* Firefox */
+*::-webkit-scrollbar { width: 0 !important; height: 0 !important; }  /* Chrome/Safari/Edge */
+*::-webkit-scrollbar-thumb { background: transparent !important; }
+*::-webkit-scrollbar-track { background: transparent !important; }
 </style>
 
 </head>
