@@ -100,13 +100,14 @@
 
   @media (prefers-reduced-motion: reduce) { html:focus-within { scroll-behavior: auto; } }
 
+  /* Triangles */
   .section-overview {
     position: fixed;
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
     z-index: 60;
-    width: 24px;            /* dots-only rail */
+    width: 24px;
     max-height: 60vh;
     overflow: visible;
     padding: 0;
@@ -114,26 +115,19 @@
     background: transparent;
     backdrop-filter: none;
   }
-  .section-overview::-webkit-scrollbar { width: 8px; }
-  .section-overview::-webkit-scrollbar-thumb { background: rgba(0,0,0,.15); border-radius: 999px; }
-
   .section-overview .item {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 0;
     width: 100%;
-    text-align: right;
     padding: .35rem 0;
-    border-radius: .5rem;
     cursor: pointer;
     user-select: none;
-    transition: background .15s ease, transform .12s ease;
     background: transparent;
+    transition: transform .12s ease;
   }
-  .section-overview .item:hover { background: transparent; }
 
-  /* Visually hide labels everywhere, keep for screen readers */
+  /* Hide labels visually but keep for screen readers */
   .section-overview .label {
     position: absolute !important;
     width: 1px !important;
@@ -146,59 +140,46 @@
     border: 0 !important;
   }
 
-  /* Dots with inner white core on hover/current */
+  /* Triangle dots */
   .section-overview .dot {
-    margin-left: 0;
-    width: .5rem;
-    height: .5rem;
-    border-radius: 999px;
+    --size: .7rem;
+    width: var(--size);
+    height: var(--size);
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
     background: var(--_accent, var(--color-accent1));
     box-shadow: 0 0 0 2px rgba(0,0,0,.04) inset;
-    flex: 0 0 .5rem;
-    opacity: 1;
-    transform: scale(1);
+    transform: rotate(var(--rot, 0deg)) scaleX(var(--flip, 1)) scale(calc(var(--scale, 1) * 0.95));
+    transform-origin: 50% 50%;
     transition: transform .14s ease, opacity .14s ease;
+    flex: 0 0 var(--size);
+    opacity: 1;
     position: relative;
   }
 
-  .section-overview .dot::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 40%;
-    height: 40%;
-    transform: translate(-50%, -50%) scale(0);
-    border-radius: 999px;
-    background: #fff;
-    transition: transform .14s ease;
-  }
-
-  .section-overview .item:hover .dot { opacity: .9; transform: scale(1.5); }
-  .section-overview .current .dot { opacity: 1; transform: scale(1.5); }
-
-  .section-overview .item:hover .dot::after,
-  .section-overview .current .dot::after {
-    transform: translate(-50%, -50%) scale(1);
+  /* Hover + current state enlarge */
+  .section-overview .item:hover .dot,
+  .section-overview .current .dot {
+    transform: rotate(var(--rot, 0deg)) scaleX(var(--flip, 1)) scale(calc(var(--scale, 1) * 1.5));
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .section-overview .label, .section-overview .dot { transition: opacity .14s ease; }
-    .section-overview .item:hover .label, .section-overview .item:hover .dot { transform: none; }
+    .section-overview .dot { transition: opacity .14s ease; }
+    .section-overview .item:hover .dot { transform: none; }
   }
 
-  /* Mobile: hide the entire overview, keep arrows */
   @media (max-width: 639.98px) {
     .section-overview { display: block; }
   }
 
-  /* Hide ALL scrollbars everywhere, but keep scrolling working */
-  :root { scrollbar-color: transparent transparent; }             /* Firefox fallback */
-  * { scrollbar-width: none; }                                    /* Firefox */
-  *::-webkit-scrollbar { width: 0 !important; height: 0 !important; }  /* Chrome/Safari/Edge */
+  /* Hide scrollbars globally */
+  :root { scrollbar-color: transparent transparent; }
+  * { scrollbar-width: none; }
+  *::-webkit-scrollbar { width: 0 !important; height: 0 !important; }
   *::-webkit-scrollbar-thumb { background: transparent !important; }
   *::-webkit-scrollbar-track { background: transparent !important; }
 </style>
+
+
 
 </head>
 
@@ -531,9 +512,16 @@
         btn.dataset.index = String(i);
         btn.style.setProperty("--_accent", accentVar(typeName, ACCENT_PRIMARY));
         btn.innerHTML = `<span class="label">${label}</span><span class="dot" aria-hidden="true"></span>`;
+
+        const rot  = (Math.random() * 60 - 30).toFixed(2) + "deg";  
+        const flip = Math.random() < 0.5 ? -1 : 1; 
+        btn.style.setProperty("--rot", rot);
+        btn.style.setProperty("--flip", String(flip));
+
         btn.addEventListener("click", () => scrollToIndex(i));
         return btn;
       });
+
 
       overviewEl.append(...items);
 
