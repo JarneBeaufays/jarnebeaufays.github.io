@@ -280,8 +280,7 @@
               const img = document.createElement('img');
               img.src = url;
               img.alt = alt;
-              //img.loading = 'lazy';
-              img.className = "w-full aspect-video object-cover rounded";
+              img.className = "w-full h-auto rounded";
               return img;
             };
 
@@ -297,7 +296,7 @@
               a.setAttribute('data-source', 'youtube');
               const videoId = src.match(/(?:youtube\.com.*v=|youtu\.be\/)([a-zA-Z0-9_-]+)/)?.[1];
               if (videoId) {
-                thumbEl = makeImg(`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`, `${project.title} — YouTube video ${i + 1}`);
+                thumbEl = makeImg(`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`, `${project.title} — YouTube video ${i + 1}`);
               }
             }
 

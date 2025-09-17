@@ -138,8 +138,8 @@
       "40+ Projects",
       "Unity"
     ],
-    "thumb": "Images/ABM.png",
-    "hero": "Images/ABM.png",
+    "thumb": "Images/ABM/ABM.png",
+    "hero": "Images/ABM/ABM.png",
     "short": "Built a modular pipeline for dozens of bite-size playable ads.",
     "sections": [
       {
@@ -182,7 +182,12 @@
       }
     ],
     "gallery": [
-      "Images/ABM.png"
+      "Images/ABM/Dove.png",
+      "Images/ABM/HomeDepot.png",
+      "Images/ABM/Honda.png",
+      "Images/ABM/Pepsi.png",
+      "Images/ABM/Shamrock.png",
+      "Images/ABM/ukGov.png"
     ]
   },
   {
