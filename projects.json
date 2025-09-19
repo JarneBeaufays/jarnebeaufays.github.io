@@ -260,7 +260,8 @@
     ],
     "gallery": [
       "Images/TheFizzler/TheFizzler1.png",
-      "Images/TheFizzler/TheFizzler2.png"
+      "Images/TheFizzler/TheFizzler2.png",
+      "https://www.youtube.com/watch?v=XS7GDHytCY0"
     ]
   },
   {
@@ -327,7 +328,8 @@
       }
     ],
     "gallery": [
-      "Images/CashMoney.png"
+      "Images/CashMoney.png",
+      "https://www.youtube.com/watch?v=w9CHBtEcjvM"
     ]
   },
   {
@@ -343,11 +345,20 @@
     ],
     "thumb": "Images/LaunchOClockDown.png",
     "hero": "Images/LaunchOClockDown.png",
-    "short": "My first game jam entry ever, a game about exploring space and using gravitational pull to navigate 2D levels.",
+    "short": "My first game jam ever ever, a game about exploring space and using gravitational pull to navigate 2D levels.",
     "sections": [
       {
         "title": "Overview",
-        "content": "My first game jam entry ever, a game about exploring space and using gravitational pull to navigate 2D levels."
+        "content": "My first game jam entry ever, a game about exploring space and using gravitational pull to navigate 2D levels. Avoid black holes, enter wormholes, see star constelations, and have fun!"
+      },
+      {
+        "title":"Useful Links",
+        "content":[
+          {
+            "label": "Play Game",
+            "href": "https://jarnebeaufays.itch.io/launch-oclockdown"
+          }
+        ]
       }
     ],
     "gallery": [
