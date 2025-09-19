@@ -1,7 +1,7 @@
 [
   {
-    "slug": "the-moonlight-lodge",
-    "title": "The Moonlight Lodge",
+    "slug": "confidential-1",
+    "title": "Confidential Meta Game",
     "year": "2025",
     "client": "Operative Games",
     "type": "Industry Projects",
@@ -11,13 +11,13 @@
       "Multiplayer",
       "Unity"
     ],
-    "thumb": "Images/TheMoonlightLodge/TheMoonlightLodge.png",
-    "hero": "Images/TheMoonlightLodge/TheMoonlightLodge.png",
-    "short": "A VR multiplayer project funded by Meta about natural interactions with LLM agents.",
+    "thumb": "Images/Confidential1/Confidential1.png",
+    "hero": "Images/Confidential1/Confidential1.png",
+    "short": "A VR multiplayer game funded by Meta about natural interactions with LLM agents.",
     "sections": [
       { 
         "title": "Project",
-        "content": "This unannounced VR multiplayer game has been my biggest project yet. I helped develop it alongside industry veterans while I took on significant responsibilities. Players solve a murder mystery by interacting with AI agents, powered by layered LLMs, viseme-driven emotions, generated voices, and flexible storytelling."
+        "content": "This unannounced VR multiplayer game has been my biggest project yet. I helped develop it alongside industry veterans while I took on significant responsibilities. Players interact with AI agents, powered by layered LLMs, viseme-driven emotions, generated voices, and flexible storytelling."
       },
       { 
         "title": "Responsibilities",
@@ -63,7 +63,7 @@
       }
     ],
     "gallery": [
-      "Images/TheMoonlightLodge/TheMoonlightLodge.png"
+      "Images/Confidential1/Confidential1.png"
     ]
   },
   {
@@ -206,7 +206,7 @@
     "sections": [
       {
         "title": "Project Overview",
-        "content": "Astro Harvest is a cute fast-paced VR tower defense like game, where the user must harvest (the power of) fruit to combat a mysterious alien force. It's available for free online."
+        "content": "Astro Harvest is a cute fast-paced VR tower defense like game, where the user must harvest (the power of) fruit to combat a mysterious alien force. It's available to download for free online."
       },
       { 
         "title": "Responsibilities",
@@ -214,7 +214,7 @@
       },
       { 
         "title": "Client",
-        "content": "Mantis Games is a small Belgian studio that worked with me and a couple other developers during my education. We helped create their pre alpha version after which it was only slightly altered."
+        "content": "Mantis Games is a small Belgian studio that I collaborated with, along with a few other developers, during my education. Together, we helped create their pre-alpha version."
       },
       {
         "title":"Useful Links",
