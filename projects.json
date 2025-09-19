@@ -25,20 +25,7 @@
       },
       { 
         "title": "Client",
-        "content": "Confidential, co-founded by Jon Snoddy (former Disney Imagineering R&D leader), is a Los Angeles-based studio pioneering AI-driven interactive storytelling. I was mentored by Ryan Green, a BAFTA- and Game Award-winning developer and creative director at Numinous Games, and collaborated with various audio engineers, storytellers, and project managers."
-      },
-      {
-        "title": "Useful Links",
-        "content": [
-          {
-            "label": "Studio Site",
-            "href": "https://www.operativegames.ai/"
-          },
-          {
-            "label": "Studio LinkedIn",
-            "href": "https://www.linkedin.com/company/operativegames/"
-          }
-        ]
+        "content": "Confidential."
       },
       {
         "title": "Technologies",
