@@ -305,18 +305,23 @@
       "Co-op",
       "Custom Engine"
     ],
-    "thumb": "Images/CashMoney.png",
-    "hero": "Images/CashMoney.png",
+    "thumb": "Images/CashMoney/CashMoney.png",
+    "hero": "Images/CashMoney/CashMoney.png",
     "short": "A game made for a DAE course using the school's custom game engine.",
     "sections": [
       {
-        "title": "Overview",
-        "content": "A game made for a DAE course using the school's custom game engine."
+        "title": "Project Overview",
+        "content": "This is a 2-4 player local coop game that I developed for a school course. It's based on a minigame from the popular party game Pummel Party, where players must rob a bank and steal as much cash as possible without getting hit by cars."
+      },
+      {
+        "title": "Custom Engine",
+        "content": "This project was developed in a custom C++ engine (partially) provided by my school, without any documentation. It was up to us students to create all the shaders used in the engine (text, sprites, post-processing, particles, shadow mapping, etc.)."
       }
     ],
     "gallery": [
-      "Images/CashMoney.png",
-      "https://www.youtube.com/watch?v=w9CHBtEcjvM"
+      "https://www.youtube.com/watch?v=w9CHBtEcjvM",
+      "Images/CashMoney/Gallery1.gif",
+      "Images/CashMoney/Gallery3.png"
     ]
   },
   {
