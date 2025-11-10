@@ -281,16 +281,23 @@
           {
             "label": "Itch",
             "href": "https://jarnebeaufays.itch.io/gameprojects"
+          },
+          {
+            "label": "The Rookies Submission",
+            "href": "https://www.therookies.co/entries/6722"
           }
         ]
       }
     ],
     "gallery": [
       "https://www.youtube.com/watch?v=ElbNA6Y3vhY&ab_channel=JorryPotsie",
-      "Images/UpWithTheSub/Gallery.gif",
-      "Images/UpWithTheSub/Gallery2.jpg",
       "Images/UpWithTheSub/Gallery3.png",
-      "Images/UpWithTheSub/Gallery4.png"
+      "Images/UpWithTheSub/Gallery.gif",
+      "Images/UpWithTheSub/Gallery5.png",
+      "Images/UpWithTheSub/Gallery4.png",
+      "Images/UpWithTheSub/Gallery6.png",
+      "Images/UpWithTheSub/Gallery7.png",
+      "Images/UpWithTheSub/Gallery2.jpg"
     ]
   },
   {
@@ -462,17 +469,33 @@
       "VR",
       "Unity"
     ],
-    "thumb": "Images/VRBike.png",
-    "hero": "Images/VRBike.png",
+    "thumb": "Images/VRCycling/VRCycling.png",
+    "hero": "Images/VRCycling/VRCycling.png",
     "short": "Prototype simulating urban cycling scenarios in VR. This project was displayed during the cycling world championship 2021 in Leuven's City hall.",
     "sections": [
       {
-        "title": "Overview",
-        "content": "Training/education prototype simulating urban cycling scenarios in VR."
+        "title": "Project Overview",
+        "content": "This is a prototype simulating urban cycling scenarios in VR. It was showcased during the 2021 Cycling World Championship at the City Hall of Leuven. It was also used in multiple scientific theses and will continue to be used by the city of Ghent."
+      },
+      {
+        "title": "Useful Links",
+        "content": [
+          {
+            "label": "Project Video",
+            "href": "https://www.youtube.com/watch?v=Yg8Qr3Qnarg"
+          },
+          {
+            "label":"Leuven's Innovation Hub",
+            "href":"https://www.youtube.com/watch?v=WlxMQeIskE0"
+          }
+        ]
       }
     ],
     "gallery": [
-      "Images/VRBike.png"
+      "Images/VRCycling/VRCycling.png",
+      "Images/VRCycling/Gallery2.png",
+      "Images/VRCycling/Gallery3.png",
+      "Images/VRCycling/Gallery4.png"
     ]
   },
   {
