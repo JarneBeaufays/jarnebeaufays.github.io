@@ -527,15 +527,54 @@
     ]
   },
   {
-    "slug": "ggj-theme-committee",
-    "title": "GGJ Theme Committee + Site Organizer",
-    "year": "2025 Onwards",
-    "client": "",
+    "slug": "mit-reality-hack",
+    "title": "MIT Reality Hack: Track Organizer + Mentor",
+    "year": "2026 Onwards",
+    "client": "MIT",
     "type": "Others",
     "tags": [
       "Community Work",
-      "Event",
-      "Hobby"
+      "Event"
+    ],
+    "thumb": "Images/MIT/Hero.png",
+    "hero": "Images/MIT/Hero.png",
+    "short": "A new challenge ahead.",
+    "sections": [
+      {
+        "title": "Track Organizer",
+        "content": "In January 2026, I will be attending the well-regarded MIT Reality Hack in Boston, Massachusetts, USA. I will be co-hosting the all-new Game Track, which focuses on creating impactful and innovative games."
+      },
+      {
+        "title": "Mentor",
+        "content": "In addition to co-hosting parts of the event, I will also be mentoring and supporting some of the brightest students on the planet. This includes hosting workshops, helping teams overcome challenges, and exploring new technologies together."
+      },
+      {
+        "title": "Useful Links",
+        "content": [
+          {
+            "label": "MIT Reality Hack",
+            "href": "https://www.realityhackatmit.com/"
+          },
+          {
+            "label":"LinkedIn Post",
+            "href":"https://www.linkedin.com/posts/jarne-beaufays-404153152_global-game-jam-antwerp-2025-had-65-participants-activity-7291145208363188226-79zt?utm_source=share&utm_medium=member_desktop&rcm=ACoAACSvV4QBFgvlvwrTq9EmSV8MxDUZNzSzEE8"
+          }
+        ]
+      }
+    ],
+    "gallery": [
+      "Images/MIT/Gallery.png"
+    ]
+  },
+  {
+    "slug": "ggj-theme-committee",
+    "title": "Global Game Jam: Theme Committee + Site Organizer",
+    "year": "2025 Onwards",
+    "client": "GGJ",
+    "type": "Others",
+    "tags": [
+      "Community Work",
+      "Event"
     ],
     "thumb": "Images/GGJ/Hero.jpg",
     "hero": "Images/GGJ/Hero.jpg",
@@ -567,7 +606,6 @@
       "Images/GGJ/Hero.jpg",
       "Images/GGJ/Gallery.jpg",
       "Images/GGJ/Gallery2.jpg",
-      "Images/GGJ/Gallery3.jpg",
       "Images/GGJ/Gallery4.gif",
       "Images/GGJ/VRJamming.jpg"
     ]
