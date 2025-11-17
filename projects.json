@@ -226,6 +226,33 @@
     ]
   },
   {
+    "slug": "acorns-and-glory",
+    "title": "Acorns & Glory",
+    "year": "2025",
+    "client": "",
+    "type": "Personal Projects",
+    "tags": [
+      "Game Jam",
+      "Windows",
+      "1v1",
+      "Unity"
+    ],
+    "thumb": "Images/AcornsAndGlory/MainMenu.png",
+    "hero": "Images/AcornsAndGlory/MainMenu.png",
+    "short": "A game about hamsters fighting a war inside a cardboard box delivered at your door.",
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "I did nearly all coding, art integration, and a big chunk of the game design for this epic 48 hour game jam stint."
+      }
+    ],
+    "gallery": [
+      "Images/AcornsAndGlory/MainMenu.png",
+      "Images/AcornsAndGlory/Credits.png",
+      "Images/AcornsAndGlory/Tutorial.png"
+    ]
+  },
+  {
     "slug": "the-fizzler",
     "title": "The Fizzler",
     "year": "2025",
