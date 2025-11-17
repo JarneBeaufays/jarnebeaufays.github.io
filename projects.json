@@ -243,13 +243,14 @@
     "sections": [
       {
         "title": "Overview",
-        "content": "I did most of the coding, art/audio integration, and a big chunk of the game design for this epic 48 hour game jam stint."
+        "content": "I did most of the coding, art/audio integration, and a big chunk of the game design for this epic 48 hour stint of a game jam!s"
       }
     ],
     "gallery": [
       "Images/AcornsAndGlory/MainMenu.png",
       "Images/AcornsAndGlory/Credits.png",
-      "Images/AcornsAndGlory/Tutorial.png"
+      "Images/AcornsAndGlory/Tutorial.png",
+      "Images/AcornsAndGlory/Teaser.mp4"
     ]
   },
   {
