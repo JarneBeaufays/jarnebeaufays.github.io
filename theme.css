@@ -1,11 +1,12 @@
 :root {
-    --color-primary: #f7f5f2;        /* clean off-white (unchanged) */
+    /* Palette: http://coolors.co/palette/ffbe0b-fb5607-ff006e-8338ec-3a86ff */
+    --color-primary: #fffcf5;        /* clean off-white (unchanged) */
 
-    --color-accent1: #f75321;        /* vibrant modern orange */
-    --color-accent2: #ff6e91;        /* bright coral-pink */
-    --color-accent3: #ffd43b;        /* energetic, professional yellow */
-    --color-accent4: #1e88e5;        /* rich, vibrant blue */
-    --color-accent1-light: #ff8a50;  /* lighter glowing orange */
+    --color-accent1: #fb5607;
+    --color-accent2: #ff006e;
+    --color-accent3: #ffbe0b; 
+    --color-accent4: #3a86ff; 
+    --color-accent1-light: #ff8a50;
 
     --card-radius: 18px;
     --card-shadow: 0 10px 30px rgba(16, 24, 40, .06);
