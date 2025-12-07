@@ -1,16 +1,12 @@
 :root {
     /* Palette: http://coolors.co/palette/ffbe0b-fb5607-ff006e-8338ec-3a86ff */
-    /* https://colorhunt.co/palette/8ce4fffeee91ffa239ff5656 */
-    
     --color-primary: #fffcf5;        /* clean off-white (unchanged) */
 
-    --color-accent1: #FFC100;
-    --color-accent3: #FF8A08; 
-    --color-accent4: #FF6500; 
-    --color-accent2: #C40C0C;
-    
+    --color-accent1: #fb5607;
+    --color-accent2: #ff006e;
+    --color-accent3: #ffbe0b; 
+    --color-accent4: #3a86ff; 
     --color-accent1-light: #ff8a50;
-
 
     --card-radius: 18px;
     --card-shadow: 0 10px 30px rgba(16, 24, 40, .06);
