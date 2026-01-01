@@ -342,7 +342,7 @@
     })();
 
     // Project rendering
-    function renderProjects({ data, gridId, type, limit = 4, alwaysShowAll = false }) {
+    function renderProjects({ data, gridId, type, limit = 4, alwaysShowAll = false, imageHeight = 72 }) {
       const grid = document.getElementById(gridId);
       if (!grid) return;
 
@@ -364,7 +364,7 @@
               <img
                 src="${p.thumb}"
                 alt="${p.title}"
-                class="w-full h-72 object-cover"
+                class="w-full h-` + imageHeight.toString() + ` object-cover"
                 decoding="async"
                 loading="lazy"
               />
@@ -581,15 +581,15 @@
     });
     withLoading(async () => {
       const data = await getProjects();
-      renderProjects({ data, gridId: "industry-prototypes-grid", type: "Industry Prototypes"});
+      renderProjects({ data, gridId: "industry-prototypes-grid", type: "Industry Prototypes", imageHeight: 60});
     });
     withLoading(async () => {
       const data = await getProjects();
-      renderProjects({ data, gridId: "personal-projects-grid", type: "Personal Projects" });
+      renderProjects({ data, gridId: "personal-projects-grid", type: "Personal Projects", imageHeight: 60 });
     });
     withLoading(async () => {
       const data = await getProjects();
-      renderProjects({ data, gridId: "others-grid", type: "Others", limit: 3 });
+      renderProjects({ data, gridId: "others-grid", type: "Others", limit: 3, imageHeight: 64 });
     });
   </script>
 </body>
