@@ -13,9 +13,15 @@
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
   <style>
+  #gallery {
+    column-gap: 1rem;
+    column-fill: balance;
+  }
+
   #gallery > a {
-    display: block;
-    margin-bottom: 1rem;
+    display: block;              
+    width: 100%;
+    margin: 0 0 1rem;
     break-inside: avoid;
     -webkit-column-break-inside: avoid;
     page-break-inside: avoid;
@@ -23,6 +29,7 @@
     overflow: hidden;
     border-radius: 0.5rem;
   }
+
 
   #gallery img,
   #gallery div {
@@ -111,7 +118,7 @@
 
     <section id="galleryWrap" class="hidden mt-12">
       <h2 class="text-xl font-semibold mb-4">Gallery</h2>
-      <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      <div id="gallery" class="columns-1 sm:columns-2 lg:columns-3"></div>
     </section>
   </main>
 

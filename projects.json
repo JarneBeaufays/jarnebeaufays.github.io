@@ -582,7 +582,7 @@
     "sections": [
       {
         "title": "GGJ Theme Committee",
-        "content": "Starting from GGJ 2026, I'll be part of the GGJ Theme Committee. In addition, I'll be designing a trophy and certificate that other site organizers can (3D) print for their participants."
+        "content": "Since the end start of 2025, I was part of the GGJ Theme Committee. It's been a rewarding experience, and in my first stint with the theme committee, one of my ideas was selected as the theme the for Global Game Jam 2026, which will guide the work of 35 thousand+ participants."
       },
       {
         "title": "GGJA 2025 & 2026",
@@ -592,7 +592,7 @@
         "title": "Useful Links",
         "content": [
           {
-            "label": "Blog",
+            "label": "Article",
             "href": "https://previewlabs.com/ggj2025/"
           },
           {
@@ -718,7 +718,8 @@
       "Images/Intense/Gallery.jpg",
       "Images/Intense/Gallery2.jpg",
       "Images/Intense/Gallery3.jpg",
-      "Images/Intense/Gallery4.png"
+      "Images/Intense/Gallery4.png",
+      "Images/Intense/Gallery5.png"
     ]
   }
 ]
