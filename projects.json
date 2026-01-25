@@ -6,7 +6,6 @@
     "client": "Confidential",
     "type": "Industry Projects",
     "tags": [
-      "Funded by Meta",
       "VR",
       "Multiplayer",
       "Unity"
@@ -60,7 +59,6 @@
     "client": "Yale University",
     "type": "Industry Projects",
     "tags": [
-      "Funded by Unity",
       "VR",
       "Unity"
     ],
@@ -122,7 +120,7 @@
     "client": "Activision Blizzard Media",
     "type": "Industry Projects",
     "tags": [
-      "40+ Projects",
+      "40+ Ads",
       "Unity"
     ],
     "thumb": "Images/ABM/ABM.png",
@@ -233,8 +231,7 @@
     "type": "Personal Projects",
     "tags": [
       "Game Jam",
-      "Windows",
-      "1v1",
+      "PC",
       "Unity"
     ],
     "thumb": "Images/AcornsAndGlory/MainMenu.png",
@@ -287,8 +284,7 @@
     "type": "Personal Projects",
     "tags": [
       "School",
-      "Windows",
-      "Co-op",
+      "PC",
       "Unity"
     ],
     "thumb": "Images/UpWithTheSub/Main.png",
@@ -336,8 +332,7 @@
     "type": "Personal Projects",
     "tags": [
       "School",
-      "Windows",
-      "Co-op",
+      "PC",
       "Custom Engine"
     ],
     "thumb": "Images/CashMoney/CashMoney.png",
@@ -439,7 +434,7 @@
     "client": "Fortress Games",
     "type": "Industry Prototypes",
     "tags": [
-      "Windows",
+      "PC",
       "Unity"
     ],
     "thumb": "Images/ZeroStateAgent.png",
@@ -528,7 +523,7 @@
   },
   {
     "slug": "mit-reality-hack",
-    "title": "MIT Reality Hack: Track Organizer + Mentor",
+    "title": "MIT Reality Hack: Track Organizer + Judge",
     "year": "2026 Onwards",
     "client": "MIT",
     "type": "Others",

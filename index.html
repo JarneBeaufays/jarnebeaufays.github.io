@@ -455,32 +455,73 @@
       const initialCount = alwaysShowAll ? cards.length : Math.min(limit, cards.length);
       grid.append(...cards.slice(0, initialCount));
 
-      if (!alwaysShowAll && cards.length > limit) {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.textContent = "Show more ↓";
-        btn.className = [
-          "mt-6 px-4 py-2 bg-white",
-          `hover:bg-[${accentVar(type, ACCENT_PRIMARY)}] hover:text-white`,
-          "rounded-lg text-sm block mx-auto shadow transition-colors",
-        ].join(" ");
-        btn.dataset.expanded = "false";
+    if (!alwaysShowAll && cards.length > limit) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.dataset.expanded = "false";
+      btn.setAttribute("aria-label", "Show more");
 
-        btn.addEventListener("click", () => {
-          const expanded = btn.dataset.expanded === "true";
-          if (expanded) {
-            while (grid.children.length > limit) grid.removeChild(grid.lastElementChild);
-            btn.textContent = "Show more ↓";
-            btn.dataset.expanded = "false";
-          } else {
-            grid.append(...cards.slice(grid.children.length));
-            btn.textContent = "Show less ↑";
-            btn.dataset.expanded = "true";
+      btn.className = [
+        "mt-6",
+        "flex items-center gap-3",
+        "text-left",
+        "group",
+        "focus:outline-none"
+      ].join(" ");
+
+      // circle arrow
+      const circle = document.createElement("span");
+      circle.textContent = "↓";
+      circle.className = [
+        "w-12 h-12",
+        "rounded-full",
+        "flex items-center justify-center",
+        "text-white text-2xl leading-none",
+        "shadow",
+        "transition",
+        "group-hover:scale-105",
+        "group-active:scale-100"
+      ].join(" ");
+      circle.style.background = accentVar(type, ACCENT_PRIMARY);
+
+      // label
+      const label = document.createElement("span");
+      label.textContent = "Show more";
+      label.className = [
+        "text-md font-medium",
+        "text-slate-700",
+        "transition-colors",
+        "group-hover:text-slate-900",
+        "select-none"
+      ].join(" ");
+
+      btn.appendChild(circle);
+      btn.appendChild(label);
+
+      btn.addEventListener("click", () => {
+        const expanded = btn.dataset.expanded === "true";
+
+        if (expanded) {
+          while (grid.children.length > limit) {
+            grid.removeChild(grid.lastElementChild);
           }
-        });
+          circle.textContent = "↓";
+          circle.classList.add("font-bold");
+          label.textContent = "Show more";
+          btn.setAttribute("aria-label", "Show more");
+          btn.dataset.expanded = "false";
+        } else {
+          grid.append(...cards.slice(grid.children.length));
+          circle.textContent = "↑";
+          label.textContent = "Show less";
+          btn.setAttribute("aria-label", "Show less");
+          btn.dataset.expanded = "true";
+        }
+      });
 
-        grid.parentNode.appendChild(btn);
-      }
+      grid.parentNode.appendChild(btn);
+    }
+
     }
 
     // Section navigation / arrows
