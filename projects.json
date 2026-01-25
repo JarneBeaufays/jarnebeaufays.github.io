@@ -542,11 +542,15 @@
     "sections": [
       {
         "title": "Track Organizer",
-        "content": "In January 2026, I will be attending the well-regarded MIT Reality Hack in Boston, Massachusetts, USA. I will be co-hosting the all-new Game Track, which focuses on creating impactful and innovative games."
+        "content": "In January 2026, I attended the well-regarded MIT Reality Hack in Boston, Massachusetts, USA. I co-organized the new Game Prototyping Track, which focuses on creating fun XR game prototypes."
       },
       {
         "title": "Mentor",
-        "content": "In addition to co-hosting parts of the event, I will also be mentoring and supporting some of the brightest students on the planet. This includes hosting workshops, helping teams overcome challenges, and exploring new technologies together."
+        "content": "I was also mentoring, meaning I helped groups explore game technology using some of the most advanced XR tech on the planet. To ensure our hackers were well prepared, I hosted three workshops together with Bernard Francois and members of Petricore Games."
+      },
+      {
+        "title": "Judge",
+        "content": "Last but not least, I was one of four judges for the Game Prototyping Track, helping decide which wonderful project took the win."
       },
       {
         "title": "Useful Links",
@@ -560,10 +564,31 @@
             "href":"https://www.linkedin.com/posts/jarne-beaufays-404153152_global-game-jam-antwerp-2025-had-65-participants-activity-7291145208363188226-79zt?utm_source=share&utm_medium=member_desktop&rcm=ACoAACSvV4QBFgvlvwrTq9EmSV8MxDUZNzSzEE8"
           }
         ]
+      },
+      {
+        "title": "Mini Vlogs",
+        "content": [
+          {
+            "label": "Day 1",
+            "href": "https://youtube.com/shorts/VSEPyISiRW8?si=HVmvtKohpnCgswDv"
+          },
+          {
+            "label": "Day 2",
+            "href": "https://youtube.com/shorts/v606qYtsADw?si=UrhRD7dGCflPZAaT"
+          }
+        ]
       }
     ],
     "gallery": [
-      "Images/MIT/Gallery.png"
+      "Images/MIT/Gallery1.jpg",
+      "Images/MIT/Gallery2.jpg",
+      "Images/MIT/Gallery3.jpg",
+      "Images/MIT/Gallery4.jpeg",
+      "Images/MIT/Gallery5.jpeg",
+      "Images/MIT/Gallery6.jpg",
+      "Images/MIT/Gallery7.jpeg",
+      "Images/MIT/Gallery8.jpeg",
+      "Images/MIT/Gallery9.jpg"
     ]
   },
   {
