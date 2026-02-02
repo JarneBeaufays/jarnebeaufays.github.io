@@ -223,6 +223,31 @@
       "Images/AstroHarvest/AstroHarvest4.png"
     ]
   },
+    {
+    "slug": "masking-for-the-mass",
+    "title": "Masking for the Mass",
+    "year": "2026",
+    "client": "",
+    "type": "Personal Projects",
+    "tags": [
+      "Game Jam",
+      "PC",
+      "Unity",
+      "Ollama"
+    ],
+    "thumb": "Images/MaskingForTheMass/MaskingForTheMass.png",
+    "hero": "Images/MaskingForTheMass/MaskingForTheMass.png",
+    "short": "An experience about people masking their emotions.",
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "Coming soon..."
+      }
+    ],
+    "gallery": [
+    
+    ]
+  },
   {
     "slug": "acorns-and-glory",
     "title": "Acorns & Glory",
@@ -263,7 +288,7 @@
     ],
     "thumb": "Images/TheFizzler/TheFizzler.jpeg",
     "hero": "Images/TheFizzler/TheFizzler.jpeg",
-    "short": "A game about spraying champagne made on my own during GGJA 2025 while hosting the site.",
+    "short": "A gimmicky game about spraying champagne in a club with your best friend.",
     "sections": [
       {
         "title": "Overview",
