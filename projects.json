@@ -191,7 +191,7 @@
     "sections": [
       {
         "title": "Overview",
-        "content": "Astro Harvest is a cute fast-paced VR tower defense like game, where the user must harvest (the power of) fruit to combat a mysterious alien force. It's available to download for free online."
+        "content": "Astro Harvest is a cute fast-paced <b>VR tower defense like</b> game, where the user must harvest (the power of) fruit to combat a mysterious alien force. It's available to download for free online."
       },
       { 
         "title": "Responsibilities",
@@ -199,11 +199,19 @@
       },
       { 
         "title": "Client",
-        "content": "Mantis Games is a small Belgian studio that I collaborated with, along with a few other developers, during my education. Together, we helped create their pre-alpha version."
+        "content": "Mantis Games is a small Belgian studio that I collaborated with, along with a few other developers, during my education. Together, we helped create their <b>pre-alpha</b> version."
       },
       {
         "title":"Useful Links",
         "content":[
+          {
+            "label":"Trailer",
+            "href":"https://www.youtube.com/watch?v=btasjoFUzn8"
+          },          
+          {
+            "label":"Playthrough",
+            "href":"https://youtu.be/N_LSuw13OI0"
+          },          
           {
             "label":"Mantis Games",
             "href":"https://mantis.games/"
@@ -211,6 +219,15 @@
           {
             "label":"Download",
             "href":"https://sidequestvr.com/app/19527/astro-harvest"
+          }
+        ]
+      },
+      {
+        "title": "Technologies",
+        "content": [
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
           }
         ]
       }
@@ -241,7 +258,7 @@
     "sections": [
       {
         "title": "Game Jam Information",
-        "content": "The theme of the jam was <b>Mask</b>, which was actually <b>my submission in the GGJ theme committee!</b> I co-organized the site in Antwerp, so I only had limited time to work on my own game.<br><br>I used the following <b>diversifiers</b>:<ul><li> - Hands Off <small>(the game is played without the use of hands)</small></li><li> - Out of Sight <small>(create a game that can be played by both sighted and blind players)</small></li><li> - Masterpiece <small>(the game culminates in the production of a piece of art that can be displayed on a wall)</small></li><li> - Random Encounter <small>(make the game around procedural generation)</small></li></ul>"
+        "content": "This game was an entry for the <b>Global Game Jam 2026</b>. The theme of the jam was <b>Mask</b>, which was actually <b>my submission in the GGJ theme committee!</b> I co-organized the site in Antwerp, so I only had limited time to work on my own game.<br><br>I used the following <b>diversifiers</b>:<ul><li> - Hands Off <small>(the game is played without the use of hands)</small></li><li> - Out of Sight <small>(create a game that can be played by both sighted and blind players)</small></li><li> - Masterpiece <small>(the game culminates in the production of a piece of art that can be displayed on a wall)</small></li><li> - Random Encounter <small>(make the game around procedural generation)</small></li></ul>"
       },
       {
         "title": "Overview",
@@ -286,17 +303,47 @@
     "sections": [
       {
         "title": "Game Jam Information",
-        "content": "This was an entry for a the <b>Jame Gam</b> of November 2025. The theme was <b>Explosion</b> and the special object we had to incorporate was <b>Box</b>."
+        "content": "This was an entry for a the <b>Mini Jame Gam 49</b> of November 2025. The theme was <b>Explosion</b> and the special object we had to incorporate was <b>Box</b>."
       },
       {
         "title": "Overview",
-        "content": ""
+        "content": "The game is about hamsters fighting a war inside a cardboard box delivered to your door. You can play as one of two factions: the <b>Golden Acorn</b> or the <b>Cinderclaw Legion</b>. In the end, the winning faction deploys a nuke resulting in the demise of both clans, teaching kids that in war no one wins.<br><br>I did nearly all of the programming for this project, which was a fun challenge as it was a game with a large scope."
+      },
+      {
+        "title": "Useful Links",
+        "content": [
+          {
+            "label": "Itch",
+            "href": "https://fracture-entertainment.itch.io/acornsglory"
+          },          
+          {
+            "label": "Trailer",
+            "href": "https://www.youtube.com/watch?v=N7qmkdp9TWU"
+          },
+          {
+            "label": "Mini Jame Gam",
+            "href": "https://itch.io/jam/mini-jame-gam-49"
+          }
+        ]
+      },
+      {
+        "title": "Technologies",
+        "content": [
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          }
+        ]
       }
     ],
     "gallery": [
       "Images/AcornsAndGlory/MainMenu.png",
       "Images/AcornsAndGlory/Credits.png",
-      "Images/AcornsAndGlory/Tutorial.png",
+      "Images/AcornsAndGlory/Game1.png",
+      "Images/AcornsAndGlory/Game2.png",
+      "Images/AcornsAndGlory/Game2.png",
+      "Images/AcornsAndGlory/Game4.png",
+      "Images/AcornsAndGlory/Game5.png",
       "https://www.youtube.com/watch?v=N7qmkdp9TWU"
     ]
   },
@@ -391,6 +438,15 @@
             "href": "https://www.therookies.co/entries/6722"
           }
         ]
+      },
+      {
+        "title": "Technologies",
+        "content": [
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          }
+        ]
       }
     ],
     "gallery": [
@@ -426,6 +482,19 @@
       {
         "title": "Custom Engine",
         "content": "This project was developed in a custom C++ engine (partially) provided by my school, without any documentation. It was up to us students to create all the shaders used in the engine (text, sprites, post-processing, particles, shadow mapping, etc.)."
+      },
+      {
+        "title": "Useful Links",
+        "content": [
+          {
+            "label": "Trailer",
+            "href": "https://www.youtube.com/watch?v=w9CHBtEcjvM"
+          },
+          {
+            "label": "Walkthrough",
+            "href": "https://www.youtube.com/watch?v=5aM9X68EXQY"
+          }
+        ]
       }
     ],
     "gallery": [
@@ -445,26 +514,47 @@
       "WebGL",
       "Unity"
     ],
-    "thumb": "Images/LaunchOClockDown.png",
-    "hero": "Images/LaunchOClockDown.png",
+    "thumb": "Images/LaunchOClockDown/LaunchOClockDown.png",
+    "hero": "Images/LaunchOClockDown/LaunchOClockDown.png",
     "short": "My first game jam ever ever, a game about exploring space and using gravitational pull to navigate 2D levels.",
     "sections": [
       {
+        "title": "Game Jam Information",
+        "content": "This was a game jam I hosted at home with two friends. We challenged ourselves to create a small game in 48 hours during the COVID-19 lockdown in 2021, hence the name of the game. There was an actual theme, but I unfortunately forgot what it was."
+      },
+      {
         "title": "Overview",
-        "content": "My first game jam entry ever, a game about exploring space and using gravitational pull to navigate 2D levels. Avoid black holes, enter wormholes, see star constelations, and have fun!"
+        "content": "This is a game about exploring space and using <b>gravitational pull</b> to navigate 2D levels. The player must avoid black holes and shooting UFOs, enter wormholes to teleport, see star constelations, and have fun!"
       },
       {
         "title":"Useful Links",
         "content":[
           {
-            "label": "Play Game",
+            "label": "Itch",
             "href": "https://jarnebeaufays.itch.io/launch-oclockdown"
+          }
+        ]
+      },
+      {
+        "title": "Technologies",
+        "content": [
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
           }
         ]
       }
     ],
     "gallery": [
-      "Images/LaunchOClockDown.png"
+      "Images/LaunchOClockDown/LaunchOClockDown.png",
+      "Images/LaunchOClockDown/LevelSelector.png",
+      "Images/LaunchOClockDown/Game1.png",
+      "Images/LaunchOClockDown/Game2.png",
+      "Images/LaunchOClockDown/Game3.png",
+      "Images/LaunchOClockDown/Game4.png",
+      "Images/LaunchOClockDown/Game5.png",
+      "Images/LaunchOClockDown/Game6.png",
+      "Images/LaunchOClockDown/Game7.png"
     ]
   },
   {
