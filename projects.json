@@ -128,7 +128,7 @@
     "short": "Built a modular pipeline for dozens of bite-size playable ads.",
     "sections": [
       {
-        "title": "Project Overview",
+        "title": "Overview",
         "content": "I've developed 40+ polished playable ads for Activision Blizzard Media's mobile game library, each served an average of 3 million times. I also helped build a modular platform that enabled rapid ad development and component reuse across campaigns."
       },
       { 
@@ -190,7 +190,7 @@
     "short": "Fast-paced space VR farming game balancing traversal, harvesting, and enemy encounters.",
     "sections": [
       {
-        "title": "Project Overview",
+        "title": "Overview",
         "content": "Astro Harvest is a cute fast-paced VR tower defense like game, where the user must harvest (the power of) fruit to combat a mysterious alien force. It's available to download for free online."
       },
       { 
@@ -237,11 +237,32 @@
     ],
     "thumb": "Images/MaskingForTheMass/MaskingForTheMass.png",
     "hero": "Images/MaskingForTheMass/MaskingForTheMass.png",
-    "short": "An experience about people masking their emotions.",
+    "short": "An experience about people masking their emotions in front of others.",
     "sections": [
       {
+        "title": "Game Jam Information",
+        "content": "The theme of the jam was <b>Mask</b>, which was actually <b>my submission in the GGJ theme committee!</b> I co-organized the site in Antwerp, so I only had limited time to work on my own game.<br><br>I used the following <b>diversifiers</b>:<ul><li> - Hands Off <small>(the game is played without the use of hands)</small></li><li> - Out of Sight <small>(create a game that can be played by both sighted and blind players)</small></li><li> - Masterpiece <small>(the game culminates in the production of a piece of art that can be displayed on a wall)</small></li><li> - Random Encounter <small>(make the game around procedural generation)</small></li></ul>"
+      },
+      {
         "title": "Overview",
-        "content": "Coming soon..."
+        "content": "Although this project is an <b>experience</b> and not a traditional game, I'm very happy with the result. The experience raises awareness about emotional masking. A simple character talks to himself, but when someone is detected via the webcam, he hides behind a mask and begins showing his <b>anxiety</b>."
+      },
+      {
+        "title": "Technologies",
+        "content": [
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          },
+          {
+            "label": "Ollama",
+            "href": "https://ollama.com/"
+          },
+          {
+            "label": "MediaPipe",
+            "href": "https://github.com/homuler/MediaPipeUnityPlugin"
+          }
+        ]
       }
     ],
     "gallery": [
@@ -264,8 +285,12 @@
     "short": "A game about hamsters fighting a war inside a cardboard box delivered at your door.",
     "sections": [
       {
+        "title": "Game Jam Information",
+        "content": "This was an entry for a the <b>Jame Gam</b> of November 2025. The theme was <b>Explosion</b> and the special object we had to incorporate was <b>Box</b>."
+      },
+      {
         "title": "Overview",
-        "content": "I did most of the coding, art/audio integration, and a big chunk of the game design for this epic 48 hour stint of a game jam!"
+        "content": ""
       }
     ],
     "gallery": [
@@ -291,8 +316,38 @@
     "short": "A gimmicky game about spraying champagne in a club with your best friend.",
     "sections": [
       {
+        "title": "Game Jam Information",
+        "content": "This was an entry for a the <b>Global Game Jam 2025</b> where the theme was <b>Bubbles</b>. I organized the site in Antwerp, so I only had limited time to work on my own game."
+      },
+      {
         "title": "Overview",
-        "content": "I built this game during the Global Game Jam Antwerp 2025 while also hosting the site, so most of the work happened after 10 PM. Being the first to rise and one of the last to sleep, I'm proud to have created my own game during the event. <br><br>The game itself is a playful gimmick where your friend urges you to keep buying champagne to impress a girl at the club. It has one of two endings..."
+        "content": "The game itself is a playful gimmick where your friend urges you to keep buying <b>champagne</b> to impress some people at the club. But in the end, your friend betrays you... It has one of <b>two endings</b>."
+      },
+      {
+        "title": "Useful Links",
+        "content": [
+          {
+            "label": "GGJ",
+            "href": "https://globalgamejam.org/games/2025/fizzler-5"
+          },
+          {
+            "label": "Itch",
+            "href": "https://jarnebeaufays.itch.io/the-fizzler"
+          },
+          {
+            "label": "Trailer",
+            "href": "https://www.youtube.com/watch?v=XS7GDHytCY0"
+          }
+        ]
+      },
+      {
+        "title": "Technologies",
+        "content": [
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          }
+        ]
       }
     ],
     "gallery": [
@@ -365,7 +420,7 @@
     "short": "A game made for a DAE course using the school's custom game engine.",
     "sections": [
       {
-        "title": "Project Overview",
+        "title": "Overview",
         "content": "This is a 2-4 player local coop game that I developed for a school course. It's based on a minigame from the popular party game Pummel Party, where players must rob a bank and steal as much cash as possible without getting hit by cars."
       },
       {
@@ -428,7 +483,7 @@
     "sections": [
       {
         "title": "Overview",
-        "content": "The very first multiplayer prototype of the well received and funded Digigods game on Meta Quest."
+        "content": "Coming soon..."
       },
       {
         "title": "Useful Links",
@@ -468,7 +523,7 @@
     "sections": [
       {
         "title": "Overview",
-        "content": "Systems-driven prototype focused on agent behavior and state transitions."
+        "content": "Coming soon..."
       },
       {
         "title": "Useful Links",
@@ -500,7 +555,7 @@
     "sections": [
       {
         "title": "Overview",
-        "content": "VR prototype exploring immunology concepts via game technology."
+        "content": "Coming soon..."
       }
     ],
     "gallery": [
@@ -630,23 +685,32 @@
     "short": "Co-organizing the Global Game Jam Antwerp site and contributing in the GGJ theme committee.",
     "sections": [
       {
-        "title": "GGJ Theme Committee",
-        "content": "Since the end start of 2025, I was part of the GGJ Theme Committee. It's been a rewarding experience, and in my first stint with the theme committee, one of my ideas was selected as the theme the for Global Game Jam 2026, which will guide the work of 35 thousand+ participants."
+        "title": "GGJ Theme and Diversifier Committee",
+        "content": "Since the end of 2025, I was part of the GGJ theme committee and the diversifier committee.<br><br>It's been a rewarding experience, and in my first stint with the theme committee, my idea of <b>Mask</b> was selected as the official GGJ 2026 theme, which will guide the work of <b>35 thousand+</b> participants."
       },
       {
         "title": "GGJA 2025 & 2026",
-        "content": "In 2025, I co-organized the Antwerp GGJ site. Thanks to our sponsors, we managed to host a free two-night on-site game jam (food/drinks/snacks included) with 65 participants. During my spare time, I also developed my own game, The Fizzler.<br><br>In 2026, I'm planning to do this all over again!"
+        "content": "In 2025 and 2026, I co-organized the Antwerp GGJ site. Thanks to our sponsors, we manage to host an affordable two-night on-site game jam (food/drinks/snacks included) with <b>40-65</b> participants."
       },
       {
-        "title": "Useful Links",
+        "title": "GGJ",
         "content": [
           {
-            "label": "Article",
-            "href": "https://previewlabs.com/ggj2025/"
+            "label": "Theme Credits",
+            "href": "https://youtu.be/ERV-CM6OnRQ?si=ewVea7ZxfeMIaLq_&t=744"
           },
           {
-            "label":"LinkedIn Post",
-            "href":"https://www.linkedin.com/posts/jarne-beaufays-404153152_global-game-jam-antwerp-2025-had-65-participants-activity-7291145208363188226-79zt?utm_source=share&utm_medium=member_desktop&rcm=ACoAACSvV4QBFgvlvwrTq9EmSV8MxDUZNzSzEE8"
+            "label": "Diversifiers Credits",
+            "href": "https://globalgamejam.org/global-game-jam-2026-diversifiers-have-arrived"
+          }
+        ]
+      },
+      {
+        "title": "GGJA 2025 & 2026",
+        "content": [
+          {
+            "label": "Article '25",
+            "href": "https://previewlabs.com/ggj2025/"
           }
         ]
       }
@@ -674,7 +738,7 @@
     "sections": [
       {
         "title": "Overview",
-        "content": "I had the pleasure of completely organizing and planning the 15 years of PreviewLabs trip to America and Canada. This trip was all about connecting with colleagues and doing fun stuff. In addition, we met clients, did some teambuilding, and explored culture across the pond.<br><br>I was responsible for tasks such as booking the flights, making sure everyone had their travel authorization, ensuring everyone was briefed, and polling interests across the company to make sure everyone would have fun together participating in activities."
+        "content": "I had the pleasure of completely organizing and planning the <b>15 years of PreviewLabs</b> trip to America and Canada. This trip was all about connecting with colleagues and doing fun stuff. In addition, we met clients, did some teambuilding, and explored culture across the pond.<br><br>I was responsible for tasks such as booking the flights, making sure everyone had their travel authorization, ensuring everyone was briefed, and polling interests across the company to make sure everyone would have fun together participating in activities."
       },
       {
         "title": "Useful Links",

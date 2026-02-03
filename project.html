@@ -117,7 +117,7 @@
     </div>
 
     <section id="galleryWrap" class="hidden mt-12">
-      <h2 class="text-xl font-semibold mb-4">Gallery</h2>
+      <!-- <h2 class="text-xl font-semibold mb-4">Gallery</h2>-->
       <div id="gallery" class="columns-1 sm:columns-2 lg:columns-3"></div>
     </section>
   </main>
@@ -125,7 +125,7 @@
   <footer class="relative text-white">
     <div id="footer" class="footer-clip bg-[var(--color-accent1)]">
       <div class="max-w-5xl mx-auto px-6 py-10 text-sm">
-        <span class="opacity-90">&copy; Jarne Beaufays — <span id="year">2025</span></span>
+        <div>&copy; Jarne Beaufays — 2026</div>
       </div>
     </div>
   </footer>
@@ -175,7 +175,6 @@
 
         document.getElementById('title').textContent = project.title;
         document.getElementById('subtitle').textContent = [project.client, project.year].filter(Boolean).join(' • ');
-        document.getElementById('year').textContent = new Date().getFullYear();
 
         const heroImg = document.getElementById('heroImg');
         heroImg.src = project.hero || project.thumb || '';
