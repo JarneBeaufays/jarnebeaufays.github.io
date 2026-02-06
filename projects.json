@@ -262,7 +262,7 @@
       },
       {
         "title": "Overview",
-        "content": "Although this project is an <b>experience</b> and not a traditional game, I'm very happy with the result. The experience raises awareness about emotional masking. A simple character talks to himself, but when someone is detected via the webcam, he hides behind a mask and begins showing his <b>anxiety</b>."
+        "content": "Although this project is an <b>experience</b> and not a traditional game, I'm very happy with the result. The experience raises awareness about social anxiety. A simple character talks to himself, but when someone is detected via the webcam, he hides behind a mask and begins hiding his <b>anxiety</b>."
       },
       {
         "title": "Technologies",
@@ -703,7 +703,7 @@
     ],
     "thumb": "Images/MIT/Hero.png",
     "hero": "Images/MIT/Hero.png",
-    "short": "A new challenge ahead.",
+    "short": "Organizing one of the tracks, mentoring, and judging at the MIT Reality Hack.",
     "sections": [
       {
         "title": "Track Organizer",
