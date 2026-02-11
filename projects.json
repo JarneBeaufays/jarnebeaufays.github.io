@@ -128,7 +128,7 @@
     "short": "Built a modular pipeline for dozens of bite-size playable ads.",
     "sections": [
       {
-        "title": "Overview",
+        "title": "Project Overview",
         "content": "I've developed 40+ polished playable ads for Activision Blizzard Media's mobile game library, each served an average of 3 million times. I also helped build a modular platform that enabled rapid ad development and component reuse across campaigns."
       },
       { 
@@ -190,7 +190,7 @@
     "short": "Fast-paced space VR farming game balancing traversal, harvesting, and enemy encounters.",
     "sections": [
       {
-        "title": "Overview",
+        "title": "Project Overview",
         "content": "Astro Harvest is a cute fast-paced <b>VR tower defense like</b> game, where the user must harvest (the power of) fruit to combat a mysterious alien force. It's available to download for free online."
       },
       { 
@@ -261,7 +261,7 @@
         "content": "This game was an entry for the <b>Global Game Jam 2026</b>. The theme of the jam was <b>Mask</b>, which was actually <b>my submission in the GGJ theme committee!</b> I co-organized the site in Antwerp, so I only had limited time to work on my own game.<br><br>I used the following <b>diversifiers</b>:<ul><li> - Hands Off <small>(the game is played without the use of hands)</small></li><li> - Out of Sight <small>(create a game that can be played by both sighted and blind players)</small></li><li> - Masterpiece <small>(the game culminates in the production of a piece of art that can be displayed on a wall)</small></li><li> - Random Encounter <small>(make the game around procedural generation)</small></li></ul>"
       },
       {
-        "title": "Overview",
+        "title": "Project Overview",
         "content": "Although this project is an <b>experience</b> and not a traditional game, I'm very happy with the result. The experience raises awareness about (social) anxiety. A simple character talks to itself, but when someone is detected via the webcam, it hides behind a mask and acts as if nothing is wrong, hiding its <b>anxiety</b>."
       },
       {
@@ -312,7 +312,7 @@
         "content": "This was an entry for a the <b>Mini Jame Gam 49</b> of November 2025. The theme was <b>Explosion</b> and the special object we had to incorporate was <b>Box</b>."
       },
       {
-        "title": "Overview",
+        "title": "Project Overview",
         "content": "The game is about hamsters fighting a war inside a cardboard box delivered to your door. You can play as one of two factions: the <b>Golden Acorn</b> or the <b>Cinderclaw Legion</b>. In the end, the winning faction deploys a nuke resulting in the demise of both clans, teaching kids that in war no one wins.<br><br>I did nearly all of the programming for this project, which was a fun challenge as it was a game with a large scope."
       },
       {
@@ -373,7 +373,7 @@
         "content": "This was an entry for a the <b>Global Game Jam 2025</b> where the theme was <b>Bubbles</b>. I organized the site in Antwerp, so I only had limited time to work on my own game."
       },
       {
-        "title": "Overview",
+        "title": "Project Overview",
         "content": "The game itself is a playful gimmick where your friend urges you to keep buying <b>champagne</b> to impress some people at the club. But in the end, your friend betrays you... It has one of <b>two endings</b>."
       },
       {
@@ -425,7 +425,7 @@
     "short": "A local co-op submarine adventure for a class project, voted as “Best Game of the Course 2020.” by our teachers.",
     "sections": [
       {
-        "title": "Overview",
+        "title": "Project Overview",
         "content": "This project was created during the Game Projects course at DAE, a program where all majors come together to collaborate on a game. Together with two artists and another programmer, we successfully completed what became my first Unity project.<br><br>While learning the basics of Unity, I focused on implementing controllable characters, a simple crafting system, and the physics for both the items and the submarine.<br><br>Our project was highly praised by both students and teachers, earning the Teachers' Prize for Greatest Game of the Course of the Year. In 2025, I heard from my interns that it's still being showcased as an example during the course's introduction."
       },
       {
@@ -482,7 +482,7 @@
     "short": "A game made for a DAE course using the school's custom game engine.",
     "sections": [
       {
-        "title": "Overview",
+        "title": "Project Overview",
         "content": "This is a 2-4 player local coop game that I developed for a school course. It's based on a minigame from the popular party game Pummel Party, where players must rob a bank and steal as much cash as possible without getting hit by cars."
       },
       {
@@ -529,7 +529,7 @@
         "content": "This was a game jam I hosted at home with two friends. We challenged ourselves to create a small game in 48 hours during the COVID-19 lockdown in 2021, hence the name of the game. There was an actual theme, but I unfortunately forgot what it was."
       },
       {
-        "title": "Overview",
+        "title": "Project Overview",
         "content": "This is a game about exploring space and using <b>gravitational pull</b> to navigate 2D levels. The player must avoid black holes and shooting UFOs, enter wormholes to teleport, see star constelations, and have fun!"
       },
       {
@@ -564,6 +564,48 @@
     ]
   },
   {
+    "slug": "racing-near-the-speed-of-light",
+    "title": "Racing Near Lightspeed",
+    "year": "2022",
+    "client": "",
+    "type": "Personal Projects",
+    "tags": [
+      "School",
+      "Thesis",
+      "Unity"
+    ],
+    "thumb": "Images/RacingNearTheSpeedOfLight/RacingNearTheSpeedOfLight.png",
+    "hero": "Images/RacingNearTheSpeedOfLight/RacingNearTheSpeedOfLight.png",
+    "short": "A bachelor thesis using the special theory of relativity as a game mechanic.",
+    "sections": [
+      {
+        "title": "Project Overview",
+        "content": "For my DAE <b>bachelor thesis</b>, I decided to make an easy-to-implement and real-time simulation of what the world would look like if you travel near the speed of light.<br><br>I implemented this in <b>various prototype scenes</b>, including a VR scene for extra realism."
+      },
+      {
+        "title": "Technologies",
+        "content": [
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          },
+          {
+            "label": "Relativity",
+            "href": "https://en.wikipedia.org/wiki/Special_relativity"
+          }
+        ]
+      }
+    ],
+    "gallery": [
+      "https://www.youtube.com/watch?v=NmwmpNR1n54",
+      "Images/RacingNearTheSpeedOfLight/RacingNearTheSpeedOfLight1.gif",
+      "Images/RacingNearTheSpeedOfLight/RacingNearTheSpeedOfLight2.png",
+      "Images/RacingNearTheSpeedOfLight/RacingNearTheSpeedOfLight3.png",
+      "Images/RacingNearTheSpeedOfLight/RacingNearTheSpeedOfLight4.png",
+      "Images/RacingNearTheSpeedOfLight/RacingNearTheSpeedOfLight5.png"
+    ]
+  },
+  {
     "slug": "digigods",
     "title": "Digigods",
     "year": "2022",
@@ -578,7 +620,7 @@
     "short": "The very first multiplayer prototype of the well received game Digigods, helping raise USD 3 million.",
     "sections": [
       {
-        "title": "Overview",
+        "title": "Project Overview",
         "content": "Coming soon..."
       },
       {
@@ -618,7 +660,7 @@
     "short": "Systems-driven prototype focused on agent behavior and state transitions.",
     "sections": [
       {
-        "title": "Overview",
+        "title": "Project Overview",
         "content": "Coming soon..."
       },
       {
@@ -650,7 +692,7 @@
     "short": "VR prototype exploring immunology concepts via game technology.",
     "sections": [
       {
-        "title": "Overview",
+        "title": "Project Overview",
         "content": "Coming soon..."
       }
     ],
@@ -695,6 +737,49 @@
       "Images/VRCycling/Gallery2.png",
       "Images/VRCycling/Gallery3.png",
       "Images/VRCycling/Gallery4.png"
+    ]
+  },
+  {
+    "slug": "urban-design",
+    "title": "Real Time Urban Design",
+    "year": "2021",
+    "client": "City of Ghent",
+    "type": "Industry Prototypes",
+    "tags": [
+      "Collaborative",
+      "Unity",
+      "Mentimeter"
+    ],
+    "thumb": "Images/UrbanDesign/UrbanDesign0.png",
+    "hero": "Images/UrbanDesign/UrbanDesign0.png",
+    "short": "The project scrapes live Mentimeter presentation responses and displays them in Unity Scenes.",
+    "sections": [
+      {
+        "title": "Project Overview",
+        "content": "This project uses Python-based <b>web scraping</b> to capture real-time audience responses from Mentimeter, a presentation platform that allows viewers to answer questions live on their phones.<br><br>Once voting is complete, the collected data is processed and applied within a Unity scene, where it dynamically moves, rescales, and rotates objects based on the results.<br><br>I demonstrated the tool during a live presentation at <b>BeGeo 2021</b> in Brussels."
+      },
+      {
+        "title": "Technologies",
+        "content": [
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          },
+          {
+            "label": "Mentimeter",
+            "href": "https://www.mentimeter.com/"
+          }
+        ]
+      }
+    ],
+    "gallery": [
+      "Images/UrbanDesign/UrbanDesign.gif",
+      "Images/UrbanDesign/UrbanDesign4.png",
+      "Images/UrbanDesign/UrbanDesign5.png",
+      "Images/UrbanDesign/UrbanDesign2.png",
+      "Images/UrbanDesign/UrbanDesign6.png",
+      "Images/UrbanDesign/UrbanDesign7.png",
+      "Images/UrbanDesign/UrbanDesign3.png"
     ]
   },
   {
@@ -833,7 +918,7 @@
     "short": "Organizing and planning the 15 years of PreviewLabs trip to America and Canada.",
     "sections": [
       {
-        "title": "Overview",
+        "title": "Project Overview",
         "content": "I had the pleasure of completely organizing and planning the <b>15 years of PreviewLabs</b> trip to America and Canada. This trip was all about connecting with colleagues and doing fun stuff. In addition, we met clients, did some teambuilding, and explored culture across the pond.<br><br>I was responsible for tasks such as booking the flights, making sure everyone had their travel authorization, ensuring everyone was briefed, and polling interests across the company to make sure everyone would have fun together participating in activities."
       },
       {
@@ -878,7 +963,7 @@
     "short": "Designing, printing, and painting custom parts, props, trophees, and miniatures as a hobby.",
     "sections": [
       {
-        "title": "Overview",
+        "title": "Project Overview",
         "content": "Ever since I bought my Bambu Lab A1 printer, I haven't stopped 3D printing. I'm usually skeptical about whether a new hobby will stick, but this time I quickly knew it would.<br><br>I've also had the opportunity to use 3D printing professionally, designing and printing trophies for several game jams with up to 60 participants. More recently, I've become more involved with the GGJ, which gave me the opportunity to design a trophy for all site organizers to use and print."
       },
       {
@@ -909,7 +994,7 @@
     "short": "For 4 years, I've worked with groups of children and adults, leading them over obstacle courses focusing on safety, movement, trust, and fun!",
     "sections": [
       {
-        "title": "Overview",
+        "title": "Project Overview",
         "content": "For 4 years, I've worked with groups of children and adults, leading them over obstacle courses goin up to 24m in height. My focus was on safety, movement, trust, and mainly fun!<br><br>I did this at the company named <b>Intense</b>, who have a location in De Schorre and Hoboken."
       },
       {
