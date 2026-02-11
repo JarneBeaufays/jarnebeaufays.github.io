@@ -262,7 +262,7 @@
       },
       {
         "title": "Overview",
-        "content": "Although this project is an <b>experience</b> and not a traditional game, I'm very happy with the result. The experience raises awareness about social anxiety. A simple character talks to himself, but when someone is detected via the webcam, he hides behind a mask and begins hiding his <b>anxiety</b>."
+        "content": "Although this project is an <b>experience</b> and not a traditional game, I'm very happy with the result. The experience raises awareness about (social) anxiety. A simple character talks to itself, but when someone is detected via the webcam, it hides behind a mask and acts as if nothing is wrong, hiding its <b>anxiety</b>."
       },
       {
         "title": "Technologies",
@@ -283,7 +283,12 @@
       }
     ],
     "gallery": [
-    
+      "https://www.youtube.com/watch?v=xoLbCNhk-dg",
+      "Images/MaskingForTheMass/MaskingForTheMass_Game.jpg",
+      "Images/MaskingForTheMass/MaskingForTheMass_GameDrawing1.jpg",
+      "Images/MaskingForTheMass/MaskingForTheMass_GameDrawing2.jpg",
+      "Images/MaskingForTheMass/MaskingForTheMass_GameDrawing3.jpg",
+      "Images/MaskingForTheMass/MaskingForTheMass_GameDrawing4.jpg"
     ]
   },
   {
