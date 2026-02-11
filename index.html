@@ -647,7 +647,7 @@
     });
     withLoading(async () => {
       const data = await getProjects();
-      renderProjects({ data, gridId: "industry-prototypes-grid", type: "Industry Prototypes", imageHeight: 60});
+      renderProjects({ data, gridId: "industry-prototypes-grid", type: "Industry Prototypes", imageHeight: 60, limit:4});
     });
     withLoading(async () => {
       const data = await getProjects();
