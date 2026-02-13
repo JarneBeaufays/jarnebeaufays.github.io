@@ -412,7 +412,7 @@
 
                 <div class="h-4"></div>
 
-                <!-- Pills: full width, wrap naturally -->
+                <!-- Pills -->
                 <div class="flex flex-wrap gap-2 w-full mb-2">
                   ${pills
                     .map(
@@ -647,11 +647,11 @@
     });
     withLoading(async () => {
       const data = await getProjects();
-      renderProjects({ data, gridId: "industry-prototypes-grid", type: "Industry Prototypes", imageHeight: 60, limit:4});
+      renderProjects({ data, gridId: "industry-prototypes-grid", type: "Industry Prototypes", imageHeight: 60, limit: 8});
     });
     withLoading(async () => {
       const data = await getProjects();
-      renderProjects({ data, gridId: "personal-projects-grid", type: "Personal Projects", imageHeight: 60 });
+      renderProjects({ data, gridId: "personal-projects-grid", type: "Personal Projects", imageHeight: 60, limit: 8 });
     });
     withLoading(async () => {
       const data = await getProjects();
