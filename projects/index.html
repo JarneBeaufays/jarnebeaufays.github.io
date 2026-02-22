@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jarne Beaufays — Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/css/theme.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+<style>
+  :root {
+    --_blur: 48px;
+  }
+
+  .site-header {
+    position: relative;
+    background: transparent;
+    isolation: isolate;
+  }
+  .site-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-accent1);
+    clip-path: polygon(0 0, 100% 0, 100% 75.7%, 0 100%);
+    z-index: 0;
+  }
+
+  .project-card {
+    transition: transform .28s cubic-bezier(.2, .9, .2, 1), box-shadow .28s;
+    border-radius: var(--card-radius);
+    overflow: hidden;
+  }
+  .project-card:hover { transform: translateY(0px) scale(1.015); box-shadow: var(--card-shadow); }
+  .project-card img { transition: transform .5s ease; }
+  .project-card:hover img { transform: scale(1.04); }
+
+  .decor-blob {
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    filter: blur(var(--_blur));
+    opacity: .25;
+    background: radial-gradient(circle at 30% 30%, var(--color-accent2), transparent 40%);
+  }
+
+  @media (min-width: 1024px) { header .name-wrap { max-width: 65%; } }
+
+  .triangle-wrapper {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    margin-left: -50vw;
+    overflow-x: hidden;
+    overflow-y: visible;
+    pointer-events: none;
+    z-index: 0;
+  }
+  @media (min-width: 640px) { .triangle-wrapper { left: calc(50% - 1.5rem); margin-left: calc(-50vw + 1.5rem); } }
+  .triangle-wrapper svg { display: block; width: 100%; overflow: visible; pointer-events: none; }
+  .triangle-wrapper polygon { pointer-events: auto; transform-box: fill-box; transform-origin: center; transition: transform .5s cubic-bezier(.2, .9, .2, 1); will-change: transform; }
+  .triangle-wrapper polygon:hover { transform: scale(1.03); }
+
+  .footer-cta { background: var(--color-accent2); clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%); }
+
+  .line-clamp-1, .line-clamp-2, .line-clamp-3 { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
+  .line-clamp-1 { -webkit-line-clamp: 1; }
+  .line-clamp-2 { -webkit-line-clamp: 2; }
+  .line-clamp-3 { -webkit-line-clamp: 3; }
+
+  .scroll-arrow {
+    position: fixed;
+    right: 1rem;
+    z-index: 60;
+    width: 2.75rem;
+    height: 2.75rem;
+    background: var(--color-accent1);
+    color: #fff;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: opacity .25s ease, transform .15s ease;
+    opacity: .9;
+    box-shadow: 0 6px 16px rgba(0,0,0,.18);
+    user-select: none;
+  }
+  .scroll-arrow:hover { opacity: 1; transform: translateY(-1px); }
+  .scroll-arrow:active { transform: translateY(0); }
+  .scroll-arrow.hidden { display: none; }
+  .scroll-arrow.down { bottom: 1rem; }
+  .scroll-arrow.up   { top: 1rem; }
+
+  @media (prefers-reduced-motion: reduce) { html:focus-within { scroll-behavior: auto; } }
+
+  /* Triangles */
+  .section-overview {
+    position: fixed;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 60;
+    width: 24px;
+    max-height: 60vh;
+    overflow: visible;
+    padding: 0;
+    border-radius: .75rem;
+    background: transparent;
+    backdrop-filter: none;
+  }
+  .section-overview .item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    padding: .35rem 0;
+    cursor: pointer;
+    user-select: none;
+    background: transparent;
+    transition: transform .12s ease;
+  }
+
+  /* Hide labels visually but keep for screen readers */
+  .section-overview .label {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  /* Triangle dots */
+  .section-overview .dot {
+    --size: .7rem;
+    width: var(--size);
+    height: var(--size);
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+    background: var(--_accent, var(--color-accent1));
+    box-shadow: 0 0 0 2px rgba(0,0,0,.04) inset;
+    transform: rotate(var(--rot, 0deg)) scaleX(var(--flip, 1)) scale(calc(var(--scale, 1) * 0.95));
+    transform-origin: 50% 50%;
+    transition: transform .14s ease, opacity .14s ease;
+    flex: 0 0 var(--size);
+    opacity: 1;
+    position: relative;
+  }
+
+  /* Hover + current state enlarge */
+  .section-overview .item:hover .dot,
+  .section-overview .current .dot {
+    transform: rotate(var(--rot, 0deg)) scaleX(var(--flip, 1)) scale(calc(var(--scale, 1) * 1.5));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .section-overview .dot { transition: opacity .14s ease; }
+    .section-overview .item:hover .dot { transform: none; }
+  }
+
+  @media (max-width: 639.98px) {
+    .section-overview { display: block; }
+  }
+
+  /* Hide scrollbars globally */
+  :root { scrollbar-color: transparent transparent; }
+  * { scrollbar-width: none; }
+  *::-webkit-scrollbar { width: 0 !important; height: 0 !important; }
+  *::-webkit-scrollbar-thumb { background: transparent !important; }
+  *::-webkit-scrollbar-track { background: transparent !important; }
+</style>
+
+</head>
+
+<body class="antialiased text-slate-800" aria-busy="true">
+  <!-- Loading overlay (visible until data is fetched) -->
+  <div id="loadingOverlay" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-4 bg-white/95 backdrop-blur-sm transition-opacity duration-300">
+    <div class="h-10 w-10 rounded-full border-4 border-slate-300 border-t-slate-700 animate-spin" aria-hidden="true"></div>
+    <p class="text-sm text-slate-600" role="status" aria-live="polite">Loading JSON data...</p>
+    <noscript><p class="text-xs text-slate-500">Enable JavaScript to load this page.</p></noscript>
+  </div>
+
+  <header class="site-header text-white py-12 min-h-[300px] flex items-center">
+    <div class="max-w-6xl mx-auto px-6 relative">
+      <img src="/assets/images/UrsaMajor.png" class="hidden md:block absolute w-96 h-auto pointer-events-none" alt="Ursa Major illustration" />
+      <div class="decor-blob" aria-hidden="true"></div>
+
+      <div class="flex items-center gap-24 translate-y-8">
+        <div class="name-wrap relative">
+          <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">Jarne Beaufays</h1>
+          <p class="mt-2 text-md opacity-90">Belgian Game Programmer and Community Builder</p>
+          <div class="mt-4 flex gap-3">
+            <a href="/resume/index.html" 
+              class="inline-block bg-white hover:bg-white/90 text-[var(--color-accent1)] font-semibold py-2 px-3 rounded-md text-sm">
+              Resume
+            </a>
+
+            <a href="mailto:j.beaufays@outlook.com"
+              aria-label="Email"
+              class="bg-white/20 hover:bg-white/30 w-10 h-10 rounded-full
+                      flex items-center justify-center text-white">
+              <i class="fa-solid fa-envelope text-sm"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/jarne-beaufays-404153152"
+              target="_blank"
+              aria-label="LinkedIn"
+              class="bg-white/20 hover:bg-white/30 hover:scale-105 transition
+                      w-10 h-10 rounded-full flex items-center justify-center text-white">
+              <i class="fa-brands fa-linkedin-in text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="flex-shrink-0 -translate-y-0 sm:-translate-y-6 -translate-x-16">
+          <img src="/assets/images/profilePicture.jpg" alt="Jarne Beaufays" class="block w-60 h-60 sm:w-80 sm:h-80 rounded-full ring-[10px] ring-white shadow-lg object-cover mx-auto sm:mx-0" />
+        </div>  
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-10 py-12 space-y-16">
+    <section>
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-3xl font-semibold">Industry Projects</h2>
+        <p class="text-sm text-slate-500 text-right">A selection of full pipeline games</p>
+      </div>
+      <div id="industry-projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6"></div>
+    </section>
+
+    <div class="triangle-wrapper" aria-hidden="true">
+      <svg width="100%" height="300" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="3,3 70,15 6,85" fill="var(--color-accent1)" />
+        <polygon points="98,4 97,97 40,62" fill="var(--color-accent3)" />
+      </svg>
+    </div>
+
+    <section>
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-3xl font-semibold">Industry Prototypes</h2>
+        <p class="text-sm text-slate-500 text-right">Smaller industry prototypes</p>
+      </div>
+      <div id="industry-prototypes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </section>
+
+    <div class="triangle-wrapper -translate-y-8" aria-hidden="true">
+      <svg width="100%" height="230" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="8,3 40,25 10,98" fill="var(--color-accent3)" />
+        <polygon points="92,4 94,96 50,60" fill="var(--color-accent4)" />
+      </svg>
+    </div>
+
+    <section>
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-3xl font-semibold">Personal Projects</h2>
+        <p class="text-sm text-slate-500 text-right">A selection of game jams, side projects, and experimentations</p>
+      </div>
+      <div id="personal-projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </section>
+
+    <div class="triangle-wrapper -translate-y-8" aria-hidden="true">
+      <svg width="100%" height="300" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="3,3 56,45 20,91" fill="var(--color-accent4)" />
+        <polygon points="96,4 97,97 28,91" fill="var(--color-accent2)" />
+      </svg>
+    </div>
+
+    <section>
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-3xl font-semibold">Others</h2>
+        <p class="text-sm text-slate-500 text-right">Events, community work, and relevant hobbies</p>
+      </div>
+      <div id="others-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+  </main>
+
+  <footer class="footer-cta text-white">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <h3 class="text-xl font-bold">Always open for a chat — let's connect!</h3>
+        </div>
+        <div class="flex gap-3">
+          <a href="/resume/index.html" target="_blank" class="bg-white hover:bg-white/90 text-[var(--color-accent2)] py-2 px-4 rounded-md font-semibold">Resume</a>
+          <a href="mailto:j.beaufays@outlook.com" class="bg-white/20 hover:bg-white/30 w-10 h-10 rounded-full flex items-center justify-center text-white"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/jarne-beaufays-404153152"
+            target="_blank"
+            aria-label="LinkedIn"
+            class="bg-white/20 hover:bg-white/30 hover:scale-105 transition
+                    w-10 h-10 rounded-full flex items-center justify-center text-white">
+            <i class="fa-brands fa-linkedin-in text-sm"></i>
+          </a>
+        </div>
+      </div>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm opacity-80">
+        <div>&copy; Jarne Beaufays — 2026</div>
+        <div>This website's design and colors are inspired by a painting created by my grandfather.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating nav + section overview -->
+  <button id="arrowDown" class="scroll-arrow down" aria-label="Go to next section" title="Next section">↓</button>
+  <button id="arrowUp" class="scroll-arrow up hidden" aria-label="Go to previous section" title="Previous section">↑</button>
+  <nav id="sectionOverview" class="section-overview" aria-label="Section overview"></nav>
+
+  <script>
+    // Utilities
+    const typeKey = (t) => String(t || "").toLowerCase().replace(/\s+/g, "");
+    const ACCENT_PRIMARY = {
+      industryprojects:   "--color-accent1",
+      industryprototypes: "--color-accent3",
+      personalprojects:   "--color-accent4",
+      others:             "--color-accent2",
+    };
+    const ACCENT_SECONDARY = {
+      industryprojects:   "--color-accent3",
+      industryprototypes: "--color-accent4",
+      personalprojects:   "--color-accent2",
+      others:             "--color-accent1",
+    };
+    const accentVar = (type, map) => `var(${map[typeKey(type)] || "--color-accent1"})`;
+
+    // Loading overlay + data memoization
+    (function () {
+      const overlay = document.getElementById("loadingOverlay");
+      let pending = 0;
+
+      const show = () => {
+        pending++;
+        overlay.classList.remove("hidden", "opacity-0");
+        document.body.setAttribute("aria-busy", "true");
+      };
+      const hide = () => {
+        pending = Math.max(0, pending - 1);
+        if (pending === 0) {
+          overlay.classList.add("opacity-0");
+          setTimeout(() => overlay.classList.add("hidden"), 250);
+          document.body.removeAttribute("aria-busy");
+        }
+      };
+
+      window.withLoading = async (fn) => { show(); try { return await fn(); } finally { hide(); } };
+
+      let projectsPromise = null;
+      window.getProjects = function () {
+        if (!projectsPromise) {
+          projectsPromise = (async () => {
+            const res = await fetch("data.json", { cache: "no-store" });
+            if (!res.ok) throw new Error("Failed to load data");
+            return res.json();
+          })();
+        }
+        return projectsPromise;
+      };
+    })();
+
+    // Project rendering
+    function renderProjects({ data, gridId, type, limit = 8, alwaysShowAll = false, imageHeight = 72 }) {
+      const grid = document.getElementById(gridId);
+      if (!grid) return;
+
+      grid.classList.add("items-stretch");
+
+      const list = data.filter((p) => (p.type || "").toLowerCase() === type.toLowerCase());
+
+      const cards = list.map((p) => {
+        const a = document.createElement("a");
+        a.href = `projectTemplate.html?slug=${encodeURIComponent(p.slug)}`;
+        a.className = "block h-full";
+
+        const pills = [
+          ...(typeof p.client === "string" && p.client ? [p.client] : []),
+          ...(Array.isArray(p.tags) ? p.tags : []),
+        ];
+          a.innerHTML = `
+            <article class="project-card bg-white shadow-md h-full flex flex-col">
+              <img
+                src="${p.thumb}"
+                alt="${p.title}"
+                class="w-full h-` + imageHeight.toString() + ` object-cover"
+                decoding="async"
+                loading="lazy"
+              />
+
+              <div class="p-4 flex flex-col grow">
+                <!-- Title + Year -->
+                <div class="flex items-start justify-between gap-2 mb-1">
+                  <h3 class="text-lg font-bold line-clamp-2">
+                    ${p.title}
+                  </h3>
+                  <span class="text-xs text-slate-400 whitespace-nowrap mt-1">
+                    ${p.year || ""}
+                  </span>
+                </div>
+
+                <!-- Description -->
+                <p class="text-sm text-slate-600 line-clamp-3">
+                  ${p.short || ""}
+                </p>
+
+                <div class="h-4"></div>
+
+                <!-- Pills -->
+                <div class="flex flex-wrap gap-2 w-full mb-2">
+                  ${pills
+                    .map(
+                      (t, i) => `
+                        <span
+                          class="cat-pill inline-block text-xs px-3 py-1 rounded-full"
+                          style="background:${
+                            i
+                              ? accentVar(p.type, ACCENT_SECONDARY)
+                              : accentVar(p.type, ACCENT_PRIMARY)
+                          };"
+                        >
+                          ${t}
+                        </span>`
+                    )
+                    .join("")}
+                </div>
+
+                <div class="mt-auto"></div>
+              </div>
+            </article>
+          `;
+        return a;
+      });
+
+      // Preload hidden thumbs so first expand doesn't jolt
+      if (!alwaysShowAll && list.length > limit) {
+        const preloads = list.slice(limit).map((p) => {
+          const img = new Image();
+          img.decoding = "async";
+          try { img.fetchPriority = "low"; } catch {}
+          img.src = p.thumb;
+          img.addEventListener("load", () => img.decode?.().catch(() => {}));
+          return img;
+        });
+        grid._preloadedThumbs = preloads;
+      }
+
+      const initialCount = alwaysShowAll ? cards.length : Math.min(limit, cards.length);
+      grid.append(...cards.slice(0, initialCount));
+
+    if (!alwaysShowAll && cards.length > limit) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.dataset.expanded = "false";
+      btn.setAttribute("aria-label", "Show more");
+
+      btn.className = [
+        "mt-6",
+        "flex items-center gap-3",
+        "text-left",
+        "group",
+        "focus:outline-none"
+      ].join(" ");
+
+      // circle arrow
+      const circle = document.createElement("span");
+      circle.textContent = "↓";
+      circle.className = [
+        "w-12 h-12",
+        "rounded-full",
+        "flex items-center justify-center",
+        "text-white text-2xl leading-none",
+        "shadow",
+        "transition",
+        "group-hover:scale-105",
+        "group-active:scale-100"
+      ].join(" ");
+      circle.style.background = accentVar(type, ACCENT_PRIMARY);
+
+      // label
+      const label = document.createElement("span");
+      label.textContent = "Show more";
+      label.className = [
+        "text-md font-medium",
+        "text-slate-700",
+        "transition-colors",
+        "group-hover:text-slate-900",
+        "select-none"
+      ].join(" ");
+
+      btn.appendChild(circle);
+      btn.appendChild(label);
+
+      btn.addEventListener("click", () => {
+        const expanded = btn.dataset.expanded === "true";
+
+        if (expanded) {
+          while (grid.children.length > limit) {
+            grid.removeChild(grid.lastElementChild);
+          }
+          circle.textContent = "↓";
+          circle.classList.add("font-bold");
+          label.textContent = "Show more";
+          btn.setAttribute("aria-label", "Show more");
+          btn.dataset.expanded = "false";
+        } else {
+          grid.append(...cards.slice(grid.children.length));
+          circle.textContent = "↑";
+          label.textContent = "Show less";
+          btn.setAttribute("aria-label", "Show less");
+          btn.dataset.expanded = "true";
+        }
+      });
+
+      grid.parentNode.appendChild(btn);
+    }
+
+    }
+
+    // Section navigation / arrows
+    const scrollTargets = Array.from(document.querySelectorAll("header.site-header, main section"));
+    const arrowDown = document.getElementById("arrowDown");
+    const arrowUp   = document.getElementById("arrowUp");
+
+    const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+
+    function getCurrentIndex() {
+      let idx = 0;
+      let best = Infinity;
+      for (let i = 0; i < scrollTargets.length; i++) {
+        const { top } = scrollTargets[i].getBoundingClientRect();
+        const dist = Math.abs(top);
+        if (dist < best) { best = dist; idx = i; }
+      }
+      return idx;
+    }
+
+    function getTypeFromElement(el) {
+      if (el.matches("header.site-header")) return "Industry Projects"; // hero default color
+      const h2 = el.querySelector("h2");
+      return (h2?.textContent || "").trim();
+    }
+
+    function applyArrowColorsForIndex(i) {
+      const el = scrollTargets[i];
+      const typeName = getTypeFromElement(el);
+      const color = accentVar(typeName, ACCENT_PRIMARY);
+      arrowDown.style.background = color;
+      arrowUp.style.background = color;
+    }
+
+    function scrollToIndex(i) {
+      i = clamp(i, 0, scrollTargets.length - 1);
+      scrollTargets[i].scrollIntoView({ behavior: "smooth", block: "start" });
+      applyArrowColorsForIndex(i);
+    }
+
+    function updateArrows() {
+      const i = getCurrentIndex();
+      arrowUp.classList.toggle("hidden", i === 0);
+      const atBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 2);
+      arrowDown.classList.toggle("hidden", i === scrollTargets.length - 1 || atBottom);
+      applyArrowColorsForIndex(i);
+    }
+
+    arrowDown.addEventListener("click", () => scrollToIndex(getCurrentIndex() + 1));
+    arrowUp  .addEventListener("click", () => scrollToIndex(getCurrentIndex() - 1));
+
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => { updateArrows(); ticking = false; });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    window.addEventListener("load", updateArrows);
+    window.addEventListener("resize", updateArrows);
+
+    // Right-side overview (reuses arrow update cycle)
+    (function () {
+      const overviewEl = document.getElementById("sectionOverview");
+
+      const getLabelForTarget = (el) => {
+        if (el.matches("header.site-header")) return (el.querySelector("h1")?.textContent || "Top").trim();
+        return (el.querySelector("h2")?.textContent || "Section").trim();
+      };
+
+      const items = scrollTargets.map((el, i) => {
+        const label = getLabelForTarget(el);
+        const typeName = getTypeFromElement(el);
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "item";
+        btn.dataset.index = String(i);
+        btn.style.setProperty("--_accent", accentVar(typeName, ACCENT_PRIMARY));
+        btn.innerHTML = `<span class="label">${label}</span><span class="dot" aria-hidden="true"></span>`;
+
+        const rot  = (Math.random() * 60 - 30).toFixed(2) + "deg";  
+        const flip = Math.random() < 0.5 ? -1 : 1; 
+        btn.style.setProperty("--rot", rot);
+        btn.style.setProperty("--flip", String(flip));
+
+        btn.addEventListener("click", () => scrollToIndex(i));
+        return btn;
+      });
+
+
+      overviewEl.append(...items);
+
+      function updateOverviewHighlight(currentIndex) {
+        items.forEach((el, i) => {
+          const isCurrent = i === currentIndex;
+          el.classList.toggle("current", isCurrent);
+          if (isCurrent) el.setAttribute("aria-current", "true");
+          else el.removeAttribute("aria-current");
+        });
+
+        const current = items[currentIndex];
+        const cTop = current.offsetTop;
+        const cBottom = cTop + current.offsetHeight;
+        const vTop = overviewEl.scrollTop;
+        const vBottom = vTop + overviewEl.clientHeight;
+        if (cTop < vTop) overviewEl.scrollTop = cTop - 8;
+        else if (cBottom > vBottom) overviewEl.scrollTop = cBottom - overviewEl.clientHeight + 8;
+      }
+
+      const _oldUpdateArrows = updateArrows;
+      window.updateArrows = function patchedUpdateArrows() {
+        _oldUpdateArrows();
+        updateOverviewHighlight(getCurrentIndex());
+      };
+
+      window.addEventListener("load", () => updateOverviewHighlight(getCurrentIndex()));
+    })();
+
+    // Kick off sections
+    withLoading(async () => {
+      const data = await getProjects();
+      renderProjects({ data, gridId: "industry-projects-grid", type: "Industry Projects", alwaysShowAll: true });
+    });
+    withLoading(async () => {
+      const data = await getProjects();
+      renderProjects({ data, gridId: "industry-prototypes-grid", type: "Industry Prototypes", imageHeight: 60, limit: 8});
+    });
+    withLoading(async () => {
+      const data = await getProjects();
+      renderProjects({ data, gridId: "personal-projects-grid", type: "Personal Projects", imageHeight: 60, limit: 8 });
+    });
+    withLoading(async () => {
+      const data = await getProjects();
+      renderProjects({ data, gridId: "others-grid", type: "Others", limit: 3, imageHeight: 64 });
+    });
+  </script>
+</body>
+</html>
