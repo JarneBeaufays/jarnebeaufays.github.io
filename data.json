@@ -5,9 +5,15 @@
     "year": "2025",
     "client": "Confidential",
     "type": "Industry Projects",
-    "tags": ["VR", "Multiplayer", "Unity"],
-    "thumb": "/assets/images/confidential1/thumb.png",
-    "hero": "/assets/images/confidential1/thumb.png",
+    "featured": 1,
+    "featuredLabel": "Meta — unannounced",
+    "tags": [
+      "VR",
+      "Multiplayer",
+      "Unity"
+    ],
+    "thumb": "../assets/images/confidential1/thumb.png",
+    "hero": "../assets/images/confidential1/thumb.png",
     "short": "A VR multiplayer game funded by Meta about natural interactions with LLM agents.",
     "sections": [
       {
@@ -18,11 +24,17 @@
         "title": "Responsibilities",
         "content": "I handled nearly all front-end Unity work, focusing on multiplayer and VR setup. I implemented gameplay features, art, maintained the Unity project, and optimized performance for Meta Quest 3 standalone."
       },
-      { "title": "Client", "content": "Confidential." },
+      {
+        "title": "Client",
+        "content": "Confidential."
+      },
       {
         "title": "Technologies",
         "content": [
-          { "label": "Unity", "href": "https://unity.com/" },
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          },
           {
             "label": "MetaXR",
             "href": "https://developers.meta.com/horizon/develop/unity"
@@ -31,11 +43,16 @@
             "label": "Photon Fusion",
             "href": "https://www.photonengine.com/fusion"
           },
-          { "label": "FMOD", "href": "https://www.fmod.com/" }
+          {
+            "label": "FMOD",
+            "href": "https://www.fmod.com/"
+          }
         ]
       }
     ],
-    "gallery": ["/assets/images/confidential1/thumb.png"]
+    "gallery": [
+      "../assets/images/confidential1/thumb.png"
+    ]
   },
   {
     "slug": "cicadas",
@@ -43,9 +60,13 @@
     "year": "2024",
     "client": "Yale University",
     "type": "Industry Projects",
-    "tags": ["VR", "Unity"],
-    "thumb": "/assets/images/cicadas/thumb.jpg",
-    "hero": "/assets/images/cicadas/thumb.jpg",
+    "featured": 2,
+    "tags": [
+      "VR",
+      "Unity"
+    ],
+    "thumb": "../assets/images/cicadas/thumb.jpg",
+    "hero": "../assets/images/cicadas/thumb.jpg",
     "short": "A VR project funded by Unity about exploring grief for losing a child.",
     "sections": [
       {
@@ -63,8 +84,14 @@
       {
         "title": "Useful Links",
         "content": [
-          { "label": "Game Website", "href": "https://www.yearofthecicadas.com/" },
-          { "label": "Kim LinkedIn", "href": "https://www.linkedin.com/in/kimberlyhieftje/" },
+          {
+            "label": "Game Website",
+            "href": "https://www.yearofthecicadas.com/"
+          },
+          {
+            "label": "Kim LinkedIn",
+            "href": "https://www.linkedin.com/in/kimberlyhieftje/"
+          },
           {
             "label": "My LinkedIn Post",
             "href": "https://www.linkedin.com/posts/jarne-beaufays-404153152_i-will-be-speaking-at-both-games-for-change-activity-7188883450592940032-5sqq?utm_source=share&utm_medium=member_desktop&rcm=ACoAACSvV4QBFgvlvwrTq9EmSV8MxDUZNzSzEE8"
@@ -74,7 +101,10 @@
       {
         "title": "Technologies",
         "content": [
-          { "label": "Unity", "href": "https://unity.com/" },
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          },
           {
             "label": "MetaXR",
             "href": "https://developers.meta.com/horizon/develop/unity"
@@ -82,7 +112,9 @@
         ]
       }
     ],
-    "gallery": ["/assets/images/cicadas/thumb.jpg"]
+    "gallery": [
+      "../assets/images/cicadas/thumb.jpg"
+    ]
   },
   {
     "slug": "abm",
@@ -90,9 +122,13 @@
     "year": "2023",
     "client": "Activision Blizzard Media",
     "type": "Industry Projects",
-    "tags": ["40+ Ads", "Unity"],
-    "thumb": "/assets/images/abm/thumb.png",
-    "hero": "/assets/images/abm/thumb.png",
+    "featured": 3,
+    "tags": [
+      "40+ Ads",
+      "Unity"
+    ],
+    "thumb": "../assets/images/abm/thumb.png",
+    "hero": "../assets/images/abm/thumb.png",
     "short": "Built a modular pipeline for dozens of bite-size playable ads.",
     "sections": [
       {
@@ -110,7 +146,10 @@
       {
         "title": "Useful Links",
         "content": [
-          { "label": "ABM", "href": "https://www.activisionblizzardmedia.com/" },
+          {
+            "label": "ABM",
+            "href": "https://www.activisionblizzardmedia.com/"
+          },
           {
             "label": "ABM Playables",
             "href": "https://www.activisionblizzardmedia.com/ad-solutions/interactive-advertising"
@@ -120,19 +159,31 @@
       {
         "title": "Technologies",
         "content": [
-          { "label": "Unity", "href": "https://unity.com/" },
-          { "label": "Unity Playworks", "href": "https://unity.com/products/playworks" }
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          },
+          {
+            "label": "Unity Playworks",
+            "href": "https://unity.com/products/playworks"
+          }
         ]
       }
     ],
     "gallery": [
-      "/assets/images/abm/gallery_1.png",
-      "/assets/images/abm/gallery_2.png",
-      "/assets/images/abm/gallery_3.png",
-      "/assets/images/abm/gallery_4.png",
-      "/assets/images/abm/gallery_5.png",
-      "/assets/images/abm/gallery_6.png"
-    ]
+      "../assets/images/abm/gallery_1.png",
+      "../assets/images/abm/gallery_2.png",
+      "../assets/images/abm/gallery_3.png",
+      "../assets/images/abm/gallery_4.png",
+      "../assets/images/abm/gallery_5.png",
+      "../assets/images/abm/gallery_6.png"
+    ],
+    "playable": {
+      "src": "../assets/ads/pepsi.html",
+      "title": "Playable Pepsi ad — muted build",
+      "height": 600,
+      "caption": "A playable ad I built for Pepsi. This is a special muted build."
+    }
   },
   {
     "slug": "astroHarvest",
@@ -140,9 +191,13 @@
     "year": "2022",
     "client": "Mantis Games",
     "type": "Industry Projects",
-    "tags": ["VR", "Unity"],
-    "thumb": "/assets/images/astroHarvest/thumb.jpg",
-    "hero": "/assets/images/astroHarvest/thumb.jpg",
+    "featured": 4,
+    "tags": [
+      "VR",
+      "Unity"
+    ],
+    "thumb": "../assets/images/astroHarvest/thumb.jpg",
+    "hero": "../assets/images/astroHarvest/thumb.jpg",
     "short": "Fast-paced space VR farming game balancing traversal, harvesting, and enemy encounters.",
     "sections": [
       {
@@ -160,23 +215,67 @@
       {
         "title": "Useful Links",
         "content": [
-          { "label": "Trailer", "href": "https://www.youtube.com/watch?v=btasjoFUzn8" },
-          { "label": "Playthrough", "href": "https://youtu.be/N_LSuw13OI0" },
-          { "label": "Mantis Games", "href": "https://mantis.games/" },
-          { "label": "Download", "href": "https://sidequestvr.com/app/19527/astro-harvest" }
+          {
+            "label": "Trailer",
+            "href": "https://www.youtube.com/watch?v=btasjoFUzn8"
+          },
+          {
+            "label": "Playthrough",
+            "href": "https://youtu.be/N_LSuw13OI0"
+          },
+          {
+            "label": "Mantis Games",
+            "href": "https://mantis.games/"
+          },
+          {
+            "label": "Download",
+            "href": "https://sidequestvr.com/app/19527/astro-harvest"
+          }
         ]
       },
       {
         "title": "Technologies",
-        "content": [{ "label": "Unity", "href": "https://unity.com/" }]
+        "content": [
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          }
+        ]
       }
     ],
     "gallery": [
       "https://www.youtube.com/watch?v=btasjoFUzn8",
-      "/assets/images/astroHarvest/gallery_1.png",
-      "/assets/images/astroHarvest/gallery_2.png",
-      "/assets/images/astroHarvest/gallery_3.png",
-      "/assets/images/astroHarvest/gallery_4.png"
+      "../assets/images/astroHarvest/gallery_1.png",
+      "../assets/images/astroHarvest/gallery_2.png",
+      "../assets/images/astroHarvest/gallery_3.png",
+      "../assets/images/astroHarvest/gallery_4.png"
+    ]
+  },
+  {
+    "slug": "shadyGrove",
+    "title": "Shady Grove",
+    "year": "2026",
+    "client": "Love146",
+    "type": "Industry Projects",
+    "tags": [
+      "Unity",
+      "WebGL"
+    ],
+    "thumb": "../assets/images/shadyGrove/thumb.jpg",
+    "hero": "../assets/images/shadyGrove/thumb.jpg",
+    "short": "An child trafficking prevention game with data collection, user profiles, and an administration portal.",
+    "sections": [
+      {
+        "title": "Project",
+        "content": "Full details are still to be announced."
+      },
+      {
+        "title": "Client",
+        "content": "Love146 is an international human rights organization, founded in 2002, working to end child trafficking and exploitation. They provide survivor care and safe housing for children who have experienced trafficking, alongside \"Not a Number,\" a prevention education curriculum for ages 12-18, which this project grew out of."
+      }
+    ],
+    "gallery": [
+      "../assets/images/shadyGrove/thumb.jpg"
     ]
   },
   {
@@ -185,9 +284,15 @@
     "year": "2026",
     "client": "",
     "type": "Personal Projects",
-    "tags": ["Game Jam", "PC", "Unity", "Ollama"],
-    "thumb": "/assets/images/maskingForTheMass/thumb.png",
-    "hero": "/assets/images/maskingForTheMass/thumb.png",
+    "tags": [
+      "Game Jam",
+      "Windows",
+      "Mac",
+      "Unity",
+      "Ollama"
+    ],
+    "thumb": "../assets/images/maskingForTheMass/thumb.png",
+    "hero": "../assets/images/maskingForTheMass/thumb.png",
     "short": "An experience about people masking their emotions in front of others.",
     "sections": [
       {
@@ -201,20 +306,29 @@
       {
         "title": "Technologies",
         "content": [
-          { "label": "Unity", "href": "https://unity.com/" },
-          { "label": "Ollama", "href": "https://ollama.com/" },
-          { "label": "MediaPipe", "href": "https://github.com/homuler/MediaPipeUnityPlugin" }
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          },
+          {
+            "label": "Ollama",
+            "href": "https://ollama.com/"
+          },
+          {
+            "label": "MediaPipe",
+            "href": "https://github.com/homuler/MediaPipeUnityPlugin"
+          }
         ]
       }
     ],
     "gallery": [
       "https://www.youtube.com/watch?v=OTGT9q9Urts",
       "https://www.youtube.com/watch?v=xoLbCNhk-dg",
-      "/assets/images/maskingForTheMass/gallery_1.jpg",
-      "/assets/images/maskingForTheMass/gallery_2.jpg",
-      "/assets/images/maskingForTheMass/gallery_3.jpg",
-      "/assets/images/maskingForTheMass/gallery_4.jpg",
-      "/assets/images/maskingForTheMass/gallery_5.jpg"
+      "../assets/images/maskingForTheMass/gallery_1.jpg",
+      "../assets/images/maskingForTheMass/gallery_2.jpg",
+      "../assets/images/maskingForTheMass/gallery_3.jpg",
+      "../assets/images/maskingForTheMass/gallery_4.jpg",
+      "../assets/images/maskingForTheMass/gallery_5.jpg"
     ]
   },
   {
@@ -223,9 +337,14 @@
     "year": "2025",
     "client": "",
     "type": "Personal Projects",
-    "tags": ["Game Jam", "PC", "Unity"],
-    "thumb": "/assets/images/acornsAndGlory/thumb.png",
-    "hero": "/assets/images/acornsAndGlory/thumb.png",
+    "tags": [
+      "Game Jam",
+      "Windows",
+      "Mac",
+      "Unity"
+    ],
+    "thumb": "../assets/images/acornsAndGlory/thumb.png",
+    "hero": "../assets/images/acornsAndGlory/thumb.png",
     "short": "A game about hamsters fighting a war inside a cardboard box delivered at your door.",
     "sections": [
       {
@@ -239,23 +358,37 @@
       {
         "title": "Useful Links",
         "content": [
-          { "label": "Itch", "href": "https://fracture-entertainment.itch.io/acornsglory" },
-          { "label": "Trailer", "href": "https://www.youtube.com/watch?v=N7qmkdp9TWU" },
-          { "label": "Mini Jame Gam", "href": "https://itch.io/jam/mini-jame-gam-49" }
+          {
+            "label": "Itch",
+            "href": "https://fracture-entertainment.itch.io/acornsglory"
+          },
+          {
+            "label": "Trailer",
+            "href": "https://www.youtube.com/watch?v=N7qmkdp9TWU"
+          },
+          {
+            "label": "Mini Jame Gam",
+            "href": "https://itch.io/jam/mini-jame-gam-49"
+          }
         ]
       },
       {
         "title": "Technologies",
-        "content": [{ "label": "Unity", "href": "https://unity.com/" }]
+        "content": [
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          }
+        ]
       }
     ],
     "gallery": [
-      "/assets/images/acornsAndGlory/gallery_0.png",
-      "/assets/images/acornsAndGlory/gallery_1.png",
-      "/assets/images/acornsAndGlory/gallery_2.png",
-      "/assets/images/acornsAndGlory/gallery_4.png",
-      "/assets/images/acornsAndGlory/gallery_5.png",
-      "/assets/images/acornsAndGlory/gallery_7.png",
+      "../assets/images/acornsAndGlory/gallery_0.png",
+      "../assets/images/acornsAndGlory/gallery_1.png",
+      "../assets/images/acornsAndGlory/gallery_2.png",
+      "../assets/images/acornsAndGlory/gallery_4.png",
+      "../assets/images/acornsAndGlory/gallery_5.png",
+      "../assets/images/acornsAndGlory/gallery_7.png",
       "https://www.youtube.com/watch?v=N7qmkdp9TWU"
     ]
   },
@@ -265,9 +398,13 @@
     "year": "2025",
     "client": "",
     "type": "Personal Projects",
-    "tags": ["Game Jam", "Android", "Unity"],
-    "thumb": "/assets/images/theFizzler/thumb.jpeg",
-    "hero": "/assets/images/theFizzler/thumb.jpeg",
+    "tags": [
+      "Game Jam",
+      "Android",
+      "Unity"
+    ],
+    "thumb": "../assets/images/theFizzler/thumb.jpeg",
+    "hero": "../assets/images/theFizzler/thumb.jpeg",
     "short": "A gimmicky game about spraying champagne in a club with your best friend.",
     "sections": [
       {
@@ -281,19 +418,33 @@
       {
         "title": "Useful Links",
         "content": [
-          { "label": "GGJ", "href": "https://globalgamejam.org/games/2025/fizzler-5" },
-          { "label": "Itch", "href": "https://jarnebeaufays.itch.io/the-fizzler" },
-          { "label": "Trailer", "href": "https://www.youtube.com/watch?v=XS7GDHytCY0" }
+          {
+            "label": "GGJ",
+            "href": "https://globalgamejam.org/games/2025/fizzler-5"
+          },
+          {
+            "label": "Itch",
+            "href": "https://jarnebeaufays.itch.io/the-fizzler"
+          },
+          {
+            "label": "Trailer",
+            "href": "https://www.youtube.com/watch?v=XS7GDHytCY0"
+          }
         ]
       },
       {
         "title": "Technologies",
-        "content": [{ "label": "Unity", "href": "https://unity.com/" }]
+        "content": [
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          }
+        ]
       }
     ],
     "gallery": [
-      "/assets/images/theFizzler/gallery_1.png",
-      "/assets/images/theFizzler/gallery_2.png",
+      "../assets/images/theFizzler/gallery_1.png",
+      "../assets/images/theFizzler/gallery_2.png",
       "https://www.youtube.com/watch?v=XS7GDHytCY0"
     ]
   },
@@ -303,9 +454,14 @@
     "year": "2021",
     "client": "",
     "type": "Personal Projects",
-    "tags": ["School", "PC", "Unity"],
-    "thumb": "/assets/images/upWithTheSub/thumb.png",
-    "hero": "/assets/images/upWithTheSub/thumb.png",
+    "tags": [
+      "School",
+      "Windows",
+      "Mac",
+      "Unity"
+    ],
+    "thumb": "../assets/images/upWithTheSub/thumb.png",
+    "hero": "../assets/images/upWithTheSub/thumb.png",
     "short": "A local co-op submarine adventure for a class project, voted as “Best Game of the Course 2020.” by our teachers.",
     "sections": [
       {
@@ -319,24 +475,35 @@
             "label": "Course",
             "href": "https://www.digitalartsandentertainment.be/pageselect/47/Game+Projects/103"
           },
-          { "label": "Itch", "href": "https://jarnebeaufays.itch.io/gameprojects" },
-          { "label": "The Rookies Submission", "href": "https://www.therookies.co/entries/6722" }
+          {
+            "label": "Itch",
+            "href": "https://jarnebeaufays.itch.io/gameprojects"
+          },
+          {
+            "label": "The Rookies Submission",
+            "href": "https://www.therookies.co/entries/6722"
+          }
         ]
       },
       {
         "title": "Technologies",
-        "content": [{ "label": "Unity", "href": "https://unity.com/" }]
+        "content": [
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          }
+        ]
       }
     ],
     "gallery": [
       "https://www.youtube.com/watch?v=ElbNA6Y3vhY&ab_channel=JorryPotsie",
-      "/assets/images/upWithTheSub/gallery_1.gif",
-      "/assets/images/upWithTheSub/gallery_2.jpg",
-      "/assets/images/upWithTheSub/gallery_3.png",
-      "/assets/images/upWithTheSub/gallery_4.png",
-      "/assets/images/upWithTheSub/gallery_5.png",
-      "/assets/images/upWithTheSub/gallery_6.png",
-      "/assets/images/upWithTheSub/gallery_7.png"
+      "../assets/images/upWithTheSub/gallery_1.gif",
+      "../assets/images/upWithTheSub/gallery_2.jpg",
+      "../assets/images/upWithTheSub/gallery_3.png",
+      "../assets/images/upWithTheSub/gallery_4.png",
+      "../assets/images/upWithTheSub/gallery_5.png",
+      "../assets/images/upWithTheSub/gallery_6.png",
+      "../assets/images/upWithTheSub/gallery_7.png"
     ]
   },
   {
@@ -345,9 +512,14 @@
     "year": "2021",
     "client": "",
     "type": "Personal Projects",
-    "tags": ["School", "PC", "Custom Engine"],
-    "thumb": "/assets/images/cashMoney/thumb.png",
-    "hero": "/assets/images/cashMoney/thumb.png",
+    "tags": [
+      "School",
+      "Windows",
+      "Mac",
+      "Custom Engine"
+    ],
+    "thumb": "../assets/images/cashMoney/thumb.png",
+    "hero": "../assets/images/cashMoney/thumb.png",
     "short": "A game made for a DAE course using the school's custom game engine.",
     "sections": [
       {
@@ -361,16 +533,22 @@
       {
         "title": "Useful Links",
         "content": [
-          { "label": "Trailer", "href": "https://www.youtube.com/watch?v=w9CHBtEcjvM" },
-          { "label": "Walkthrough", "href": "https://www.youtube.com/watch?v=5aM9X68EXQY" }
+          {
+            "label": "Trailer",
+            "href": "https://www.youtube.com/watch?v=w9CHBtEcjvM"
+          },
+          {
+            "label": "Walkthrough",
+            "href": "https://www.youtube.com/watch?v=5aM9X68EXQY"
+          }
         ]
       }
     ],
     "gallery": [
       "https://www.youtube.com/watch?v=w9CHBtEcjvM",
-      "/assets/images/cashMoney/gallery_1.gif",
-      "/assets/images/cashMoney/gallery_2.png",
-      "/assets/images/cashMoney/gallery_3.png"
+      "../assets/images/cashMoney/gallery_1.gif",
+      "../assets/images/cashMoney/gallery_2.png",
+      "../assets/images/cashMoney/gallery_3.png"
     ]
   },
   {
@@ -379,9 +557,13 @@
     "year": "2021",
     "client": "",
     "type": "Personal Projects",
-    "tags": ["Game Jam", "WebGL", "Unity"],
-    "thumb": "/assets/images/launchOClockDown/thumb.png",
-    "hero": "/assets/images/launchOClockDown/thumb.png",
+    "tags": [
+      "Game Jam",
+      "WebGL",
+      "Unity"
+    ],
+    "thumb": "../assets/images/launchOClockDown/thumb.png",
+    "hero": "../assets/images/launchOClockDown/thumb.png",
     "short": "My first game jam ever ever, a game about exploring space and using gravitational pull to navigate 2D levels.",
     "sections": [
       {
@@ -392,18 +574,34 @@
         "title": "Project Overview",
         "content": "This is a game about exploring space and using <b>gravitational pull</b> to navigate 2D levels. The player must avoid black holes and shooting UFOs, enter wormholes to teleport, see star constelations, and have fun!"
       },
-      { "title": "Useful Links", "content": [{ "label": "Itch", "href": "https://jarnebeaufays.itch.io/launch-oclockdown" }] },
-      { "title": "Technologies", "content": [{ "label": "Unity", "href": "https://unity.com/" }] }
+      {
+        "title": "Useful Links",
+        "content": [
+          {
+            "label": "Itch",
+            "href": "https://jarnebeaufays.itch.io/launch-oclockdown"
+          }
+        ]
+      },
+      {
+        "title": "Technologies",
+        "content": [
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          }
+        ]
+      }
     ],
     "gallery": [
-      "/assets/images/launchOClockDown/gallery_1.png",
-      "/assets/images/launchOClockDown/gallery_2.png",
-      "/assets/images/launchOClockDown/gallery_3.png",
-      "/assets/images/launchOClockDown/gallery_4.png",
-      "/assets/images/launchOClockDown/gallery_5.png",
-      "/assets/images/launchOClockDown/gallery_6.png",
-      "/assets/images/launchOClockDown/gallery_7.png",
-      "/assets/images/launchOClockDown/gallery_8.png"
+      "../assets/images/launchOClockDown/gallery_1.png",
+      "../assets/images/launchOClockDown/gallery_2.png",
+      "../assets/images/launchOClockDown/gallery_3.png",
+      "../assets/images/launchOClockDown/gallery_4.png",
+      "../assets/images/launchOClockDown/gallery_5.png",
+      "../assets/images/launchOClockDown/gallery_6.png",
+      "../assets/images/launchOClockDown/gallery_7.png",
+      "../assets/images/launchOClockDown/gallery_8.png"
     ]
   },
   {
@@ -412,9 +610,13 @@
     "year": "2022",
     "client": "",
     "type": "Personal Projects",
-    "tags": ["School", "Thesis", "Unity"],
-    "thumb": "/assets/images/racingNearTheSpeedOfLight/thumb.png",
-    "hero": "/assets/images/racingNearTheSpeedOfLight/thumb.png",
+    "tags": [
+      "School",
+      "Thesis",
+      "Unity"
+    ],
+    "thumb": "../assets/images/racingNearTheSpeedOfLight/thumb.png",
+    "hero": "../assets/images/racingNearTheSpeedOfLight/thumb.png",
     "short": "A bachelor thesis using the special theory of relativity as a game mechanic.",
     "sections": [
       {
@@ -424,18 +626,24 @@
       {
         "title": "Technologies",
         "content": [
-          { "label": "Unity", "href": "https://unity.com/" },
-          { "label": "Relativity", "href": "https://en.wikipedia.org/wiki/Special_relativity" }
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          },
+          {
+            "label": "Relativity",
+            "href": "https://en.wikipedia.org/wiki/Special_relativity"
+          }
         ]
       }
     ],
     "gallery": [
       "https://www.youtube.com/watch?v=NmwmpNR1n54",
-      "/assets/images/racingNearTheSpeedOfLight/gallery_1.gif",
-      "/assets/images/racingNearTheSpeedOfLight/gallery_2.png",
-      "/assets/images/racingNearTheSpeedOfLight/gallery_3.png",
-      "/assets/images/racingNearTheSpeedOfLight/gallery_4.png",
-      "/assets/images/racingNearTheSpeedOfLight/gallery_5.png"
+      "../assets/images/racingNearTheSpeedOfLight/gallery_1.gif",
+      "../assets/images/racingNearTheSpeedOfLight/gallery_2.png",
+      "../assets/images/racingNearTheSpeedOfLight/gallery_3.png",
+      "../assets/images/racingNearTheSpeedOfLight/gallery_4.png",
+      "../assets/images/racingNearTheSpeedOfLight/gallery_5.png"
     ]
   },
   {
@@ -444,22 +652,39 @@
     "year": "2022",
     "client": "Squido Studio",
     "type": "Industry Prototypes",
-    "tags": ["VR", "Unity"],
-    "thumb": "/assets/images/digigods/thumb.jpg",
-    "hero": "/assets/images/digigods/thumb.jpg",
+    "tags": [
+      "VR",
+      "Unity"
+    ],
+    "thumb": "../assets/images/digigods/thumb.jpg",
+    "hero": "../assets/images/digigods/thumb.jpg",
     "short": "The very first multiplayer prototype of the well received game Digigods, helping raise USD 3 million.",
     "sections": [
-      { "title": "Project Overview", "content": "Coming soon..." },
+      {
+        "title": "Project Overview",
+        "content": "Coming soon..."
+      },
       {
         "title": "Useful Links",
         "content": [
-          { "label": "Official Site", "href": "https://www.digigods.gg/" },
-          { "label": "Funding", "href": "https://gamesbeat.com/squido-studio-raises-3m-for-social-xr-game-digigods/" },
-          { "label": "Blog", "href": "https://previewlabs.com/collaborative-vr-multiplayer-physics-digigods/" }
+          {
+            "label": "Official Site",
+            "href": "https://www.digigods.gg/"
+          },
+          {
+            "label": "Funding",
+            "href": "https://gamesbeat.com/squido-studio-raises-3m-for-social-xr-game-digigods/"
+          },
+          {
+            "label": "Blog",
+            "href": "https://previewlabs.com/collaborative-vr-multiplayer-physics-digigods/"
+          }
         ]
       }
     ],
-    "gallery": ["/assets/images/digigods/thumb.jpg"]
+    "gallery": [
+      "../assets/images/digigods/thumb.jpg"
+    ]
   },
   {
     "slug": "zeroStateAgent",
@@ -467,18 +692,32 @@
     "year": "2023",
     "client": "Fortress Games",
     "type": "Industry Prototypes",
-    "tags": ["PC", "Unity"],
-    "thumb": "/assets/images/zeroStateAgent/thumb.png",
-    "hero": "/assets/images/zeroStateAgent/thumb.png",
+    "tags": [
+      "Windows",
+      "Mac",
+      "Unity"
+    ],
+    "thumb": "../assets/images/zeroStateAgent/thumb.png",
+    "hero": "../assets/images/zeroStateAgent/thumb.png",
     "short": "Systems-driven prototype focused on agent behavior and state transitions.",
     "sections": [
-      { "title": "Project Overview", "content": "Coming soon..." },
+      {
+        "title": "Project Overview",
+        "content": "Coming soon..."
+      },
       {
         "title": "Useful Links",
-        "content": [{ "label": "Official Site", "href": "https://zerostateagent.com/" }]
+        "content": [
+          {
+            "label": "Official Site",
+            "href": "https://zerostateagent.com/"
+          }
+        ]
       }
     ],
-    "gallery": ["/assets/images/zeroStateAgent/thumb.png"]
+    "gallery": [
+      "../assets/images/zeroStateAgent/thumb.png"
+    ]
   },
   {
     "slug": "immunodeck",
@@ -486,12 +725,22 @@
     "year": "2024",
     "client": "Yale University",
     "type": "Industry Prototypes",
-    "tags": ["VR", "Unity"],
-    "thumb": "/assets/images/immunoDeck/thumb.png",
-    "hero": "/assets/images/immunodeck/thumb.png",
+    "tags": [
+      "VR",
+      "Unity"
+    ],
+    "thumb": "../assets/images/immunoDeck/thumb.png",
+    "hero": "../assets/images/immunodeck/thumb.png",
     "short": "VR prototype exploring immunology concepts via game technology.",
-    "sections": [{ "title": "Project Overview", "content": "Coming soon..." }],
-    "gallery": ["/assets/images/immunodeck/thumb.png"]
+    "sections": [
+      {
+        "title": "Project Overview",
+        "content": "Coming soon..."
+      }
+    ],
+    "gallery": [
+      "../assets/images/immunodeck/thumb.png"
+    ]
   },
   {
     "slug": "vrCycling",
@@ -499,9 +748,12 @@
     "year": "2021",
     "client": "City of Ghent",
     "type": "Industry Prototypes",
-    "tags": ["VR", "Unity"],
-    "thumb": "/assets/images/vrCycling/thumb.png",
-    "hero": "/assets/images/vrCycling/thumb.png",
+    "tags": [
+      "VR",
+      "Unity"
+    ],
+    "thumb": "../assets/images/vrCycling/thumb.png",
+    "hero": "../assets/images/vrCycling/thumb.png",
     "short": "Prototype simulating urban cycling scenarios in VR. This project was displayed during the cycling world championship 2021 in Leuven's City hall.",
     "sections": [
       {
@@ -511,15 +763,21 @@
       {
         "title": "Useful Links",
         "content": [
-          { "label": "Project Video", "href": "https://www.youtube.com/watch?v=Yg8Qr3Qnarg" },
-          { "label": "Leuven's Innovation Hub", "href": "https://www.youtube.com/watch?v=WlxMQeIskE0" }
+          {
+            "label": "Project Video",
+            "href": "https://www.youtube.com/watch?v=Yg8Qr3Qnarg"
+          },
+          {
+            "label": "Leuven's Innovation Hub",
+            "href": "https://www.youtube.com/watch?v=WlxMQeIskE0"
+          }
         ]
       }
     ],
     "gallery": [
-      "/assets/images/vrCycling/gallery_1.png",
-      "/assets/images/vrCycling/gallery_2.png",
-      "/assets/images/vrCycling/gallery_3.png"
+      "../assets/images/vrCycling/gallery_1.png",
+      "../assets/images/vrCycling/gallery_2.png",
+      "../assets/images/vrCycling/gallery_3.png"
     ]
   },
   {
@@ -528,9 +786,13 @@
     "year": "2021",
     "client": "City of Ghent",
     "type": "Industry Prototypes",
-    "tags": ["Collaborative", "Unity", "Mentimeter"],
-    "thumb": "/assets/images/urbanDesign/thumb.png",
-    "hero": "/assets/images/urbanDesign/thumb.png",
+    "tags": [
+      "Collaborative",
+      "Unity",
+      "Mentimeter"
+    ],
+    "thumb": "../assets/images/urbanDesign/thumb.png",
+    "hero": "../assets/images/urbanDesign/thumb.png",
     "short": "The project scrapes live Mentimeter presentation responses and displays them in Unity Scenes.",
     "sections": [
       {
@@ -540,19 +802,25 @@
       {
         "title": "Technologies",
         "content": [
-          { "label": "Unity", "href": "https://unity.com/" },
-          { "label": "Mentimeter", "href": "https://www.mentimeter.com/" }
+          {
+            "label": "Unity",
+            "href": "https://unity.com/"
+          },
+          {
+            "label": "Mentimeter",
+            "href": "https://www.mentimeter.com/"
+          }
         ]
       }
     ],
     "gallery": [
-      "/assets/images/urbanDesign/gallery_1.gif",
-      "/assets/images/urbanDesign/gallery_2.png",
-      "/assets/images/urbanDesign/gallery_3.png",
-      "/assets/images/urbanDesign/gallery_4.png",
-      "/assets/images/urbanDesign/gallery_5.png",
-      "/assets/images/urbanDesign/gallery_6.png",
-      "/assets/images/urbanDesign/gallery_7.png"
+      "../assets/images/urbanDesign/gallery_1.gif",
+      "../assets/images/urbanDesign/gallery_2.png",
+      "../assets/images/urbanDesign/gallery_3.png",
+      "../assets/images/urbanDesign/gallery_4.png",
+      "../assets/images/urbanDesign/gallery_5.png",
+      "../assets/images/urbanDesign/gallery_6.png",
+      "../assets/images/urbanDesign/gallery_7.png"
     ]
   },
   {
@@ -561,9 +829,12 @@
     "year": "2026 Onwards",
     "client": "MIT",
     "type": "Others",
-    "tags": ["Community Work", "Event"],
-    "thumb": "/assets/images/mit/thumb.png",
-    "hero": "/assets/images/mit/thumb.png",
+    "tags": [
+      "Community Work",
+      "Event"
+    ],
+    "thumb": "../assets/images/mit/thumb.png",
+    "hero": "../assets/images/mit/thumb.png",
     "short": "Organizing one of the tracks, mentoring, and judging at the MIT Reality Hack.",
     "sections": [
       {
@@ -581,7 +852,10 @@
       {
         "title": "Useful Links",
         "content": [
-          { "label": "MIT Reality Hack", "href": "https://www.realityhackatmit.com/" },
+          {
+            "label": "MIT Reality Hack",
+            "href": "https://www.realityhackatmit.com/"
+          },
           {
             "label": "LinkedIn Post",
             "href": "https://www.linkedin.com/posts/jarne-beaufays-404153152_global-game-jam-antwerp-2025-had-65-participants-activity-7291145208363188226-79zt?utm_source=share&utm_medium=member_desktop&rcm=ACoAACSvV4QBFgvlvwrTq9EmSV8MxDUZNzSzEE8"
@@ -591,22 +865,31 @@
       {
         "title": "Mini Vlogs",
         "content": [
-          { "label": "Day 1", "href": "https://youtube.com/shorts/VSEPyISiRW8?si=HVmvtKohpnCgswDv" },
-          { "label": "Day 2", "href": "https://youtube.com/shorts/v606qYtsADw?si=UrhRD7dGCflPZAaT" },
-          { "label": "Day 3", "href": "https://www.youtube.com/shorts/NdLwqOaPgEk" }
+          {
+            "label": "Day 1",
+            "href": "https://youtube.com/shorts/VSEPyISiRW8?si=HVmvtKohpnCgswDv"
+          },
+          {
+            "label": "Day 2",
+            "href": "https://youtube.com/shorts/v606qYtsADw?si=UrhRD7dGCflPZAaT"
+          },
+          {
+            "label": "Day 3",
+            "href": "https://www.youtube.com/shorts/NdLwqOaPgEk"
+          }
         ]
       }
     ],
     "gallery": [
-      "/assets/images/mit/gallery_01.jpg",
-      "/assets/images/mit/gallery_02.jpg",
-      "/assets/images/mit/gallery_03.jpg",
-      "/assets/images/mit/gallery_04.jpeg",
-      "/assets/images/mit/gallery_05.jpeg",
-      "/assets/images/mit/gallery_06.jpg",
-      "/assets/images/mit/gallery_07.jpeg",
-      "/assets/images/mit/gallery_08.jpeg",
-      "/assets/images/mit/gallery_09.jpg"
+      "../assets/images/mit/gallery_01.jpg",
+      "../assets/images/mit/gallery_02.jpg",
+      "../assets/images/mit/gallery_03.jpg",
+      "../assets/images/mit/gallery_04.jpeg",
+      "../assets/images/mit/gallery_05.jpeg",
+      "../assets/images/mit/gallery_06.jpg",
+      "../assets/images/mit/gallery_07.jpeg",
+      "../assets/images/mit/gallery_08.jpeg",
+      "../assets/images/mit/gallery_09.jpg"
     ]
   },
   {
@@ -615,9 +898,12 @@
     "year": "2025 Onwards",
     "client": "GGJ",
     "type": "Others",
-    "tags": ["Community Work", "Event"],
-    "thumb": "/assets/images/ggj/thumb.jpg",
-    "hero": "/assets/images/ggj/thumb.jpg",
+    "tags": [
+      "Community Work",
+      "Event"
+    ],
+    "thumb": "../assets/images/ggj/thumb.jpg",
+    "hero": "../assets/images/ggj/thumb.jpg",
     "short": "Co-organizing the Global Game Jam Antwerp site and contributing in the GGJ theme committee.",
     "sections": [
       {
@@ -631,22 +917,33 @@
       {
         "title": "GGJ",
         "content": [
-          { "label": "Theme Credits", "href": "https://youtu.be/ERV-CM6OnRQ?si=ewVea7ZxfeMIaLq_&t=744" },
-          { "label": "Diversifiers Credits", "href": "https://globalgamejam.org/global-game-jam-2026-diversifiers-have-arrived" }
+          {
+            "label": "Theme Credits",
+            "href": "https://youtu.be/ERV-CM6OnRQ?si=ewVea7ZxfeMIaLq_&t=744"
+          },
+          {
+            "label": "Diversifiers Credits",
+            "href": "https://globalgamejam.org/global-game-jam-2026-diversifiers-have-arrived"
+          }
         ]
       },
       {
         "title": "GGJA 2025 & 2026",
-        "content": [{ "label": "Article '25", "href": "https://previewlabs.com/ggj2025/" }]
+        "content": [
+          {
+            "label": "Article '25",
+            "href": "https://previewlabs.com/ggj2025/"
+          }
+        ]
       }
     ],
     "gallery": [
-      "/assets/images/ggj/gallery_1.jpg",
-      "/assets/images/ggj/gallery_2.jpg",
-      "/assets/images/ggj/gallery_4.gif",
-      "/assets/images/ggj/gallery_5.jpg",
-      "/assets/images/ggj/gallery_6.png",
-      "/assets/images/ggj/gallery_7.jpg"
+      "../assets/images/ggj/gallery_1.jpg",
+      "../assets/images/ggj/gallery_2.jpg",
+      "../assets/images/ggj/gallery_4.gif",
+      "../assets/images/ggj/gallery_5.jpg",
+      "../assets/images/ggj/gallery_6.png",
+      "../assets/images/ggj/gallery_7.jpg"
     ]
   },
   {
@@ -655,9 +952,11 @@
     "year": "2025",
     "client": "",
     "type": "Others",
-    "tags": ["Event"],
-    "thumb": "/assets/images/companyTrip/thumb.jpg",
-    "hero": "/assets/images/companyTrip/thumb.jpg",
+    "tags": [
+      "Event"
+    ],
+    "thumb": "../assets/images/companyTrip/thumb.jpg",
+    "hero": "../assets/images/companyTrip/thumb.jpg",
     "short": "Organizing and planning the 15 years of PreviewLabs trip to America and Canada.",
     "sections": [
       {
@@ -679,16 +978,16 @@
       }
     ],
     "gallery": [
-      "/assets/images/companyTrip/gallery_1.jpg",
-      "/assets/images/companyTrip/gallery_2.jpg",
-      "/assets/images/companyTrip/gallery_3.jpg",
-      "/assets/images/companyTrip/gallery_4.jpg",
-      "/assets/images/companyTrip/gallery_5.jpg",
-      "/assets/images/companyTrip/gallery_6.jpg",
-      "/assets/images/companyTrip/gallery_7.jpg",
-      "/assets/images/companyTrip/gallery_8.jpg",
-      "/assets/images/companyTrip/gallery_9.jpg",
-      "/assets/images/companyTrip/gallery_10.jpg"
+      "../assets/images/companyTrip/gallery_1.jpg",
+      "../assets/images/companyTrip/gallery_2.jpg",
+      "../assets/images/companyTrip/gallery_3.jpg",
+      "../assets/images/companyTrip/gallery_4.jpg",
+      "../assets/images/companyTrip/gallery_5.jpg",
+      "../assets/images/companyTrip/gallery_6.jpg",
+      "../assets/images/companyTrip/gallery_7.jpg",
+      "../assets/images/companyTrip/gallery_8.jpg",
+      "../assets/images/companyTrip/gallery_9.jpg",
+      "../assets/images/companyTrip/gallery_10.jpg"
     ]
   },
   {
@@ -697,9 +996,11 @@
     "year": "2024 Onwards",
     "client": "",
     "type": "Others",
-    "tags": ["Hobby"],
-    "thumb": "/assets/images/3dPrinting/thumb.jpg",
-    "hero": "/assets/images/3dPrinting/thumb.jpg",
+    "tags": [
+      "Hobby"
+    ],
+    "thumb": "../assets/images/3dPrinting/thumb.jpg",
+    "hero": "../assets/images/3dPrinting/thumb.jpg",
     "short": "Designing, printing, and painting custom parts, props, trophees, and miniatures as a hobby.",
     "sections": [
       {
@@ -716,7 +1017,9 @@
         ]
       }
     ],
-    "gallery": ["/assets/images/3dPrinting/thumb.jpg"]
+    "gallery": [
+      "../assets/images/3dPrinting/thumb.jpg"
+    ]
   },
   {
     "slug": "intense",
@@ -724,23 +1027,33 @@
     "year": "2018-2022",
     "client": "",
     "type": "Others",
-    "tags": ["Hobby"],
-    "thumb": "/assets/images/intense/thumb.jpg",
-    "hero": "/assets/images/intense/thumb.jpg",
+    "tags": [
+      "Hobby"
+    ],
+    "thumb": "../assets/images/intense/thumb.jpg",
+    "hero": "../assets/images/intense/thumb.jpg",
     "short": "For 4 years, I've worked with groups of children and adults, leading them over obstacle courses focusing on safety, movement, trust, and fun!",
     "sections": [
       {
         "title": "Project Overview",
         "content": "For 4 years, I've worked with groups of children and adults, leading them over obstacle courses goin up to 24m in height. My focus was on safety, movement, trust, and mainly fun!<br><br>I did this at the company named <b>Intense</b>, who have a location in De Schorre and Hoboken."
       },
-      { "title": "Useful Links", "content": [{ "label": "Intense", "href": "https://intense.be/en/" }] }
+      {
+        "title": "Useful Links",
+        "content": [
+          {
+            "label": "Intense",
+            "href": "https://intense.be/en/"
+          }
+        ]
+      }
     ],
     "gallery": [
-      "/assets/images/intense/gallery_1.jpg",
-      "/assets/images/intense/gallery_2.jpg",
-      "/assets/images/intense/gallery_3.jpg",
-      "/assets/images/intense/gallery_4.png",
-      "/assets/images/intense/gallery_5.png"
+      "../assets/images/intense/gallery_1.jpg",
+      "../assets/images/intense/gallery_2.jpg",
+      "../assets/images/intense/gallery_3.jpg",
+      "../assets/images/intense/gallery_4.png",
+      "../assets/images/intense/gallery_5.png"
     ]
   }
 ]

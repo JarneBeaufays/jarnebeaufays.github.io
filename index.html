@@ -1,11 +1,1479 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Redirecting...</title>
-  <script>
-    window.location.href = "projects/";
-  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Jarne Beaufays — Game Programmer &amp; Community Builder</title>
+  <meta name="description"
+    content="Portfolio of Jarne Beaufays, a Belgian game programmer and community builder. VR, multiplayer and rapid prototyping work for Meta, Yale, Activision Blizzard Media and more." />
+  <link rel="canonical" href="https://jarnebeaufays.com/projects/" />
+
+  <!-- Link previews (LinkedIn, Discord, Slack, X) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Jarne Beaufays" />
+  <meta property="og:title" content="Jarne Beaufays — Game Programmer &amp; Community Builder" />
+  <meta property="og:description"
+    content="VR, multiplayer and rapid prototyping work for Meta, Yale, Activision Blizzard Media and more." />
+  <meta property="og:image" content="https://jarnebeaufays.com/assets/images/og-cover.jpg" />
+  <meta property="og:image:alt" content="Jarne Beaufays — portfolio" />
+  <meta property="og:url" content="https://jarnebeaufays.com/projects/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="../assets/images/favicon.png" />
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/css/theme.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" defer></script>
+
+  <style>
+    /* ---------------------------------------------------------------
+       Layout tokens
+       --------------------------------------------------------------- */
+    :root {
+      --nav-h: 56px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      /* keep anchored sections clear of the fixed nav */
+      scroll-padding-top: calc(var(--nav-h) + 1.5rem);
+    }
+
+    /* `overflow-x: clip` is a safety net against accidental horizontal
+       overflow, without creating a scroll container (which would break
+       `position: sticky`). `padding-top` clears the nav, which is fixed
+       and always visible now instead of only appearing once you scroll. */
+    body { overflow-x: clip; padding-top: var(--nav-h); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+
+    /* Tailwind's `.block` beats preflight's `[hidden]`, and filtering
+       relies on the attribute — so make the attribute win. */
+    [hidden] { display: none !important; }
+
+    /* ---------------------------------------------------------------
+       Universal focus ring — never remove an indicator without a
+       replacement.
+       --------------------------------------------------------------- */
+    :where(a, button, input, [tabindex]):focus-visible {
+      outline: 3px solid var(--color-accent1);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: .75rem;
+      top: -100px;
+      z-index: 200;
+      background: #fff;
+      color: var(--color-accent1);
+      padding: .6rem 1rem;
+      border-radius: .5rem;
+      font-weight: 600;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .18);
+      transition: top .15s ease;
+    }
+    .skip-link:focus { top: .75rem; }
+
+    /* ---------------------------------------------------------------
+       Sticky navigation
+       --------------------------------------------------------------- */
+    .site-nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      height: var(--nav-h);
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(15, 23, 42, .08);
+      transform: translateY(-100%);
+      transition: transform .25s ease;
+    }
+    .site-nav[data-visible="true"] { transform: translateY(0); }
+
+    .site-nav__inner {
+      max-width: 80rem;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .site-nav__home {
+      font-weight: 700;
+      font-size: .95rem;
+      white-space: nowrap;
+      color: #0f172a;
+    }
+
+    .site-nav__links {
+      display: flex;
+      align-items: center;
+      gap: .25rem;
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow-x: auto;
+      /* horizontal chip rail: hiding the bar here is conventional and
+         the rail is also reachable by keyboard */
+      scrollbar-width: none;
+    }
+    .site-nav__links::-webkit-scrollbar { display: none; }
+
+    .site-nav__link {
+      position: relative;
+      flex: 0 0 auto;
+      padding: .45rem .7rem;
+      font-size: .85rem;
+      color: #475569;
+      border-radius: .5rem;
+      white-space: nowrap;
+    }
+    .site-nav__link:hover { background: rgba(15, 23, 42, .05); color: #0f172a; }
+
+    .site-nav__link::before {
+      content: "";
+      position: absolute;
+      left: .7rem;
+      right: .7rem;
+      bottom: 0;
+      height: 2px;
+      background: var(--color-accent1);
+      opacity: 0;
+      transition: opacity .15s ease;
+    }
+    .site-nav__link[aria-current="true"] { color: #0f172a; font-weight: 600; }
+    .site-nav__link[aria-current="true"]::before { opacity: 1; }
+
+    .nav-icon {
+      width: 2.1rem;
+      height: 2.1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      color: #475569;
+    }
+    .nav-icon:hover { background: rgba(15, 23, 42, .06); color: #0f172a; }
+
+    @media (max-width: 767.98px) {
+      .site-nav__home { display: none; }
+    }
+
+    /* ---------------------------------------------------------------
+       Header
+       --------------------------------------------------------------- */
+    .site-header {
+      background: var(--color-accent1);
+    }
+
+
+    .avatar {
+      width: 9rem;
+      height: 9rem;
+      border-radius: 999px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+      outline: 8px solid #fff;
+      outline-offset: -1px;
+      background: rgba(255, 255, 255, .25);
+    }
+    @media (min-width: 768px) { .avatar { width: 12rem; height: 12rem; } }
+    @media (min-width: 1024px) { .avatar { width: 15rem; height: 15rem; } }
+
+    /* ---------------------------------------------------------------
+       Cards
+       --------------------------------------------------------------- */
+    .card-media {
+      position: relative;
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      /* tinted placeholder while the image loads, or if it is missing */
+      background: color-mix(in srgb, var(--_accent, #64748b) 20%, #e2e8f0);
+    }
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .project-card {
+      border-radius: var(--card-radius, .75rem);
+      overflow: hidden;
+      transition: transform .28s cubic-bezier(.2, .9, .2, 1), box-shadow .28s;
+    }
+    a:hover .project-card { transform: scale(1.015); box-shadow: var(--card-shadow, 0 14px 32px rgba(0, 0, 0, .14)); }
+    a:hover .card-media img { transform: scale(1.04); }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      font-size: .7rem;
+      line-height: 1.4;
+      padding: .2rem .6rem;
+      border-radius: 999px;
+      font-weight: 600;
+      color: var(--_pill, var(--color-accent1));
+      background: color-mix(in srgb, var(--_pill, var(--color-accent1)) 14%, #fff);
+    }
+    /* the client is who it's for, not a tag about it — a neutral tone
+       instead of the accent keeps it visually separate from the rest */
+    .pill--client { color: #475569; background: #f1f5f9; }
+
+    /* platforms/engines with a logo: icon only, no pill chrome */
+    .tag-icon { display: inline-flex; width: 1.05rem; height: 1.05rem; }
+
+    .clamp-2, .clamp-3, .clamp-4 {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .clamp-2 { -webkit-line-clamp: 2; }
+    .clamp-3 { -webkit-line-clamp: 3; }
+    .clamp-4 { -webkit-line-clamp: 4; }
+
+    .btn-accent {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .65rem 1.1rem;
+      border-radius: .6rem;
+      font-weight: 600;
+      font-size: .9rem;
+      color: #fff;
+      background: var(--_accent, var(--color-accent1));
+      transition: filter .18s ease, transform .18s ease;
+    }
+    .btn-accent:hover { filter: brightness(1.08); transform: translateY(-1px); }
+
+    /* ---------------------------------------------------------------
+       Filters — full card in the page, collapsed into the nav on scroll
+       --------------------------------------------------------------- */
+    .filter-card {
+      background: #fff;
+      border-radius: .9rem;
+      border: 1px solid rgba(15, 23, 42, .09);
+      box-shadow: 0 2px 10px rgba(15, 23, 42, .05);
+      padding: .75rem;
+    }
+    @media (min-width: 640px) { .filter-card { padding: 1rem; } }
+
+    .nav-filter {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .4rem .7rem;
+      font-size: .85rem;
+      color: #475569;
+      border-radius: .5rem;
+      border: 1px solid rgba(15, 23, 42, .15);
+      background: #fff;
+    }
+    .nav-filter:hover { border-color: rgba(15, 23, 42, .35); color: #0f172a; }
+    .nav-filter[aria-expanded="true"] { background: rgba(15, 23, 42, .06); color: #0f172a; }
+    .nav-filter__count {
+      display: inline-flex;
+      align-items: center;
+      padding: 0 .4rem;
+      height: 1.15rem;
+      border-radius: 999px;
+      font-size: .7rem;
+      font-weight: 700;
+      color: #fff;
+      background: var(--color-accent1);
+    }
+    @media (max-width: 639.98px) { .nav-filter__text { display: none; } }
+
+    .filter-panel {
+      position: absolute;
+      inset: 100% 0 auto 0;
+      background: rgba(255, 255, 255, .97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(15, 23, 42, .1);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, .1);
+    }
+    .filter-panel__inner { max-width: 80rem; margin: 0 auto; padding: 1rem; }
+
+    .search-field {
+      width: 100%;
+      padding: .6rem .9rem .6rem 2.4rem;
+      font-size: .9rem;
+      border: 1px solid rgba(15, 23, 42, .15);
+      border-radius: .6rem;
+      background: #fff;
+    }
+    .search-field::placeholder { color: #64748b; }
+
+    .chip {
+      flex: 0 0 auto;
+      font-size: .8rem;
+      padding: .35rem .8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 23, 42, .15);
+      color: #334155;
+      background: #fff;
+      transition: background .15s ease, color .15s ease, border-color .15s ease;
+    }
+    .chip:hover { border-color: rgba(15, 23, 42, .35); }
+    .chip[aria-pressed="true"] {
+      background: var(--color-accent1);
+      border-color: var(--color-accent1);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .footer-cta {
+      background: var(--color-accent1);
+    }
+
+    /* ---------------------------------------------------------------
+       Back to top
+       --------------------------------------------------------------- */
+    .to-top {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 90;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: var(--color-accent1);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .2s ease, visibility .2s ease;
+    }
+    .to-top[data-visible="true"] { opacity: .95; visibility: visible; }
+    .to-top:hover { opacity: 1; }
+
+    /* ---------------------------------------------------------------
+       Project overlay — a project opens over the grid instead of
+       navigating to a separate page.
+       --------------------------------------------------------------- */
+    .pm-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(15, 23, 42, .55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .pm-panel {
+      width: 80vw;
+      height: 80vh;
+      max-width: 1400px;
+      background: #f8fafc;
+      border-radius: 1rem;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .35);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    @media (max-width: 767.98px) {
+      .pm-overlay { padding: 0; }
+      .pm-panel { width: 100vw; height: 100dvh; border-radius: 0; }
+    }
+
+    .pm-scroll { flex: 1 1 auto; overflow-y: auto; overscroll-behavior: contain; outline: none; }
+
+    /* close + prev/next sit directly on the hero, no bar behind them */
+    .pm-hero-controls {
+      position: absolute;
+      inset: 0 0 auto 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 1.25rem;
+    }
+    .pm-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.25rem;
+      height: 2.25rem;
+      color: #fff;
+      opacity: .85;
+    }
+    .pm-close:hover { opacity: 1; }
+    .pm-pagernav { display: flex; align-items: center; gap: .1rem; }
+    .pm-navarrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 999px;
+      color: #fff;
+      opacity: .85;
+    }
+    .pm-navarrow:hover { opacity: 1; }
+    /* an empty slot keeps its space so the real arrow never shifts */
+    .pm-navarrow--empty { visibility: hidden; pointer-events: none; }
+
+    .pm-hero {
+      position: relative;
+      color: #fff;
+      background: var(--_accent, var(--color-accent1));
+    }
+    .pm-hero-inner {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 2.75rem;
+    }
+    .pm-h1 { font-size: 1.9rem; font-weight: 800; letter-spacing: -.01em; line-height: 1.15; }
+    @media (min-width: 640px) { .pm-h1 { font-size: 2.4rem; } }
+    .pm-subtitle { margin-top: .6rem; opacity: .9; }
+    .pm-tags { margin-top: 1rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; }
+
+    .pm-body { max-width: 80rem; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    .pm-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+    @media (min-width: 1024px) { .pm-grid { grid-template-columns: minmax(0,2fr) minmax(0,1fr); gap: 3.5rem; } }
+
+    /* top media: a horizontally-scrolling strip of images, 4 visible at a
+       time, with arrows to cycle when there are more */
+    .pm-topmedia { position: relative; margin-bottom: 3rem; }
+    .pm-topmedia-track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: calc(50% - .5rem);
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+    .pm-topmedia-track::-webkit-scrollbar { display: none; }
+    @media (min-width: 640px) { .pm-topmedia-track { grid-auto-columns: calc(25% - .75rem); } }
+
+    .pm-topmedia-track > a, #pmGallery > a {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      border-radius: .75rem;
+      background: color-mix(in srgb, var(--_accent, #64748b) 18%, #e2e8f0);
+    }
+    .pm-topmedia-track > a { aspect-ratio: 16 / 10; scroll-snap-align: start; }
+    #pmGallery { column-gap: 1rem; }
+    #pmGallery > a { width: 100%; margin: 0 0 1rem; break-inside: avoid; }
+    .pm-topmedia-track img, #pmGallery img {
+      width: 100%; height: 100%; display: block; object-fit: cover; border-radius: .75rem;
+      transition: transform .3s ease, filter .3s ease;
+    }
+    .pm-topmedia-track a:hover img, #pmGallery a:hover img { transform: scale(1.03); filter: brightness(.9); }
+
+    .pm-topmedia-nav {
+      position: absolute;
+      top: 50%;
+      translate: 0 -50%;
+      z-index: 5;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      color: #0f172a;
+      border: 1px solid rgba(15, 23, 42, .08);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+    }
+    .pm-topmedia-nav:hover { background: #f1f5f9; }
+    .pm-topmedia-nav--prev { left: -.75rem; }
+    .pm-topmedia-nav--next { right: -.75rem; }
+    @media (max-width: 639.98px) {
+      .pm-topmedia-nav--prev { left: -.4rem; }
+      .pm-topmedia-nav--next { right: -.4rem; }
+    }
+
+    .play-overlay { position: absolute; inset: 0; pointer-events: none; display: grid; place-items: center; }
+    .play-overlay svg { width: 56px; height: 56px; fill: #fff; filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .5)); }
+
+    .pm-prose { color: #334155; line-height: 1.7; max-width: 68ch; }
+    .pm-prose p + p { margin-top: 1rem; }
+    .pm-prose a { color: var(--_accent, var(--color-accent1)); text-decoration: underline; text-underline-offset: 3px; }
+    .pm-prose ul { list-style: disc; padding-left: 1.25rem; margin-top: .75rem; }
+    .pm-prose li + li { margin-top: .35rem; }
+
+    .pm-link-btn {
+      display: inline-flex; align-items: center; gap: .4rem;
+      padding: .5rem .85rem; border-radius: .5rem; font-size: .85rem; font-weight: 600;
+      color: #fff; background: var(--_accent, var(--color-accent1));
+      transition: filter .18s ease;
+    }
+    .pm-link-btn:hover { filter: brightness(1.1); }
+  </style>
 </head>
-<body>
+
+<body class="antialiased text-slate-800 bg-slate-50">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================= Sticky nav ============================ -->
+  <nav id="siteNav" class="site-nav" data-visible="true" aria-label="Sections">
+    <div class="site-nav__inner">
+      <a class="site-nav__home" href="#top">Jarne Beaufays</a>
+      <div class="site-nav__links" id="navLinks"></div>
+      <div class="flex items-center gap-1 flex-none">
+        <button type="button" id="filterToggle" class="nav-filter" aria-expanded="false" aria-controls="filterPanel">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-3.5-3.5" stroke-linecap="round" />
+          </svg>
+          <span class="nav-filter__text">Filters</span>
+          <span class="nav-filter__count js-filter-badge" hidden></span>
+        </button>
+        <a href="../resume/" class="hidden sm:inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-semibold text-white"
+          style="background: var(--color-accent1);">Resume</a>
+        <a href="mailto:j.beaufays@outlook.com" class="nav-icon" aria-label="Email Jarne">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v.32l-10 5.6-10-5.6V5.5Zm0 2.6V18.5A1.5 1.5 0 0 0 3.5 20h17a1.5 1.5 0 0 0 1.5-1.5V8.1l-9.51 5.33a1 1 0 0 1-.98 0L2 8.1Z" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/jarne-beaufays-404153152" target="_blank" rel="noopener noreferrer"
+          class="nav-icon" aria-label="LinkedIn profile (opens in a new tab)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5ZM3 9h4v12H3V9Zm6 0h3.8v1.65h.05A4.17 4.17 0 0 1 16.6 8.7c4 0 4.74 2.5 4.74 5.76V21h-4v-5.65c0-1.35-.02-3.08-1.9-3.08-1.9 0-2.19 1.46-2.19 2.98V21H9V9Z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Same controls as the in-page card, shown once you've scrolled past it -->
+    <div class="filter-panel" id="filterPanel" hidden>
+      <div class="filter-panel__inner" data-filter-host></div>
+    </div>
+  </nav>
+
+  <!-- ============================== Header ============================== -->
+  <header id="top" class="site-header text-white pt-14 pb-20">
+    <div class="max-w-7xl mx-auto px-6 relative">
+      <div class="flex flex-col-reverse md:flex-row md:items-center gap-8 lg:gap-16">
+        <div class="max-w-xl">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">Jarne Beaufays</h1>
+          <p class="mt-3 text-lg opacity-95">Belgian game programmer and community builder</p>
+          <p class="mt-4 text-sm sm:text-base opacity-90 leading-relaxed">
+            Four years of VR, multiplayer and rapid-prototype work for clients like Meta, Yale and
+            Activision Blizzard Media — now leading projects at PreviewLabs. Outside the editor you'll find me
+            organising game jams and hackathon tracks.
+          </p>
+
+          <div class="mt-6 flex flex-wrap items-center gap-3">
+            <a href="../resume/"
+              class="inline-flex items-center gap-2 bg-white hover:bg-white/90 font-semibold py-2.5 px-4 rounded-lg text-sm"
+              style="color: var(--color-accent1);">
+              Read my resume
+            </a>
+            <a href="#sections"
+              class="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 font-semibold py-2.5 px-4 rounded-lg text-sm text-white">
+              See the work
+            </a>
+            <a href="mailto:j.beaufays@outlook.com"
+              class="bg-white/20 hover:bg-white/30 w-10 h-10 rounded-full flex items-center justify-center"
+              aria-label="Email Jarne">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v.32l-10 5.6-10-5.6V5.5Zm0 2.6V18.5A1.5 1.5 0 0 0 3.5 20h17a1.5 1.5 0 0 0 1.5-1.5V8.1l-9.51 5.33a1 1 0 0 1-.98 0L2 8.1Z" />
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/jarne-beaufays-404153152" target="_blank" rel="noopener noreferrer"
+              class="bg-white/20 hover:bg-white/30 w-10 h-10 rounded-full flex items-center justify-center"
+              aria-label="LinkedIn profile (opens in a new tab)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5ZM3 9h4v12H3V9Zm6 0h3.8v1.65h.05A4.17 4.17 0 0 1 16.6 8.7c4 0 4.74 2.5 4.74 5.76V21h-4v-5.65c0-1.35-.02-3.08-1.9-3.08-1.9 0-2.19 1.46-2.19 2.98V21H9V9Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="md:ms-auto flex-none">
+          <img src="../assets/images/profilePicture.jpg" alt="Portrait of Jarne Beaufays" class="avatar" data-optional />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =============================== Main =============================== -->
+  <main id="main" class="max-w-7xl mx-auto px-6 pb-4">
+
+    <!-- ----------------------------- Sections -------------------------- -->
+    <div id="sections" class="mt-12 space-y-16"></div>
+
+    <!-- --------------------------- Empty state ------------------------- -->
+    <div id="emptyState" class="hidden py-20 text-center">
+      <p class="text-lg font-semibold">No projects match that.</p>
+      <p class="mt-2 text-slate-600">Try a different word, or remove a tag filter.</p>
+      <button type="button" data-clear class="mt-5 btn-accent">Show all projects</button>
+    </div>
+
+    <!-- ---------------------------- Load error ------------------------- -->
+    <div id="errorState" class="hidden py-20 text-center">
+      <p class="text-lg font-semibold">The project list didn't load.</p>
+      <p class="mt-2 text-slate-600">
+        Reload the page to try again, or email me at
+        <a class="underline font-medium" href="mailto:j.beaufays@outlook.com">j.beaufays@outlook.com</a>
+        and I'll send the work over directly.
+      </p>
+      <button type="button" onclick="location.reload()" class="mt-5 btn-accent">Reload the page</button>
+    </div>
+
+    <!-- ---------------------------- Skeletons -------------------------- -->
+    <div id="skeleton" class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" aria-hidden="true">
+      <div class="h-64 rounded-xl bg-slate-200 animate-pulse"></div>
+      <div class="h-64 rounded-xl bg-slate-200 animate-pulse"></div>
+      <div class="h-64 rounded-xl bg-slate-200 animate-pulse"></div>
+      <div class="h-64 rounded-xl bg-slate-200 animate-pulse"></div>
+    </div>
+  </main>
+
+  <!-- ============================== Footer ============================== -->
+  <footer class="footer-cta text-white mt-16">
+    <div class="max-w-7xl mx-auto px-6 pt-20 pb-12">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold">Always open for a chat — let's connect</h2>
+          <p class="mt-1 text-sm opacity-90">Based in Belgium, happy to travel.</p>
+        </div>
+        <div class="flex gap-3">
+          <a href="../resume/" class="bg-white hover:bg-white/90 py-2.5 px-4 rounded-lg font-semibold text-sm"
+            style="color: var(--color-accent1);">Resume</a>
+          <a href="mailto:j.beaufays@outlook.com"
+            class="bg-white/20 hover:bg-white/30 w-10 h-10 rounded-full flex items-center justify-center"
+            aria-label="Email Jarne">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v.32l-10 5.6-10-5.6V5.5Zm0 2.6V18.5A1.5 1.5 0 0 0 3.5 20h17a1.5 1.5 0 0 0 1.5-1.5V8.1l-9.51 5.33a1 1 0 0 1-.98 0L2 8.1Z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/jarne-beaufays-404153152" target="_blank" rel="noopener noreferrer"
+            class="bg-white/20 hover:bg-white/30 w-10 h-10 rounded-full flex items-center justify-center"
+            aria-label="LinkedIn profile (opens in a new tab)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5ZM3 9h4v12H3V9Zm6 0h3.8v1.65h.05A4.17 4.17 0 0 1 16.6 8.7c4 0 4.74 2.5 4.74 5.76V21h-4v-5.65c0-1.35-.02-3.08-1.9-3.08-1.9 0-2.19 1.46-2.19 2.98V21H9V9Z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="mt-10 text-sm opacity-90">
+        <div>&copy; <span data-year>2026</span> Jarne Beaufays</div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#top" class="to-top" id="toTop" data-visible="false" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m6 14 6-6 6 6" />
+    </svg>
+  </a>
+
+  <!-- ======================= Project overlay ======================= -->
+  <div id="pmOverlay" class="pm-overlay" hidden>
+    <div class="pm-panel" id="pmPanel" role="dialog" aria-modal="true" aria-labelledby="pmTitle">
+      <div class="pm-scroll" id="pmScroll" tabindex="-1">
+        <div class="pm-hero" id="pmHero">
+          <div class="pm-hero-controls">
+            <button type="button" class="pm-close" id="pmClose" aria-label="Close project details">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 6l12 12M18 6 6 18" />
+              </svg>
+            </button>
+            <div id="pmPagerNav" class="pm-pagernav"></div>
+          </div>
+          <div class="pm-hero-inner">
+            <h2 id="pmTitle" class="pm-h1"></h2>
+            <p id="pmSubtitle" class="pm-subtitle"></p>
+            <div id="pmTags" class="pm-tags"></div>
+          </div>
+        </div>
+
+        <div class="pm-body">
+          <section id="pmTopMedia" class="hidden pm-topmedia" aria-label="Featured media">
+            <button type="button" id="pmTopPrev" class="pm-topmedia-nav pm-topmedia-nav--prev" aria-label="Show previous images" hidden>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>
+            </button>
+            <div id="pmTopMediaTrack" class="pm-topmedia-track"></div>
+            <button type="button" id="pmTopNext" class="pm-topmedia-nav pm-topmedia-nav--next" aria-label="Show more images" hidden>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
+            </button>
+          </section>
+
+          <div class="pm-grid">
+            <div class="min-w-0">
+              <div id="pmLeftCol" class="space-y-10"></div>
+              <section id="pmGalleryWrap" class="hidden mt-14" aria-label="Gallery">
+                <div id="pmGallery" class="columns-1 sm:columns-2"></div>
+              </section>
+            </div>
+            <aside class="min-w-0">
+              <div id="pmRightCol" class="space-y-8"></div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      /* =============================================================
+         Config
+         ============================================================= */
+      const SECTIONS = [
+        { id: "industry-projects",   type: "Industry Projects",   label: "Industry projects",  blurb: "Full-pipeline games I shipped with a team.",        cols: "sm:grid-cols-2 lg:grid-cols-3", limit: 6 },
+        { id: "industry-prototypes", type: "Industry Prototypes", label: "Prototypes",         blurb: "Short client prototypes, usually a few weeks each.", cols: "sm:grid-cols-2 lg:grid-cols-4", limit: 8 },
+        { id: "personal-projects",   type: "Personal Projects",   label: "Personal work",      blurb: "Game jams, school projects and experiments.",       cols: "sm:grid-cols-2 lg:grid-cols-4", limit: 8 },
+        { id: "others",              type: "Others",              label: "Community & other",  blurb: "Events, community work and relevant hobbies.",      cols: "sm:grid-cols-2 lg:grid-cols-3", limit: 6 }
+      ];
+      /* Tags need at least this many projects before they get a filter chip.
+         Everything else is still reachable through the search box. */
+      const MIN_TAG_COUNT = 2;
+
+      const byId = Object.fromEntries(SECTIONS.map(s => [s.id, s]));
+      /* one accent color site-wide, kept as a function since call sites pass a project */
+      const accentOf = () => "var(--color-accent1)";
+
+      /* well-known platforms/engines get their logo instead of a plain text
+         pill — inlined (from Simple Icons) rather than fetched, so they pick
+         up the pill's own color via currentColor and need no network call */
+      const TAG_ICONS = {
+        Unity: '<path d="m12.9288 4.2939 3.7997 2.1929c.1366.077.1415.2905 0 .3675l-4.515 2.6076a.4192.4192 0 0 1-.4246 0L7.274 6.8543c-.139-.0745-.1415-.293 0-.3675l3.7972-2.193V0L1.3758 5.5977V16.793l3.7177-2.1456v-4.3858c-.0025-.1565.1813-.2682.318-.1838l4.5148 2.6076a.4252.4252 0 0 1 .2136.3676v5.2127c.0025.1565-.1813.2682-.3179.1838l-3.7996-2.1929-3.7178 2.1457L12 24l9.6954-5.5977-3.7178-2.1457-3.7996 2.1929c-.1341.082-.3229-.0248-.3179-.1838V13.053c0-.1565.087-.2956.2136-.3676l4.5149-2.6076c.134-.082.3228.0224.3179.1838v4.3858l3.7177 2.1456V5.5977L12.9288 0Z"/>',
+        Android: '<path d="M18.4395 5.5586c-.675 1.1664-1.352 2.3318-2.0274 3.498-.0366-.0155-.0742-.0286-.1113-.043-1.8249-.6957-3.484-.8-4.42-.787-1.8551.0185-3.3544.4643-4.2597.8203-.084-.1494-1.7526-3.021-2.0215-3.4864a1.1451 1.1451 0 0 0-.1406-.1914c-.3312-.364-.9054-.4859-1.379-.203-.475.282-.7136.9361-.3886 1.5019 1.9466 3.3696-.0966-.2158 1.9473 3.3593.0172.031-.4946.2642-1.3926 1.0177C2.8987 12.176.452 14.772 0 18.9902h24c-.119-1.1108-.3686-2.099-.7461-3.0683-.7438-1.9118-1.8435-3.2928-2.7402-4.1836a12.1048 12.1048 0 0 0-2.1309-1.6875c.6594-1.122 1.312-2.2559 1.9649-3.3848.2077-.3615.1886-.7956-.0079-1.1191a1.1001 1.1001 0 0 0-.8515-.5332c-.5225-.0536-.9392.3128-1.0488.5449zm-.0391 8.461c.3944.5926.324 1.3306-.1563 1.6503-.4799.3197-1.188.0985-1.582-.4941-.3944-.5927-.324-1.3307.1563-1.6504.4727-.315 1.1812-.1086 1.582.4941zM7.207 13.5273c.4803.3197.5506 1.0577.1563 1.6504-.394.5926-1.1038.8138-1.584.4941-.48-.3197-.5503-1.0577-.1563-1.6504.4008-.6021 1.1087-.8106 1.584-.4941z"/>',
+        Windows: '<path d="M0,0H11.377V11.372H0ZM12.623,0H24V11.372H12.623ZM0,12.623H11.377V24H0Zm12.623,0H24V24H12.623"/>',
+        Mac: '<path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>'
+      };
+      const pillHTML = (tag, accent) => `<span class="pill" style="--_pill:${accent}">${esc(tag)}</span>`;
+      const clientPillHTML = client => `<span class="pill pill--client">${esc(client)}</span>`;
+
+      /* icon-only, no label — for the platforms/engines that have a logo */
+      const iconBadgeHTML = (tag, accent) =>
+        `<span class="tag-icon" style="color:${accent}" role="img" aria-label="${esc(tag)}" title="${esc(tag)}">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">${TAG_ICONS[tag]}</svg>
+        </span>`;
+
+      /* splits a tag list into the plain-text pills and the ones with a logo */
+      function splitTags(tags) {
+        const text = [], icons = [];
+        tags.forEach(t => (TAG_ICONS[t] ? icons : text).push(t));
+        return { text, icons };
+      }
+
+      /* YouTube: handles watch?v=, youtu.be/, /embed/ and /shorts/ — used
+         by the project overlay's gallery. */
+      const YT = /(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/;
+
+      /* =============================================================
+         Helpers
+         ============================================================= */
+      const $ = sel => document.querySelector(sel);
+      const esc = str => String(str ?? "").replace(/[&<>"']/g, c =>
+        ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+      const norm = s => String(s ?? "").toLowerCase();
+
+      /* Images are optional: if one 404s, the tinted frame stays and we
+         never show a broken-image icon. */
+      function guardImages(root) {
+        root.querySelectorAll("img").forEach(img => {
+          img.addEventListener("error", () => { img.style.visibility = "hidden"; }, { once: true });
+        });
+      }
+
+      /* =============================================================
+         State
+         ============================================================= */
+      const state = { all: [], query: "", tags: new Set(), expanded: new Set() };
+
+      /* =============================================================
+         Cards
+         ============================================================= */
+      function buildCard(p) {
+        const accent = accentOf(p);
+        const a = document.createElement("a");
+        a.href = `?project=${encodeURIComponent(p.slug)}`;
+        a.className = "block h-full";
+        a.dataset.slug = p.slug;
+        /* haystack for the search box */
+        a.dataset.search = norm([p.title, p.short, p.client, p.year, (p.tags || []).join(" ")].join(" "));
+        a.dataset.tags = JSON.stringify(p.tags || []);
+
+        const { text: textPills, icons: iconPills } = splitTags(p.tags || []);
+        const clientPill = p.client ? clientPillHTML(p.client) : "";
+
+        a.innerHTML = `
+          <article class="project-card bg-white shadow-md h-full flex flex-col" style="--_accent:${accent}">
+            <span class="card-media">
+              <img src="${esc(p.thumb || "")}" alt="" loading="lazy" decoding="async" data-optional />
+            </span>
+            <div class="p-4 flex flex-col grow">
+              <div class="flex items-start justify-between gap-2">
+                <h3 class="text-base font-bold leading-snug clamp-2">${esc(p.title)}</h3>
+                <span class="text-xs text-slate-500 whitespace-nowrap mt-0.5">${esc(p.year || "")}</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-600 clamp-3">${esc(p.short || "")}</p>
+              <div class="mt-auto pt-4 flex items-center justify-between gap-2">
+                <div class="flex flex-wrap gap-2">${clientPill}${textPills.map(t => pillHTML(t, accent)).join("")}</div>
+                ${iconPills.length
+                  ? `<div class="flex items-center gap-1.5 flex-none">${iconPills.map(t => iconBadgeHTML(t, accent)).join("")}</div>`
+                  : ""}
+              </div>
+            </div>
+          </article>`;
+        guardImages(a);
+        return a;
+      }
+
+      function renderSections() {
+        const host = $("#sections");
+        host.innerHTML = "";
+
+        SECTIONS.forEach((sec, i) => {
+          const items = state.all.filter(p => p.type === sec.type);
+          if (!items.length) return;
+
+          const el = document.createElement("section");
+          el.id = sec.id;
+          el.className = "scroll-mt-28";
+          el.dataset.section = sec.id;
+          el.innerHTML = `
+            <div class="flex items-end justify-between gap-4 mb-5">
+              <h2 class="text-2xl sm:text-3xl font-semibold">
+                ${esc(sec.label)}
+                <span class="ms-1 align-middle text-base font-normal text-slate-500" data-count>${items.length}</span>
+              </h2>
+              <p class="text-sm text-slate-600 text-right max-w-xs">${esc(sec.blurb)}</p>
+            </div>
+            <div class="grid grid-cols-1 ${sec.cols} gap-6 items-stretch" data-grid></div>
+            <div class="mt-6 text-center">
+              <button type="button" hidden
+                class="text-sm font-semibold underline underline-offset-4 hover:opacity-80" data-more
+                style="color:var(--color-accent1)">Show all ${items.length}</button>
+            </div>`;
+
+          const grid = el.querySelector("[data-grid]");
+          items.forEach(p => grid.appendChild(buildCard(p)));
+
+          const moreBtn = el.querySelector("[data-more]");
+          moreBtn.addEventListener("click", () => {
+            state.expanded.add(sec.id);
+            applyFilters();
+          });
+
+          host.appendChild(el);
+
+          /* a plain rule between sections instead of a colored divider */
+          if (i < SECTIONS.length - 1) host.appendChild(sectionRule());
+        });
+      }
+
+      function sectionRule() {
+        const hr = document.createElement("hr");
+        hr.className = "border-slate-200"; /* vertical rhythm comes from the host's space-y-16 */
+        hr.setAttribute("aria-hidden", "true");
+        return hr;
+      }
+
+      /* =============================================================
+         Project overlay — a project opens on top of this page instead
+         of navigating to a separate one.
+         ============================================================= */
+      const pm = { overlay: null, panel: null, scroll: null, lightbox: null, current: null, lastFocus: null, baseTitle: document.title };
+
+      /* The hero image leads the gallery, then whatever else isn't a repeat of it. */
+      function dedupeGallery(p) {
+        const hero = p.hero || p.thumb;
+        const rest = (p.gallery || []).filter(Boolean).filter(src => src !== hero);
+        return hero ? [hero, ...rest] : rest;
+      }
+
+      function buildMediaLink(project, src, i) {
+        const a = document.createElement("a");
+        a.href = src;
+        a.setAttribute("data-gallery", "pm-project");
+
+        const isImage = /\.(jpe?g|png|gif|webp|avif)$/i.test(src);
+        const isVideoFile = /\.(mp4|webm|ogg)$/i.test(src);
+        const yt = src.match(YT);
+
+        let thumbSrc = null;
+        let label = `${project.title} — image ${i + 1}`;
+
+        if (isImage) {
+          thumbSrc = src;
+        } else if (yt) {
+          a.setAttribute("data-type", "video");
+          a.setAttribute("data-source", "youtube");
+          thumbSrc = `https://i.ytimg.com/vi/${yt[1]}/hqdefault.jpg`;
+          label = `${project.title} — video ${i + 1}`;
+        } else if (isVideoFile) {
+          a.setAttribute("data-type", "video");
+          /* a poster keeps local videos from rendering as a grey slab */
+          thumbSrc = project.posters?.[src] || null;
+          label = `${project.title} — video ${i + 1}`;
+        } else {
+          return null; /* unknown source: skip rather than append an empty link */
+        }
+
+        a.setAttribute("aria-label", label);
+
+        if (thumbSrc) {
+          const img = document.createElement("img");
+          img.src = thumbSrc;
+          img.alt = label;
+          img.loading = "lazy";
+          img.decoding = "async";
+          a.appendChild(img);
+        } else {
+          const ph = document.createElement("div");
+          ph.style.cssText = "width:100%;aspect-ratio:16/9;";
+          a.appendChild(ph);
+        }
+
+        if (a.hasAttribute("data-type")) {
+          const overlay = document.createElement("div");
+          overlay.className = "play-overlay";
+          overlay.innerHTML = `<svg viewBox="0 0 64 64" aria-hidden="true"><polygon points="22,14 50,32 22,50" /></svg>`;
+          a.appendChild(overlay);
+        }
+
+        return a;
+      }
+
+      function pmTextBlock(title, html) {
+        const sec = document.createElement("section");
+        sec.innerHTML = `<h2 class="text-xl font-semibold mb-3">${esc(title)}</h2>
+                          <div class="pm-prose">${html}</div>`;
+        return sec;
+      }
+
+      function pmLinksBlock(title, links) {
+        const sec = document.createElement("section");
+        sec.innerHTML = `<h2 class="text-sm font-semibold text-slate-500 mb-2 tracking-wide">${esc(title)}</h2>`;
+        const wrap = document.createElement("div");
+        wrap.className = "flex flex-wrap gap-2";
+        links.forEach(l => {
+          if (!l || !l.href || !l.label) return;
+          const a = document.createElement("a");
+          a.href = l.href;
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+          a.className = "pm-link-btn";
+          a.textContent = l.label;
+          wrap.appendChild(a);
+        });
+        sec.appendChild(wrap);
+        return sec;
+      }
+
+      function renderPmPager(p) {
+        /* walk within the same category first, like the old standalone page did */
+        const siblings = state.all.filter(x => x.type === p.type);
+        const i = siblings.findIndex(x => x.slug === p.slug);
+        const prev = siblings[i - 1] || null;
+        const next = siblings[i + 1] || null;
+
+        const navPager = $("#pmPagerNav");
+        navPager.innerHTML = "";
+
+        /* always render both slots, even when a side has nothing — so the
+           one that does have a sibling never shifts position */
+        [["prev", prev, "m14 6-6 6 6 6"], ["next", next, "m10 6 6 6-6 6"]].forEach(([dir, sib, d]) => {
+          const el = document.createElement(sib ? "a" : "span");
+          el.className = "pm-navarrow";
+          if (sib) {
+            el.href = `?project=${encodeURIComponent(sib.slug)}`;
+            el.dataset.slug = sib.slug;
+            el.setAttribute("aria-label", `${dir === "prev" ? "Previous" : "Next"} project: ${sib.title}`);
+            el.title = sib.title;
+          } else {
+            el.classList.add("pm-navarrow--empty");
+            el.setAttribute("aria-hidden", "true");
+          }
+          el.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
+          navPager.appendChild(el);
+        });
+      }
+
+      /* show each arrow only when there's actually more to scroll to in that direction */
+      function updateTopArrows() {
+        const track = $("#pmTopMediaTrack");
+        const max = track.scrollWidth - track.clientWidth;
+        $("#pmTopPrev").hidden = track.scrollLeft <= 4;
+        $("#pmTopNext").hidden = track.scrollLeft >= max - 4;
+      }
+
+      function renderPmContent(p) {
+        const accent = accentOf(p);
+        pm.panel.style.setProperty("--_accent", accent);
+
+        $("#pmTitle").textContent = p.title;
+        $("#pmSubtitle").textContent = [p.client, p.year].filter(Boolean).join(" — ");
+
+        const tagsWrap = $("#pmTags");
+        const validTags = (p.tags || []).filter(t => typeof t === "string" && t.trim());
+        const { text: pmTextTags, icons: pmIconTags } = splitTags(validTags);
+        tagsWrap.innerHTML = `
+          <div class="flex flex-wrap gap-2">${pmTextTags.map(t => pillHTML(t, accent)).join("")}</div>
+          ${pmIconTags.length
+            ? `<div class="flex items-center gap-2 flex-none">${pmIconTags.map(t => iconBadgeHTML(t, "#fff")).join("")}</div>`
+            : ""}`;
+
+        const leftCol = $("#pmLeftCol");
+        const rightCol = $("#pmRightCol");
+        leftCol.innerHTML = "";
+        rightCol.innerHTML = "";
+
+        (p.sections || []).forEach(sec => {
+          if (!sec || !sec.title || !sec.content) return;
+          if (typeof sec.content === "string") {
+            leftCol.appendChild(pmTextBlock(sec.title, sec.content));
+          } else if (Array.isArray(sec.content)) {
+            rightCol.appendChild(pmLinksBlock(sec.title, sec.content));
+          } else if (typeof sec.content === "object") {
+            if (typeof sec.content.text === "string" && sec.content.text.trim()) {
+              leftCol.appendChild(pmTextBlock(sec.title, sec.content.text));
+            }
+            if (Array.isArray(sec.content.links) && sec.content.links.length) {
+              rightCol.appendChild(pmLinksBlock(sec.title, sec.content.links));
+            }
+          }
+        });
+
+        if (p.playable && p.playable.src) {
+          const wrap = document.createElement("section");
+          wrap.innerHTML = `
+            <h2 class="text-sm font-semibold text-slate-500 mb-2 tracking-wide">Try it</h2>
+            <div class="rounded-xl overflow-hidden border border-slate-200 bg-white">
+              <iframe src="${esc(p.playable.src)}"
+                      title="${esc(p.playable.title || p.title + " — playable demo")}"
+                      width="100%" height="${Number(p.playable.height) || 600}"
+                      style="border:0; display:block;" loading="lazy"
+                      allow="autoplay; fullscreen"></iframe>
+            </div>
+            ${p.playable.caption ? `<p class="mt-2 text-xs text-slate-600">${esc(p.playable.caption)}</p>` : ""}`;
+          rightCol.appendChild(wrap);
+        }
+
+        const topWrap = $("#pmTopMedia");
+        const track = $("#pmTopMediaTrack");
+        const grid = $("#pmGallery");
+        track.innerHTML = "";
+        grid.innerHTML = "";
+        topWrap.classList.add("hidden");
+        $("#pmGalleryWrap").classList.add("hidden");
+
+        if (pm.lightbox) { pm.lightbox.destroy(); pm.lightbox = null; }
+
+        /* the hero image leads the top strip (all images, scrollable);
+           videos only fill the gallery slot below */
+        const sources = dedupeGallery(p);
+        if (sources.length) {
+          const isImageSrc = src => /\.(jpe?g|png|gif|webp|avif)$/i.test(src);
+          const isVideoSrc = src => /\.(mp4|webm|ogg)$/i.test(src) || YT.test(src);
+          const images = sources.filter(isImageSrc);
+          const videos = sources.filter(isVideoSrc);
+
+          images.forEach((src, i) => {
+            const a = buildMediaLink(p, src, i);
+            if (a) track.appendChild(a);
+          });
+          if (track.children.length) topWrap.classList.remove("hidden");
+          track.scrollLeft = 0;
+          updateTopArrows();
+
+          videos.forEach((src, i) => {
+            const a = buildMediaLink(p, src, i);
+            if (a) grid.appendChild(a);
+          });
+          if (grid.children.length) $("#pmGalleryWrap").classList.remove("hidden");
+
+          /* one shared group so the lightbox steps through all of them */
+          const initLightbox = () => {
+            if (typeof GLightbox === "function") pm.lightbox = GLightbox({ selector: '[data-gallery="pm-project"]' });
+          };
+          if (typeof GLightbox === "function") initLightbox();
+          else window.addEventListener("load", initLightbox, { once: true });
+        } else {
+          updateTopArrows();
+        }
+
+        renderPmPager(p);
+        guardImages(pm.panel);
+        pm.scroll.scrollTop = 0;
+      }
+
+      function openProject(slug, { push = true } = {}) {
+        const p = state.all.find(x => x.slug === slug);
+        if (!p) return;
+
+        const first = !pm.current;
+        if (first) pm.lastFocus = document.activeElement;
+        pm.current = p;
+
+        /* unhide first — rendering measures the gallery strip's width to
+           decide which arrows to show, and a hidden element measures 0 */
+        pm.overlay.hidden = false;
+        document.documentElement.style.overflow = "hidden";
+        renderPmContent(p);
+        document.title = `${p.title} — Jarne Beaufays`;
+
+        if (push) {
+          const params = new URLSearchParams(location.search);
+          params.set("project", slug);
+          history.pushState({ project: slug }, "", `?${params.toString()}`);
+        }
+
+        if (first) pm.scroll.focus({ preventScroll: true });
+      }
+
+      function closeProject({ push = true } = {}) {
+        if (!pm.current) return;
+        pm.overlay.hidden = true;
+        document.documentElement.style.overflow = "";
+        document.title = pm.baseTitle;
+        if (pm.lightbox) { pm.lightbox.destroy(); pm.lightbox = null; }
+        pm.current = null;
+
+        if (push) {
+          const params = new URLSearchParams(location.search);
+          params.delete("project");
+          const qs = params.toString();
+          history.pushState(null, "", qs ? `?${qs}` : location.pathname);
+        }
+
+        if (pm.lastFocus && document.contains(pm.lastFocus)) pm.lastFocus.focus();
+        pm.lastFocus = null;
+      }
+
+      function setupProjectOverlay() {
+        pm.overlay = $("#pmOverlay");
+        pm.panel = $("#pmPanel");
+        pm.scroll = $("#pmScroll");
+
+        $("#pmClose").addEventListener("click", () => closeProject());
+        pm.overlay.addEventListener("click", e => { if (e.target === pm.overlay) closeProject(); });
+
+        const track = $("#pmTopMediaTrack");
+        $("#pmTopPrev").addEventListener("click", () => track.scrollBy({ left: -track.clientWidth * 0.9, behavior: "smooth" }));
+        $("#pmTopNext").addEventListener("click", () => track.scrollBy({ left: track.clientWidth * 0.9, behavior: "smooth" }));
+        track.addEventListener("scroll", updateTopArrows);
+
+        /* any link carrying data-slug opens the overlay instead of navigating */
+        document.addEventListener("click", e => {
+          const a = e.target.closest("a[data-slug]");
+          if (!a) return;
+          if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+          e.preventDefault();
+          openProject(a.dataset.slug);
+        });
+
+        document.addEventListener("keydown", e => {
+          if (pm.overlay.hidden) return;
+          if (e.key === "Escape") closeProject();
+        });
+
+        window.addEventListener("popstate", () => {
+          const slug = new URLSearchParams(location.search).get("project");
+          if (slug) openProject(slug, { push: false });
+          else closeProject({ push: false });
+        });
+      }
+
+      /* =============================================================
+         Filtering
+         ============================================================= */
+      function applyFilters() {
+        /* "unity vr" should find projects tagged with both, so match each
+           word separately rather than the phrase as typed */
+        const terms = norm(state.query).split(/\s+/).filter(Boolean);
+        const tags = [...state.tags];
+        const filtering = Boolean(terms.length || tags.length);
+        let visible = 0;
+
+        document.querySelectorAll("#sections [data-grid]").forEach(grid => {
+          const section = grid.closest("section");
+          const sec = byId[section.dataset.section];
+          const expanded = filtering || state.expanded.has(sec.id);
+
+          let shown = 0;
+          grid.querySelectorAll("a[data-slug]").forEach(card => {
+            const cardTags = JSON.parse(card.dataset.tags);
+            const okQuery = terms.every(t => card.dataset.search.includes(t));
+            const okTags = !tags.length || tags.every(t => cardTags.includes(t));
+            const match = okQuery && okTags;
+            if (match) shown++;
+            /* beyond the section's limit, only the expanded/filtered view shows the rest */
+            card.hidden = !match || (!expanded && shown > sec.limit);
+          });
+          visible += shown;
+
+          section.hidden = shown === 0;
+          const count = section.querySelector("[data-count]");
+          const total = grid.children.length;
+          if (count) count.textContent = filtering && shown !== total ? `${shown} of ${total}` : String(total);
+
+          const moreBtn = section.querySelector("[data-more]");
+          if (moreBtn) moreBtn.hidden = expanded || shown <= sec.limit;
+        });
+
+        /* a rule only makes sense between two visible sections */
+        const sections = [...document.querySelectorAll("#sections > section")];
+        [...document.querySelectorAll("#sections > hr")].forEach(hr => {
+          const before = sections.filter(s => hr.compareDocumentPosition(s) & Node.DOCUMENT_POSITION_PRECEDING);
+          const after = sections.filter(s => hr.compareDocumentPosition(s) & Node.DOCUMENT_POSITION_FOLLOWING);
+          hr.hidden = !(before.some(s => !s.hidden) && after.some(s => !s.hidden));
+        });
+
+        $("#emptyState").classList.toggle("hidden", visible > 0);
+
+        const total = state.all.length;
+        const summary = filtering ? `${visible} of ${total} project${total === 1 ? "" : "s"}` : "";
+
+        /* every copy of the controls reflects the same state */
+        document.querySelectorAll("[data-filter-host] .js-search").forEach(i => {
+          if (i.value !== state.query) i.value = state.query;
+        });
+        document.querySelectorAll("[data-filter-host] .chip").forEach(c =>
+          c.setAttribute("aria-pressed", String(state.tags.has(c.dataset.tag))));
+        document.querySelectorAll("[data-filter-host] .js-count").forEach(c => c.textContent = summary);
+        document.querySelectorAll("[data-filter-host] .js-clear").forEach(c =>
+          c.classList.toggle("hidden", !filtering));
+
+        /* the collapsed buttons carry the count, so a filtered page never
+           leaves you wondering where half the work went */
+        document.querySelectorAll(".js-filter-badge").forEach(badge => {
+          badge.hidden = !filtering;
+          badge.textContent = filtering ? `${visible}/${total}` : "";
+        });
+
+        syncUrl();
+      }
+
+      function syncUrl() {
+        /* start from the current params so an open project (?project=…)
+           survives a filter change instead of being wiped out */
+        const params = new URLSearchParams(location.search);
+        if (state.query.trim()) params.set("q", state.query.trim()); else params.delete("q");
+        if (state.tags.size) params.set("tag", [...state.tags].join(",")); else params.delete("tag");
+        const qs = params.toString();
+        history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
+      }
+
+      function readUrl() {
+        const params = new URLSearchParams(location.search);
+        state.query = params.get("q") || "";
+        (params.get("tag") || "").split(",").filter(Boolean).forEach(t => state.tags.add(t));
+      }
+
+      /* The same controls are rendered into the in-page card and into the
+         nav dropdown; both write to one state object, so they can never
+         disagree. */
+      function renderFilterControls() {
+        const counts = new Map();
+        state.all.forEach(p => (p.tags || []).forEach(t => counts.set(t, (counts.get(t) || 0) + 1)));
+        const tags = [...counts.entries()]
+          .filter(([, n]) => n >= MIN_TAG_COUNT)
+          .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+          .map(([t]) => t);
+
+        document.querySelectorAll("[data-filter-host]").forEach((host, hostIndex) => {
+          const inputId = `search-${hostIndex}`;
+          host.setAttribute("role", "search");
+          host.innerHTML = `
+            <div class="flex flex-col lg:flex-row lg:items-center gap-3">
+              <div class="relative lg:w-72 flex-none">
+                <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" width="16" height="16"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m20 20-3.5-3.5" stroke-linecap="round" />
+                </svg>
+                <label for="${inputId}" class="sr-only">Search projects</label>
+                <input id="${inputId}" type="search" class="search-field js-search"
+                  placeholder="Search projects…  (press /)" autocomplete="off" />
+              </div>
+              <div class="js-chips flex items-center gap-2 overflow-x-auto lg:flex-wrap"
+                role="group" aria-label="Filter by tag" style="scrollbar-width: none;"></div>
+              <button type="button"
+                class="js-clear flex-none text-sm font-medium text-slate-600 hover:text-slate-900 underline underline-offset-4 hidden">
+                Clear
+              </button>
+            </div>
+            <p class="js-count mt-2 text-sm text-slate-600" role="status" aria-live="polite"></p>`;
+
+          const chipHost = host.querySelector(".js-chips");
+          tags.forEach(tag => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "chip";
+            btn.dataset.tag = tag;
+            btn.textContent = tag;
+            btn.setAttribute("aria-pressed", String(state.tags.has(tag)));
+            btn.addEventListener("click", () => {
+              state.tags.has(tag) ? state.tags.delete(tag) : state.tags.add(tag);
+              applyFilters();
+            });
+            chipHost.appendChild(btn);
+          });
+
+          host.querySelector(".js-search").addEventListener("input", e => {
+            state.query = e.target.value;
+            applyFilters();
+          });
+          host.querySelector(".js-clear").addEventListener("click", clearFilters);
+        });
+      }
+
+      function clearFilters() {
+        state.query = "";
+        state.tags.clear();
+        applyFilters();
+      }
+
+      /* =============================================================
+         Filters stay hidden in the (always-visible) nav until its
+         toggle button is clicked.
+         ============================================================= */
+      function wireFilterPanel(toggleSel, panelSel) {
+        const toggle = $(toggleSel);
+        const panel = $(panelSel);
+
+        const setOpen = open => {
+          panel.hidden = !open;
+          toggle.setAttribute("aria-expanded", String(open));
+          if (open) panel.querySelector(".js-search")?.focus();
+        };
+
+        toggle.addEventListener("click", () => setOpen(panel.hidden));
+
+        /* click away and Escape both close it */
+        document.addEventListener("click", e => {
+          if (panel.hidden) return;
+          if (!panel.contains(e.target) && !toggle.contains(e.target)) setOpen(false);
+        });
+        document.addEventListener("keydown", e => {
+          if (e.key === "Escape" && !panel.hidden) { setOpen(false); toggle.focus(); }
+        });
+
+        return setOpen;
+      }
+
+      /* =============================================================
+         Navigation
+         ============================================================= */
+      function renderNav() {
+        const host = $("#navLinks");
+        const entries = SECTIONS.filter(s => state.all.some(p => p.type === s.type))
+          .map(s => ({ id: s.id, label: s.label }));
+
+        entries.forEach(e => {
+          const a = document.createElement("a");
+          a.className = "site-nav__link";
+          a.href = `#${e.id}`;
+          a.textContent = e.label;
+          a.dataset.target = e.id;
+          host.appendChild(a);
+        });
+
+        const observer = new IntersectionObserver(entriesIO => {
+          entriesIO.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            host.querySelectorAll(".site-nav__link").forEach(link =>
+              link.setAttribute("aria-current", String(link.dataset.target === entry.target.id)));
+          });
+        }, { rootMargin: "-20% 0px -70% 0px", threshold: 0 });
+
+        entries.forEach(e => {
+          const el = document.getElementById(e.id);
+          if (el) observer.observe(el);
+        });
+      }
+
+      function setupChrome() {
+        /* the nav stays visible always; only the "back to top" button
+           still waits for you to scroll a bit first */
+        const toTop = $("#toTop");
+        const sentinel = document.createElement("div");
+        sentinel.style.cssText = "position:absolute;top:60vh;height:1px;width:1px;";
+        document.body.prepend(sentinel);
+
+        new IntersectionObserver(([entry]) => {
+          const past = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+          toTop.dataset.visible = String(past);
+        }, { threshold: 0 }).observe(sentinel);
+      }
+
+      /* =============================================================
+         Boot
+         ============================================================= */
+      async function boot() {
+        try {
+          const res = await fetch("data.json");
+          if (!res.ok) throw new Error(`data.json responded ${res.status}`);
+          const data = await res.json();
+          if (!Array.isArray(data)) throw new Error("data.json is not an array");
+
+          state.all = data;
+          $("#skeleton").remove();
+
+          renderSections();
+          readUrl();      /* must run before the controls so a shared ?tag=
+                             link comes back with the right chips switched on */
+          renderFilterControls();
+          renderNav();
+          const setPanelOpen = wireFilterPanel("#filterToggle", "#filterPanel");
+          applyFilters();
+
+          const initialSlug = new URLSearchParams(location.search).get("project");
+          if (initialSlug) openProject(initialSlug, { push: false });
+
+          document.querySelectorAll("[data-clear]").forEach(b => b.addEventListener("click", clearFilters));
+
+          /* "/" opens the filter panel from anywhere on the page */
+          document.addEventListener("keydown", e => {
+            if (e.key !== "/") return;
+            if (/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName || "")) return;
+            e.preventDefault();
+            setPanelOpen(true);
+          });
+        } catch (err) {
+          console.error(err);
+          ["#skeleton", "#sections", "#filterToggle"]
+            .forEach(sel => $(sel)?.remove());
+          $("#errorState").classList.remove("hidden");
+        }
+      }
+
+      document.querySelectorAll("[data-year]").forEach(el => el.textContent = new Date().getFullYear());
+      setupChrome();
+      setupProjectOverlay();
+      guardImages(document);
+      boot();
+    })();
+  </script>
 </body>
+
 </html>
